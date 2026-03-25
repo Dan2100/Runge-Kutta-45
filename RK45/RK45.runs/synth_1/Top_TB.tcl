@@ -56,18 +56,15 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param checkpoint.writeSynthRtdsInDcp 1
 set_param general.usePosixSpawnForFork 1
 set_param chipscope.maxJobs 8
-set_param synth.incrementalSynthesisCache C:/Users/lehar/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-28364-Harry/incrSyn
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
-create_project -in_memory -part xc7a35tftg256-1
+create_project -in_memory -part xc7k70tfbv676-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
+set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.cache/wt [current_project]
 set_property parent.project_path C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
@@ -77,15 +74,23 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
-  C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/Control.vhd
-  C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/Mem.vhd
-  C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RKMod1.vhd
-  C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/Top.vhd
-  C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/func.vhd
-  C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/k_block.vhd
-  C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/reg.vhd
-  C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/Top_TB.vhd
+  C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Control.vhd
+  C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd
+  C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd
+  C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top.vhd
+  C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd
+  C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd
+  C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/reg.vhd
+  C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top_TB.vhd
 }
+read_ip -quiet c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/ip/fpu_add/fpu_add.xci
+
+read_ip -quiet c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/ip/fpu_mul/fpu_mul.xci
+
+read_ip -quiet c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/ip/fpu_sub/fpu_sub.xci
+
+read_ip -quiet c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/ip/fpu_fused/fpu_fused.xci
+
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -95,13 +100,15 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
 read_checkpoint -auto_incremental -incremental C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/utils_1/imports/synth_1/Top_TB.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top Top_TB -part xc7a35tftg256-1
+synth_design -top Top_TB -part xc7k70tfbv676-1
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"
