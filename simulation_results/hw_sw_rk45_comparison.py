@@ -73,7 +73,7 @@ fig, (ax1, ax2, ax3) = plt.subplots(
 )
 
 # Panel 1 — Trajectories
-ax1.plot(t_fine, y_true, color=WHITE, lw=2.5, label="Exact solution", zorder=10)
+ax1.plot(t_fine, y_true, color=WHITE, lw=1.2, label="Exact solution", zorder=2)
 ax1.plot(t_sw,   y_sw,   color=GREEN, lw=1.6,
          label=f"RK45 SW adaptive ({len(t_sw)-1} steps)", zorder=3)
 ax1.plot(t_hw,   y_hw,   color=BLUE,  lw=1.6, ls='--',
