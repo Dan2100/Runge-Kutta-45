@@ -11,6 +11,7 @@ vhdl xil_defaultlib  \
 "../../../../RK45.srcs/sources_1/imports/RK4/func.vhd" \
 "../../../../RK45.srcs/sources_1/imports/RK4/k_block.vhd" \
 "../../../../RK45.srcs/sources_1/imports/RK4/reg.vhd" \
+"../../../../RK45.srcs/sources_1/imports/RK4/step_ctrl.vhd" \
 "../../../../RK45.srcs/sources_1/imports/RK4/Top_TB.vhd" \
 
 # Do not sort compile order

@@ -46,8 +46,8 @@ component Top is
  x_out: out std_logic_vector(31 downto 0);
  y_out: out std_logic_vector(31 downto 0);
  err_out: out std_logic_vector(31 downto 0);
-  initial: out std_logic
- 
+ initial: out std_logic;
+ done: out std_logic
  );
 end component;
 
@@ -55,7 +55,8 @@ signal clock: std_logic := '1';
 signal x_out:  std_logic_vector(31 downto 0);
 signal y_out:  std_logic_vector(31 downto 0);
 signal err_out:  std_logic_vector(31 downto 0);
-signal initial: std_logic;
+signal initial_sig: std_logic;
+signal done:  std_logic;
 signal cont:  std_logic_vector(31 downto 0);
 signal inst:  std_logic_vector(31 downto 0);
 signal  addr :  std_logic_vector(11 downto 0);
@@ -70,7 +71,8 @@ inst => inst,
 x_out => x_out,
 y_out => y_out,
 err_out => err_out,
-initial => initial,
+initial => initial_sig,
+done => done,
 clock => clock,
 cont => cont,
 addr => addr
@@ -89,72 +91,41 @@ wait for clock_period/2;
 proc: process 
 begin
 
---write_en <= '1';
-
+-- Init phase: load x, y, h, tol, n_steps into memory
+-- mem(0)  = x   = 2.0    (rs1=1)
 inst <= "000000000000" &  "00001" & "000" & "00000" & "0001100";
 wait for clock_period;
 
---write_en <= '1';
-
+-- mem(4)  = y   = 1.0    (rs1=2)
 inst <= "000000000100" &  "00010" & "000" & "00000" & "0001100";
 wait for clock_period;
 
---write_en <= '1';
-
+-- mem(8)  = h   = 0.1    (rs1=3)
 inst <= "000000001000" &  "00011" & "000" & "00000" & "0001100";
 wait for clock_period;
 
---write_en <= '1';
-
+-- mem(12) = tol = 0.05   (rs1=4)
 inst <= "000000001100" &  "00100" & "000" & "00000" & "0001100";
 wait for clock_period;
 
---write_en <= '1';
-
+-- mem(16) = n_steps = 5  (rs1=5)
 inst <= "000000010000" &  "00101" & "000" & "00000" & "0001100";
 wait for clock_period;
 
---write_en <= '1';
-
+-- (optional 6th init, addr=20, not used by adaptive solver)
 inst <= "000000010100" &  "00110" & "000" & "00000" & "0001100";
-wait for clock_period; --- RKI
+wait for clock_period;
 
+-- Issue RKS command: func3 = "010" → triggers adaptive solver
+inst <= "000000000000" &  "00001" & "010" & "00000" & "0001100";
+wait for clock_period;
 
-inst <= "000000000000"  &  "00001" & "110" & "00000" & "0001100";
-wait for clock_period * 500;
+-- Clear instruction to avoid re-triggering
+inst <= (others => '0');
 
-inst <= "000000000000"  &  "00001" & "100" & "00000" & "0001100";
-wait for clock_period * 500;
-
-inst <= "000000000000"  &  "00001" & "110" & "00000" & "0001100";
-wait for clock_period * 500;
-
-inst <= "000000000000"  &  "00001" & "100" & "00000" & "0001100";
-wait for clock_period * 500;
-
-inst <= "000000000000"  &  "00001" & "110" & "00000" & "0001100";
-wait for clock_period * 500;
-
-inst <= "000000000000"  &  "00001" & "100" & "00000" & "0001100";
-wait for clock_period * 500; --- RKU update
-
-
-
-
-
---inst <= "000000000100" &  "00010" & "010" & "00000" & "0001100";
---wait for clock_period;
---inst <= "000000001000" &  "00011" & "010" & "00000" & "0001100";
---wait for clock_period;
---inst <= "000000001100" &  "00100" & "010" & "00000" & "0001100";
---wait for clock_period;
---inst <= "000000010000" &  "00101" & "010" & "00000" & "0001100";
---wait for clock_period;
---inst <= "000000010100" &  "00110" & "010" & "00000" & "0001100";
---wait for clock_period;
-
-
-
+-- Wait for solver to finish
+wait until done = '1';
+wait for clock_period * 20;
 
 wait;
 

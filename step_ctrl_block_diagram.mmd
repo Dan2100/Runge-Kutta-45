@@ -1,0 +1,64 @@
+%%{ init: { 'theme': 'base', 'themeVariables': { 'fontSize': '12px' } } }%%
+graph TB
+    ERR["err_in<31:0>"]
+    HIN["h_in<31:0>"]
+    TOL["tol<31:0>"]
+
+    ABS["Magnitude Extract\nabs_err = err_in[30:0]\nabs_tol = tol[30:0]"]
+    THR["Low Threshold\ntol_low ~= tol/32\n(exponent - 5)"]
+    CMP{"Compare"}
+
+    REJ["Reject Path\naccepted='0'"]
+    SHR{"h_exp > 1?"}
+    H_HALF["h_out = h/2\n(exp - 1)"]
+    H_HOLD1["h_out = h\n(underflow guard)"]
+
+    ACC["Accept Path\naccepted='1'"]
+    GROWCHK{"abs_err < tol_low?"}
+    DBL{"h_exp < 254?"}
+    H_DBL["h_out = h*2\n(exp + 1)"]
+    H_HOLD2["h_out = h\n(overflow guard)"]
+    H_KEEP["h_out = h\n(keep step)"]
+
+    ACC_OUT["accepted"]
+    HOUT["h_out<31:0>"]
+
+    ERR --> ABS
+    TOL --> ABS
+    TOL --> THR
+    HIN --> SHR
+    HIN --> DBL
+
+    ABS --> CMP
+    THR --> GROWCHK
+
+    CMP -->|abs_err > abs_tol| REJ
+    CMP -->|abs_err <= abs_tol| ACC
+
+    REJ --> SHR
+    SHR -->|Yes| H_HALF
+    SHR -->|No| H_HOLD1
+
+    ACC --> GROWCHK
+    GROWCHK -->|Yes| DBL
+    GROWCHK -->|No| H_KEEP
+
+    DBL -->|Yes| H_DBL
+    DBL -->|No| H_HOLD2
+
+    REJ --> ACC_OUT
+    ACC --> ACC_OUT
+
+    H_HALF --> HOUT
+    H_HOLD1 --> HOUT
+    H_DBL --> HOUT
+    H_HOLD2 --> HOUT
+    H_KEEP --> HOUT
+
+    style ABS fill:#4a90d9,stroke:#2c5f8a,color:#fff
+    style THR fill:#50b86c,stroke:#357a48,color:#fff
+    style CMP fill:#ff9f40,stroke:#d97d2e,color:#fff
+    style REJ fill:#d94a6b,stroke:#9e2d4a,color:#fff
+    style ACC fill:#1abc9c,stroke:#148f77,color:#fff
+    style HOUT fill:#7f8c8d,stroke:#566573,color:#fff
+    style ACC_OUT fill:#7f8c8d,stroke:#566573,color:#fff

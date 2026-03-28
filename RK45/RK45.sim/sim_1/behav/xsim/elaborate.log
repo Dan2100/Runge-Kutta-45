@@ -332,6 +332,7 @@ Compiling architecture xilinx of entity floating_point_v7_1_21.floating_point_v7
 Compiling architecture fpu_fused_arch of entity xil_defaultlib.fpu_fused [fpu_fused_default]
 Compiling architecture behavioral of entity xil_defaultlib.k_block [k_block_default]
 Compiling architecture behavioral of entity xil_defaultlib.RKMod1 [rkmod1_default]
+Compiling architecture behavioral of entity xil_defaultlib.step_ctrl [step_ctrl_default]
 Compiling architecture behavioral of entity xil_defaultlib.Top [top_default]
 Compiling architecture behavioral of entity xil_defaultlib.top_tb
 Built simulation snapshot Top_TB_behav

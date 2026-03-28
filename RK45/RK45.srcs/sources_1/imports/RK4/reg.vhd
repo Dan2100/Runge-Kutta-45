@@ -92,8 +92,8 @@ begin
         wrdata  <= x"3D4CCCCD";
 
       when "00101" =>
-        wridata <= x"40000000";
-        wrdata  <= x"40000000";
+        wridata <= x"00000005";  -- 5 (n_steps, integer)
+        wrdata  <= x"00000005";
 
       when "00110" =>
         wridata <= x"3C887A8D";

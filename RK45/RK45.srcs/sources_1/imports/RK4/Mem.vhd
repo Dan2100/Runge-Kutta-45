@@ -42,11 +42,15 @@ Port (
            p_in : out STD_LOGIC_VECTOR(31 downto 0);
            p1_in : out STD_LOGIC_VECTOR(31 downto 0);
            c_in : out STD_LOGIC_VECTOR(31 downto 0);
+           tol : out STD_LOGIC_VECTOR(31 downto 0);
+           n_steps : out STD_LOGIC_VECTOR(31 downto 0);
            write_en: in std_logic;
            clock: in std_logic;
            flush : in std_logic;
            x_out: in STD_LOGIC_VECTOR(31 downto 0);
            y_out : in STD_LOGIC_VECTOR(31 downto 0);
+           h_new : in STD_LOGIC_VECTOR(31 downto 0);
+           step_ok : in std_logic;
            init: in std_logic);
 end Mem;
 
@@ -84,9 +88,11 @@ if rising_edge(clock)  then
 
    if flush = '0' and write_en = '1' and init = '1'  then  ---UPDATE MODE
 
-  
-  mem(0) <= x_out;
-  mem(4) <= y_out;
+  mem(8) <= h_new;  -- always update step size
+  if step_ok = '1' then
+    mem(0) <= x_out;
+    mem(4) <= y_out;
+  end if;
   
   
 --   if (to_integer(unsigned(cma_in)) >= 12) then
@@ -106,6 +112,9 @@ end if;
 
   end process;
 
+  -- Continuous outputs for adaptive step control
+  tol     <= mem(12);
+  n_steps <= mem(16);
 
     
 end Behavioral;
