@@ -12,9 +12,9 @@ echo "Please update the PATH and LD_LIBRARY_PATH variables below, before executi
 exit
 
 if [ -z "$PATH" ]; then
-  PATH=C:/Xilinx/2025.2/Vitis/bin;C:/Xilinx/2025.2/Vivado/ids_lite/ISE/bin/nt64;C:/Xilinx/2025.2/Vivado/ids_lite/ISE/lib/nt64:C:/Xilinx/2025.2/Vivado/bin
+  PATH=C:/AMDDesignTools/2025.2/Vitis/bin;C:/AMDDesignTools/2025.2/Vivado/ids_lite/ISE/bin/nt64;C:/AMDDesignTools/2025.2/Vivado/ids_lite/ISE/lib/nt64:C:/AMDDesignTools/2025.2/Vivado/bin
 else
-  PATH=C:/Xilinx/2025.2/Vitis/bin;C:/Xilinx/2025.2/Vivado/ids_lite/ISE/bin/nt64;C:/Xilinx/2025.2/Vivado/ids_lite/ISE/lib/nt64:C:/Xilinx/2025.2/Vivado/bin:$PATH
+  PATH=C:/AMDDesignTools/2025.2/Vitis/bin;C:/AMDDesignTools/2025.2/Vivado/ids_lite/ISE/bin/nt64;C:/AMDDesignTools/2025.2/Vivado/ids_lite/ISE/lib/nt64:C:/AMDDesignTools/2025.2/Vivado/bin:$PATH
 fi
 export PATH
 
@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.runs/synth_1'
+HD_PWD='C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

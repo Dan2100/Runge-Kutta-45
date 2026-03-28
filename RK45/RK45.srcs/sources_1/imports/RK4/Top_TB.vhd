@@ -44,7 +44,8 @@ component Top is
  cont: out std_logic_vector(31 downto 0);
  addr: out std_logic_vector(11 downto 0);
  x_out: out std_logic_vector(31 downto 0);
- y_out: out std_logic_vector(31 downto 0); 
+ y_out: out std_logic_vector(31 downto 0);
+ err_out: out std_logic_vector(31 downto 0);
   initial: out std_logic
  
  );
@@ -53,6 +54,7 @@ end component;
 signal clock: std_logic := '1';
 signal x_out:  std_logic_vector(31 downto 0);
 signal y_out:  std_logic_vector(31 downto 0);
+signal err_out:  std_logic_vector(31 downto 0);
 signal initial: std_logic;
 signal cont:  std_logic_vector(31 downto 0);
 signal inst:  std_logic_vector(31 downto 0);
@@ -67,6 +69,7 @@ uut: Top port map (
 inst => inst,
 x_out => x_out,
 y_out => y_out,
+err_out => err_out,
 initial => initial,
 clock => clock,
 cont => cont,
@@ -118,22 +121,22 @@ wait for clock_period; --- RKI
 
 
 inst <= "000000000000"  &  "00001" & "110" & "00000" & "0001100";
-wait for clock_period * 95;
+wait for clock_period * 200;
 
 inst <= "000000000000"  &  "00001" & "100" & "00000" & "0001100";
-wait for clock_period * 95;
+wait for clock_period * 200;
 
 inst <= "000000000000"  &  "00001" & "110" & "00000" & "0001100";
-wait for clock_period * 95;
+wait for clock_period * 200;
 
 inst <= "000000000000"  &  "00001" & "100" & "00000" & "0001100";
-wait for clock_period * 95;
+wait for clock_period * 200;
 
 inst <= "000000000000"  &  "00001" & "110" & "00000" & "0001100";
-wait for clock_period * 95;
+wait for clock_period * 200;
 
 inst <= "000000000000"  &  "00001" & "100" & "00000" & "0001100";
-wait for clock_period * 95; --- RKU update
+wait for clock_period * 200; --- RKU update
 
 
 

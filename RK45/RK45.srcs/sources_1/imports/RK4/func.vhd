@@ -54,6 +54,7 @@ COMPONENT fpu_add
     s_axis_b_tready : OUT STD_LOGIC;
     s_axis_b_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     m_axis_result_tvalid : OUT STD_LOGIC;
+    m_axis_result_tready : IN STD_LOGIC;
     m_axis_result_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0) 
   );
 END COMPONENT;
@@ -68,6 +69,7 @@ COMPONENT fpu_sub
     s_axis_b_tready : OUT STD_LOGIC;
     s_axis_b_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     m_axis_result_tvalid : OUT STD_LOGIC;
+    m_axis_result_tready : IN STD_LOGIC;
     m_axis_result_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0) 
   );
 END COMPONENT;
@@ -82,6 +84,7 @@ COMPONENT fpu_mul
     s_axis_b_tready : OUT STD_LOGIC;
     s_axis_b_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     m_axis_result_tvalid : OUT STD_LOGIC;
+    m_axis_result_tready : IN STD_LOGIC;
     m_axis_result_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0) 
   );
 END COMPONENT;
@@ -115,6 +118,7 @@ uut: fpu_add
     s_axis_b_tvalid => s_axis_b_tvalid,
     s_axis_b_tdata => y_in,
     m_axis_result_tvalid => m_axis_result_tvalid1,
+    m_axis_result_tready => '1',
     m_axis_result_tdata => add1
   );
 
@@ -129,6 +133,7 @@ uut1: fpu_sub
     s_axis_b_tvalid => s_axis_b_tvalid,
     s_axis_b_tdata => y_in,
    m_axis_result_tvalid => m_axis_result_tvalid2,
+    m_axis_result_tready => '1',
     m_axis_result_tdata => sub1
   );
 
@@ -142,6 +147,7 @@ uut2 : fpu_mul
     s_axis_b_tvalid => s_axis_b_tvalid,
     s_axis_b_tdata => sub1,
     m_axis_result_tvalid => m_axis_result_tvalid3,
+    m_axis_result_tready => '1',
     m_axis_result_tdata => func
   );
    

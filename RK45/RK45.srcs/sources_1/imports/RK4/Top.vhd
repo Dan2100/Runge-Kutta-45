@@ -39,7 +39,8 @@ entity Top is
  cont: out std_logic_vector(31 downto 0);
  addr: out std_logic_vector(11 downto 0);
  x_out: out std_logic_vector(31 downto 0);
- y_out: out std_logic_vector(31 downto 0); 
+ y_out: out std_logic_vector(31 downto 0);
+ err_out: out std_logic_vector(31 downto 0);
   initial: out std_logic
  );
 end Top;
@@ -94,13 +95,9 @@ Port (
    x_in: in STD_LOGIC_VECTOR(31 downto 0);
            y_in : in STD_LOGIC_VECTOR(31 downto 0);
            h : in STD_LOGIC_VECTOR(31 downto 0);
-           p_in : in STD_LOGIC_VECTOR(31 downto 0);
-           p1_in : in STD_LOGIC_VECTOR(31 downto 0);
-           c_in : in STD_LOGIC_VECTOR(31 downto 0);
            x_out: out STD_LOGIC_VECTOR(31 downto 0);
-           y_out: out STD_LOGIC_VECTOR(31 downto 0)
-        --   clk : in std_logic
-           --aclk: in std_logic
+           y_out: out STD_LOGIC_VECTOR(31 downto 0);
+           err_out: out STD_LOGIC_VECTOR(31 downto 0)
     );
 end component;
  
@@ -118,6 +115,7 @@ signal  p1_in1 :  STD_LOGIC_VECTOR(31 downto 0);
 signal   c_in1 :  STD_LOGIC_VECTOR(31 downto 0);
 signal x_output:  STD_LOGIC_VECTOR(31 downto 0);
 signal y_output :  STD_LOGIC_VECTOR(31 downto 0);
+signal err_output :  STD_LOGIC_VECTOR(31 downto 0);
 signal init : std_logic;
 
 signal  init_flag :  std_logic;
@@ -162,12 +160,9 @@ clk => clock,
 x_in => x_in1,
 y_in => y_in1,
 h => h1,
-p_in => p_in1,
-c_in => c_in1,
-p1_in => p1_in1,
 x_out => x_output,
-y_out => y_output
---clk => clock
+y_out => y_output,
+err_out => err_output
 );
 clk <= clock;
 cont <= wdata;
@@ -176,6 +171,7 @@ addr <= addr1;
 initial <= init;
 x_out <= x_output;
 y_out <= y_output;
+err_out <= err_output;
 
 
 
