@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Sat Mar 28 04:43:25 2026
-# Process ID         : 19508
+# Start of session at: Sat Mar 28 14:31:34 2026
+# Process ID         : 2576
 # Current directory  : C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.runs/synth_1
 # Command line       : vivado.exe -log Top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top.tcl
 # Log file           : C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.runs/synth_1/Top.vds
@@ -17,8 +17,8 @@
 # CPU Physical cores : 8
 # CPU Logical cores  : 16
 # Host memory        : 17107 MB
-# Swap memory        : 27802 MB
-# Total Virtual      : 44910 MB
-# Available Virtual  : 7052 MB
+# Swap memory        : 18253 MB
+# Total Virtual      : 35361 MB
+# Available Virtual  : 11506 MB
 #-----------------------------------------------------------
 source Top.tcl -notrace

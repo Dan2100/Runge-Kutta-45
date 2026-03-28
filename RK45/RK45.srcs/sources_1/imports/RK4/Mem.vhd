@@ -63,54 +63,33 @@ type mem_type is array (0 to 63 ) of std_logic_vector (31 downto 0);
 begin
 process(clock)
 begin
-if rising_edge(clock) then 
-if ((write_en = '1') and (flush = '0')) then
-     mem(TO_INTEGER(unsigned(addr))) <= cont;
-  end if; 
-end if;
+  if rising_edge(clock) then
 
-if rising_edge(clock) then 
- if flush = '1' and write_en = '0' and init = '0'  then --- FLUSH MODE
-  
-  x_in <= mem(0);
-  y_in <= mem(4) ;
-  h <= mem(8);
-  p_in <= mem(12);
-  p1_in <= mem(16);
-  c_in <= mem(20);
+    if (write_en = '1' and flush = '0' and init = '0') then
+      -- INIT WRITE MODE: store register value into memory
+      mem(TO_INTEGER(unsigned(addr))) <= cont;
 
-  
-  end if;   
-end if;
+    elsif (flush = '1' and write_en = '0' and init = '0') then
+      -- FLUSH MODE: read solver inputs from memory
+      x_in  <= mem(0);
+      y_in  <= mem(4);
+      h     <= mem(8);
+      p_in  <= mem(12);
+      p1_in <= mem(16);
+      c_in  <= mem(20);
 
-if rising_edge(clock)  then 
-     
+    elsif (flush = '0' and write_en = '1' and init = '1') then
+      -- UPDATE MODE: write back solver results
+      mem(8) <= h_new;  -- always update step size
+      if step_ok = '1' then
+        mem(0) <= x_out;
+        mem(4) <= y_out;
+      end if;
 
-   if flush = '0' and write_en = '1' and init = '1'  then  ---UPDATE MODE
+    end if;
 
-  mem(8) <= h_new;  -- always update step size
-  if step_ok = '1' then
-    mem(0) <= x_out;
-    mem(4) <= y_out;
   end if;
-  
-  
---   if (to_integer(unsigned(cma_in)) >= 12) then
-  
-  --if (to_integer(unsigned(cma_in)) >= 12) then
---    mem(to_integer(unsigned(cma_in))) <= x_out;
---  mem(to_integer(unsigned(cma_in)) + 4) <=  y_out;
-
-   
-
-end if;
-
-
- end if; 
---end if;   
-
-
-  end process;
+end process;
 
   -- Continuous outputs for adaptive step control
   tol     <= mem(12);
