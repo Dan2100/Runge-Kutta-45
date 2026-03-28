@@ -1,6 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'RKMod1'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'func'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'k_block'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top_TB.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Top_TB'

@@ -65,32 +65,34 @@ imm <= inst(31 downto 20);
 process(func3, imm)
 begin
 
- if (func3 = "000")  then    ---    EulerInit (func3 changed)
+ -- Default assignments to avoid latches / 'U' on unassigned paths
+ write_en <= '0';
+ flush    <= '0';
+ init     <= '0';
+ addr1    <= addr1;
+
+ if (func3 = "000")  then    ---    RKI Init: write register value to memory
    write_en <= '1';
    flush <= '0';
+   init  <= '0';
        if (imm = "000000000000" ) then 
      addr1 <= imm;
     else
          addr1 <= std_logic_vector(unsigned(addr1) + 4);
    end if;
-  end if;
 
-  if (func3 = "110") then   --- EulerUpdate Flush mode
+  elsif (func3 = "110") then   --- RKF Flush: load values from memory to RK module
    write_en <= '0';
    flush <= '1';
    init <= '0';
-   
-   end if;
-   
-  
- 
-   if (func3 = "100")  then --- EulerUpdate Store mode
+
+  elsif (func3 = "100")  then --- RKU Update: store RK output back to memory
    write_en <= '1';
    flush <= '0';
    init <= '1';
    addr1 <= imm;
-      end if;
 
+  end if;
 
  end process;
     addr <= addr1;

@@ -156,7 +156,7 @@ write_en => write_en,
 init => init );
 
 uut4: RKMod1 port map (
-clk => clock,
+clk => clk,
 x_in => x_in1,
 y_in => y_in1,
 h => h1,

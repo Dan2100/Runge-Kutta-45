@@ -121,22 +121,22 @@ wait for clock_period; --- RKI
 
 
 inst <= "000000000000"  &  "00001" & "110" & "00000" & "0001100";
-wait for clock_period * 200;
+wait for clock_period * 500;
 
 inst <= "000000000000"  &  "00001" & "100" & "00000" & "0001100";
-wait for clock_period * 200;
+wait for clock_period * 500;
 
 inst <= "000000000000"  &  "00001" & "110" & "00000" & "0001100";
-wait for clock_period * 200;
+wait for clock_period * 500;
 
 inst <= "000000000000"  &  "00001" & "100" & "00000" & "0001100";
-wait for clock_period * 200;
+wait for clock_period * 500;
 
 inst <= "000000000000"  &  "00001" & "110" & "00000" & "0001100";
-wait for clock_period * 200;
+wait for clock_period * 500;
 
 inst <= "000000000000"  &  "00001" & "100" & "00000" & "0001100";
-wait for clock_period * 200; --- RKU update
+wait for clock_period * 500; --- RKU update
 
 
 

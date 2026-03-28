@@ -1,7 +1,7 @@
 Vivado Simulator v2025.2
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xbip_utils_v3_0_15 -L axi_utils_v2_0_11 -L xbip_pipe_v3_0_11 -L xbip_dsp48_wrapper_v3_0_7 -L mult_gen_v12_0_24 -L floating_point_v7_1_21 -L secureip -L xpm --snapshot Top_behav xil_defaultlib.Top -log elaborate.log 
+Running: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xbip_utils_v3_0_15 -L axi_utils_v2_0_11 -L xbip_pipe_v3_0_11 -L xbip_dsp48_wrapper_v3_0_7 -L mult_gen_v12_0_24 -L floating_point_v7_1_21 -L secureip -L xpm --snapshot Top_TB_behav xil_defaultlib.Top_TB -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -332,5 +332,6 @@ Compiling architecture xilinx of entity floating_point_v7_1_21.floating_point_v7
 Compiling architecture fpu_fused_arch of entity xil_defaultlib.fpu_fused [fpu_fused_default]
 Compiling architecture behavioral of entity xil_defaultlib.k_block [k_block_default]
 Compiling architecture behavioral of entity xil_defaultlib.RKMod1 [rkmod1_default]
-Compiling architecture behavioral of entity xil_defaultlib.top
-Built simulation snapshot Top_behav
+Compiling architecture behavioral of entity xil_defaultlib.Top [top_default]
+Compiling architecture behavioral of entity xil_defaultlib.top_tb
+Built simulation snapshot Top_TB_behav
