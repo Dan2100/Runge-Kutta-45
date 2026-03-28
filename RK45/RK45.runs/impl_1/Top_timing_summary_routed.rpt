@@ -1,0 +1,609 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Fri Mar 27 22:55:36 2026
+| Host         : Harry running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 10 -routable_nets -report_unconstrained -file Top_timing_summary_routed.rpt -pb Top_timing_summary_routed.pb -rpx Top_timing_summary_routed.rpx -warn_on_violation
+| Design       : Top
+| Device       : 7a35t-ftg256
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+  Inter-SLR Compensation                     :  Conservative
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+Rule       Severity          Description                     Violations  
+---------  ----------------  ------------------------------  ----------  
+TIMING-17  Critical Warning  Non-clocked sequential cell     1000        
+LUTAR-1    Warning           LUT drives async reset alert    3           
+TIMING-20  Warning           Non-clocked latch               31          
+LATCH-1    Advisory          Existing latches in the design  1           
+
+Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (13584)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (31418)
+5. checking no_input_delay (18)
+6. checking no_output_delay (100)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (12)
+
+1. checking no_clock (13584)
+----------------------------
+ There are 13471 register/latch pins with no clock driven by root clock pin: clock (HIGH)
+
+ There are 15 register/latch pins with no clock driven by root clock pin: inst[12] (HIGH)
+
+ There are 15 register/latch pins with no clock driven by root clock pin: inst[13] (HIGH)
+
+ There are 3 register/latch pins with no clock driven by root clock pin: inst[14] (HIGH)
+
+ There are 16 register/latch pins with no clock driven by root clock pin: inst[15] (HIGH)
+
+ There are 16 register/latch pins with no clock driven by root clock pin: inst[16] (HIGH)
+
+ There are 16 register/latch pins with no clock driven by root clock pin: inst[17] (HIGH)
+
+ There are 16 register/latch pins with no clock driven by root clock pin: inst[18] (HIGH)
+
+ There are 16 register/latch pins with no clock driven by root clock pin: inst[19] (HIGH)
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (31418)
+----------------------------------------------------
+ There are 31418 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (18)
+-------------------------------
+ There are 18 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (100)
+---------------------------------
+ There are 100 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (12)
+-----------------------------
+ There are 12 combinational latch loops in the design through latch input (HIGH)
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+        inf        0.000                      0                31518          inf        0.000                      0                31518           NA           NA                      NA                    NA  
+
+
+There are no user specified timing constraints.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| User Ignored Path Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+
+
+------------------------------------------------------------------------------------------------
+| Unconstrained Path Table
+| ------------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+(none)                                    
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  
+
+Max Delay         31518 Endpoints
+Min Delay         31518 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 uut2/wrdata_reg[2]/G
+                            (positive level-sensitive latch)
+  Destination:            cont[19]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        11.217ns  (logic 3.409ns (30.390%)  route 7.808ns (69.610%))
+  Logic Levels:           2  (LDCE=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X63Y36         LDCE                         0.000     0.000 r  uut2/wrdata_reg[2]/G
+    SLICE_X63Y36         LDCE (EnToQ_ldce_G_Q)        0.763     0.763 r  uut2/wrdata_reg[2]/Q
+                         net (fo=25, routed)          7.808     8.571    cont_OBUF[0]
+    D15                  OBUF (Prop_obuf_I_O)         2.646    11.217 r  cont_OBUF[19]_inst/O
+                         net (fo=0)                   0.000    11.217    cont[19]
+    D15                                                               r  cont[19] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 uut2/wrdata_reg[2]/G
+                            (positive level-sensitive latch)
+  Destination:            cont[14]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        11.169ns  (logic 3.413ns (30.554%)  route 7.757ns (69.446%))
+  Logic Levels:           2  (LDCE=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X63Y36         LDCE                         0.000     0.000 r  uut2/wrdata_reg[2]/G
+    SLICE_X63Y36         LDCE (EnToQ_ldce_G_Q)        0.763     0.763 r  uut2/wrdata_reg[2]/Q
+                         net (fo=25, routed)          7.757     8.520    cont_OBUF[0]
+    F15                  OBUF (Prop_obuf_I_O)         2.650    11.169 r  cont_OBUF[14]_inst/O
+                         net (fo=0)                   0.000    11.169    cont[14]
+    F15                                                               r  cont[14] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 uut2/wrdata_reg[2]/G
+                            (positive level-sensitive latch)
+  Destination:            cont[11]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.873ns  (logic 3.399ns (31.263%)  route 7.474ns (68.737%))
+  Logic Levels:           2  (LDCE=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X63Y36         LDCE                         0.000     0.000 r  uut2/wrdata_reg[2]/G
+    SLICE_X63Y36         LDCE (EnToQ_ldce_G_Q)        0.763     0.763 r  uut2/wrdata_reg[2]/Q
+                         net (fo=25, routed)          7.474     8.237    cont_OBUF[0]
+    G12                  OBUF (Prop_obuf_I_O)         2.636    10.873 r  cont_OBUF[11]_inst/O
+                         net (fo=0)                   0.000    10.873    cont[11]
+    G12                                                               r  cont[11] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 uut2/wrdata_reg[27]/G
+                            (positive level-sensitive latch)
+  Destination:            cont[29]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.766ns  (logic 3.422ns (31.783%)  route 7.344ns (68.217%))
+  Logic Levels:           2  (LDCE=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X62Y37         LDCE                         0.000     0.000 r  uut2/wrdata_reg[27]/G
+    SLICE_X62Y37         LDCE (EnToQ_ldce_G_Q)        0.763     0.763 r  uut2/wrdata_reg[27]/Q
+                         net (fo=16, routed)          7.344     8.107    cont_OBUF[26]
+    B16                  OBUF (Prop_obuf_I_O)         2.659    10.766 r  cont_OBUF[29]_inst/O
+                         net (fo=0)                   0.000    10.766    cont[29]
+    B16                                                               r  cont[29] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 uut2/wrdata_reg[27]/G
+                            (positive level-sensitive latch)
+  Destination:            cont[28]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.641ns  (logic 3.438ns (32.310%)  route 7.203ns (67.690%))
+  Logic Levels:           2  (LDCE=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X62Y37         LDCE                         0.000     0.000 r  uut2/wrdata_reg[27]/G
+    SLICE_X62Y37         LDCE (EnToQ_ldce_G_Q)        0.763     0.763 r  uut2/wrdata_reg[27]/Q
+                         net (fo=16, routed)          7.203     7.966    cont_OBUF[26]
+    C11                  OBUF (Prop_obuf_I_O)         2.675    10.641 r  cont_OBUF[28]_inst/O
+                         net (fo=0)                   0.000    10.641    cont[28]
+    C11                                                               r  cont[28] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 uut2/wrdata_reg[23]/G
+                            (positive level-sensitive latch)
+  Destination:            cont[23]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.619ns  (logic 3.408ns (32.095%)  route 7.211ns (67.905%))
+  Logic Levels:           2  (LDCE=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X62Y38         LDCE                         0.000     0.000 r  uut2/wrdata_reg[23]/G
+    SLICE_X62Y38         LDCE (EnToQ_ldce_G_Q)        0.763     0.763 r  uut2/wrdata_reg[23]/Q
+                         net (fo=7, routed)           7.211     7.974    cont_OBUF[23]
+    E13                  OBUF (Prop_obuf_I_O)         2.645    10.619 r  cont_OBUF[23]_inst/O
+                         net (fo=0)                   0.000    10.619    cont[23]
+    E13                                                               r  cont[23] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 uut2/wrdata_reg[27]/G
+                            (positive level-sensitive latch)
+  Destination:            cont[26]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.606ns  (logic 3.405ns (32.105%)  route 7.201ns (67.895%))
+  Logic Levels:           2  (LDCE=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X62Y37         LDCE                         0.000     0.000 r  uut2/wrdata_reg[27]/G
+    SLICE_X62Y37         LDCE (EnToQ_ldce_G_Q)        0.763     0.763 r  uut2/wrdata_reg[27]/Q
+                         net (fo=16, routed)          7.201     7.964    cont_OBUF[26]
+    D13                  OBUF (Prop_obuf_I_O)         2.642    10.606 r  cont_OBUF[26]_inst/O
+                         net (fo=0)                   0.000    10.606    cont[26]
+    D13                                                               r  cont[26] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 uut2/wrdata_reg[2]/G
+                            (positive level-sensitive latch)
+  Destination:            cont[7]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.552ns  (logic 3.384ns (32.070%)  route 7.168ns (67.930%))
+  Logic Levels:           2  (LDCE=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X63Y36         LDCE                         0.000     0.000 r  uut2/wrdata_reg[2]/G
+    SLICE_X63Y36         LDCE (EnToQ_ldce_G_Q)        0.763     0.763 r  uut2/wrdata_reg[2]/Q
+                         net (fo=25, routed)          7.168     7.931    cont_OBUF[0]
+    F14                  OBUF (Prop_obuf_I_O)         2.621    10.552 r  cont_OBUF[7]_inst/O
+                         net (fo=0)                   0.000    10.552    cont[7]
+    F14                                                               r  cont[7] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 uut2/wrdata_reg[27]/G
+                            (positive level-sensitive latch)
+  Destination:            cont[27]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.495ns  (logic 3.441ns (32.785%)  route 7.054ns (67.215%))
+  Logic Levels:           2  (LDCE=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X62Y37         LDCE                         0.000     0.000 r  uut2/wrdata_reg[27]/G
+    SLICE_X62Y37         LDCE (EnToQ_ldce_G_Q)        0.763     0.763 r  uut2/wrdata_reg[27]/Q
+                         net (fo=16, routed)          7.054     7.817    cont_OBUF[26]
+    C12                  OBUF (Prop_obuf_I_O)         2.678    10.495 r  cont_OBUF[27]_inst/O
+                         net (fo=0)                   0.000    10.495    cont[27]
+    C12                                                               r  cont[27] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 uut2/wrdata_reg[2]/G
+                            (positive level-sensitive latch)
+  Destination:            cont[3]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.268ns  (logic 3.394ns (33.050%)  route 6.875ns (66.950%))
+  Logic Levels:           2  (LDCE=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X63Y36         LDCE                         0.000     0.000 r  uut2/wrdata_reg[2]/G
+    SLICE_X63Y36         LDCE (EnToQ_ldce_G_Q)        0.763     0.763 r  uut2/wrdata_reg[2]/Q
+                         net (fo=25, routed)          6.875     7.638    cont_OBUF[0]
+    J16                  OBUF (Prop_obuf_I_O)         2.631    10.268 r  cont_OBUF[3]_inst/O
+                         net (fo=0)                   0.000    10.268    cont[3]
+    J16                                                               r  cont[3] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (internal pin)
+  Destination:            Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  Path Group:             (none)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.002ns  (logic 0.000ns (0.000%)  route 0.002ns (100.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    DSP48_X0Y26          DSP48E1                      0.000     0.000 r  Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.002     0.002    Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    DSP48_X0Y27          DSP48E1                                      r  Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (internal pin)
+  Destination:            Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  Path Group:             (none)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.002ns  (logic 0.000ns (0.000%)  route 0.002ns (100.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    DSP48_X0Y26          DSP48E1                      0.000     0.000 r  Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.002     0.002    Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    DSP48_X0Y27          DSP48E1                                      r  Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (internal pin)
+  Destination:            Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  Path Group:             (none)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.002ns  (logic 0.000ns (0.000%)  route 0.002ns (100.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    DSP48_X0Y26          DSP48E1                      0.000     0.000 r  Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.002     0.002    Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    DSP48_X0Y27          DSP48E1                                      r  Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (internal pin)
+  Destination:            Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  Path Group:             (none)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.002ns  (logic 0.000ns (0.000%)  route 0.002ns (100.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    DSP48_X0Y26          DSP48E1                      0.000     0.000 r  Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.002     0.002    Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    DSP48_X0Y27          DSP48E1                                      r  Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (internal pin)
+  Destination:            Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  Path Group:             (none)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.002ns  (logic 0.000ns (0.000%)  route 0.002ns (100.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    DSP48_X0Y26          DSP48E1                      0.000     0.000 r  Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.002     0.002    Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    DSP48_X0Y27          DSP48E1                                      r  Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (internal pin)
+  Destination:            Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  Path Group:             (none)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.002ns  (logic 0.000ns (0.000%)  route 0.002ns (100.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    DSP48_X0Y26          DSP48E1                      0.000     0.000 r  Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.002     0.002    Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    DSP48_X0Y27          DSP48E1                                      r  Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (internal pin)
+  Destination:            Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  Path Group:             (none)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.002ns  (logic 0.000ns (0.000%)  route 0.002ns (100.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    DSP48_X0Y26          DSP48E1                      0.000     0.000 r  Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.002     0.002    Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    DSP48_X0Y27          DSP48E1                                      r  Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (internal pin)
+  Destination:            Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  Path Group:             (none)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.002ns  (logic 0.000ns (0.000%)  route 0.002ns (100.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    DSP48_X0Y26          DSP48E1                      0.000     0.000 r  Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.002     0.002    Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    DSP48_X0Y27          DSP48E1                                      r  Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (internal pin)
+  Destination:            Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  Path Group:             (none)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.002ns  (logic 0.000ns (0.000%)  route 0.002ns (100.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    DSP48_X0Y26          DSP48E1                      0.000     0.000 r  Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.002     0.002    Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    DSP48_X0Y27          DSP48E1                                      r  Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                            (internal pin)
+  Destination:            Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  Path Group:             (none)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.002ns  (logic 0.000ns (0.000%)  route 0.002ns (100.000%))
+  Logic Levels:           0  
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    DSP48_X0Y26          DSP48E1                      0.000     0.000 r  Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+                         net (fo=1, routed)           0.002     0.002    Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+    DSP48_X0Y27          DSP48E1                                      r  Top/RKMod1/k_block/func__xdcDup__1/fpu_mul__4/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>/<hidden>
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+

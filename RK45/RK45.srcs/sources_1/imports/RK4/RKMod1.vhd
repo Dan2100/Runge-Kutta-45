@@ -62,7 +62,7 @@ Port (      clk: in std_logic;
            );
 end component;
 
-COMPONENT RKMul
+COMPONENT fpu_mul
   PORT (
  aclk : IN STD_LOGIC;
     s_axis_a_tvalid : IN STD_LOGIC;
@@ -90,7 +90,7 @@ aclk : IN STD_LOGIC;
   );
 END COMPONENT;
 
-COMPONENT RKFPU_fused
+COMPONENT fpu_fused
   PORT (
  aclk : IN STD_LOGIC;
     s_axis_a_tvalid : IN STD_LOGIC;
@@ -162,7 +162,7 @@ k3 => k3,
 k4 => k4 );
 --clk => clk );
 
-uut1 : RKMul
+uut1 : fpu_mul
   PORT MAP (
    aclk => clk,
    s_axis_a_tready => s_axis_a_tready9,
@@ -175,7 +175,7 @@ uut1 : RKMul
     m_axis_result_tdata => a
   );
 
-uut2: RKmul
+uut2: fpu_mul
   PORT MAP (
     aclk => clk,
     s_axis_a_tready => s_axis_a_tready10,
@@ -231,7 +231,7 @@ uut5 : fpu_add
     m_axis_result_tdata => g
   );
 
-uut6 : RKFPU_fused
+uut6 : fpu_fused
   PORT MAP (
     aclk => clk,
     s_axis_a_tready => s_axis_a_tready14,

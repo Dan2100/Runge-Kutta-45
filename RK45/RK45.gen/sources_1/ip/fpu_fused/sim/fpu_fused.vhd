@@ -217,8 +217,8 @@ ARCHITECTURE fpu_fused_arch OF fpu_fused IS
 BEGIN
   U0 : floating_point_v7_1_21
     GENERIC MAP (
-      C_XDEVICEFAMILY => "kintex7",
-      C_PART => "xc7k70tfbv676-1",
+      C_XDEVICEFAMILY => "artix7",
+      C_PART => "xc7a35tftg256-1",
       C_HAS_ADD => 0,
       C_HAS_SUBTRACT => 0,
       C_HAS_MULTIPLY => 0,
