@@ -59,7 +59,7 @@ Port (
            p1_in : out STD_LOGIC_VECTOR(31 downto 0);
            c_in : out STD_LOGIC_VECTOR(31 downto 0);
            tol : out STD_LOGIC_VECTOR(31 downto 0);
-           n_steps : out STD_LOGIC_VECTOR(31 downto 0);
+           x_end : out STD_LOGIC_VECTOR(31 downto 0);
            write_en: in std_logic;
            clock: in std_logic;
            flush : in std_logic;
@@ -124,8 +124,8 @@ signal state : state_type := S_IDLE;
 signal running : std_logic := '0';
 signal done_reg : std_logic := '0';
 signal wait_cnt : unsigned(9 downto 0) := (others => '0');
-signal step_cnt : unsigned(15 downto 0) := (others => '0');
-signal target_steps : unsigned(15 downto 0) := (others => '0');
+signal iter_cnt : unsigned(15 downto 0) := (others => '0');
+constant MAX_ITER : unsigned(15 downto 0) := to_unsigned(4096, 16);
 
 -- State machine outputs to Mem
 signal sm_flush    : std_logic := '0';
@@ -143,9 +143,9 @@ signal mem_step_ok  : std_logic;
 signal sc_h_out    : STD_LOGIC_VECTOR(31 downto 0);
 signal sc_accepted : std_logic;
 
--- Tolerance and step count from memory
+-- Tolerance and bound from memory
 signal tol1     : STD_LOGIC_VECTOR(31 downto 0);
-signal nsteps1  : STD_LOGIC_VECTOR(31 downto 0);
+signal x_end1   : STD_LOGIC_VECTOR(31 downto 0);
  
 signal clk: std_logic;
 signal addr1: std_logic_vector(11 downto 0);
@@ -192,7 +192,7 @@ p_in => p_in1,
 c_in => c_in1,
 p1_in => p1_in1,
 tol => tol1,
-n_steps => nsteps1,
+x_end => x_end1,
 flush => mem_flush,
 init => mem_init,
 x_out => x_output,
@@ -250,8 +250,7 @@ begin
                 if inst(14 downto 12) = "010" and inst(6 downto 0) = "0001100" then
                     running <= '1';
                     done_reg <= '0';
-                    step_cnt <= (others => '0');
-                    target_steps <= unsigned(nsteps1(15 downto 0));
+                    iter_cnt <= (others => '0');
                     state <= S_FLUSH;
                 end if;
 
@@ -273,9 +272,11 @@ begin
             when S_UPDATE =>
                 -- Write results to memory (step_ctrl decides h_new and step_ok)
                 sm_flush <= '0'; sm_write_en <= '1'; sm_init <= '1';
+                iter_cnt <= iter_cnt + 1;
                 if sc_accepted = '1' then
-                    step_cnt <= step_cnt + 1;
-                    if step_cnt + 1 >= target_steps then
+                    -- Bound check: x_output >= x_end (unsigned magnitude comparison)
+                    -- IEEE 754 positive floats are ordered as unsigned integers
+                    if unsigned(x_output(30 downto 0)) >= unsigned(x_end1(30 downto 0)) then
                         state <= S_DONE;
                     else
                         state <= S_FLUSH;
@@ -283,6 +284,10 @@ begin
                 else
                     -- Rejected: h was halved, retry same step
                     state <= S_FLUSH;
+                end if;
+                -- Safety: max-iteration watchdog
+                if iter_cnt + 1 >= MAX_ITER then
+                    state <= S_DONE;
                 end if;
 
             when S_DONE =>

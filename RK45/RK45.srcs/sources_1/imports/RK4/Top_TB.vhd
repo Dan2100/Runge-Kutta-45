@@ -108,7 +108,7 @@ wait for clock_period;
 inst <= "000000001100" &  "00100" & "000" & "00000" & "0001100";
 wait for clock_period;
 
--- mem(16) = n_steps = 5  (rs1=5)
+-- mem(16) = x_end = 2.5  (rs1=5)
 inst <= "000000010000" &  "00101" & "000" & "00000" & "0001100";
 wait for clock_period;
 

@@ -59,7 +59,6 @@ OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param tcl.statsThreshold 360
 set_param checkpoint.writeSynthRtdsInDcp 1
 set_param general.usePosixSpawnForFork 1
-set_param synth.incrementalSynthesisCache C:/Users/Daniel/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-38180-DANIEL-PC/incrSyn
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -84,6 +83,7 @@ read_vhdl -library xil_defaultlib {
   {C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd}
   {C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd}
   {C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/reg.vhd}
+  {C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/step_ctrl.vhd}
   {C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top.vhd}
 }
 read_ip -quiet {{C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/ip/fpu_mul/fpu_mul.xci}}

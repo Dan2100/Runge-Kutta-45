@@ -1,5 +1,4 @@
 @startuml adaptive_fsm
-title Adaptive FSM
 
 skinparam state {
 	BackgroundColor #EAF3FF
@@ -15,7 +14,7 @@ state "S_COMPUTE\nrunning=1\nsm_flush=0\nsm_write_en=0\nsm_init=0\nwait RK laten
 state "S_UPDATE\nrunning=1\nsm_flush=0\nsm_write_en=1\nsm_init=1\nwrite back + adapt" as S_UPDATE
 state "S_DONE\nrunning=0\ndone_reg=1\nsm_flush=0\nsm_write_en=0\nsm_init=0" as S_DONE
 
-S_IDLE --> S_FLUSH : RKS detect\ninst(14:12)="010"\ninst(6:0)="0001100"\nstep_cnt:=0\ntarget_steps:=n_steps
+S_IDLE --> S_FLUSH : RKS detect\ninst(14:12)="010"\ninst(6:0)="0001100"\niter_cnt:=0
 S_IDLE --> S_IDLE : otherwise
 
 S_FLUSH --> S_COMPUTE : next clock
@@ -24,8 +23,9 @@ S_COMPUTE --> S_COMPUTE : wait_cnt < COMPUTE_WAIT-1\nwait_cnt := wait_cnt + 1
 S_COMPUTE --> S_UPDATE : wait_cnt = COMPUTE_WAIT-1
 
 S_UPDATE --> S_FLUSH : sc_accepted='0'\n(reject, retry with smaller h)
-S_UPDATE --> S_FLUSH : sc_accepted='1' and\nstep_cnt+1 < target_steps\n(step_cnt := step_cnt + 1)
-S_UPDATE --> S_DONE : sc_accepted='1' and\nstep_cnt+1 >= target_steps\n(step_cnt := step_cnt + 1)
+S_UPDATE --> S_FLUSH : sc_accepted='1' and\nx_out < x_end
+S_UPDATE --> S_DONE : sc_accepted='1' and\nx_out >= x_end
+S_UPDATE --> S_DONE : iter_cnt >= MAX_ITER\n(safety watchdog)
 
 S_DONE --> S_IDLE : init cmd detect\ninst(14:12)="000"\ninst(6:0)="0001100"\ndone_reg := 0
 S_DONE --> S_DONE : otherwise

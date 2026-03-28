@@ -8,7 +8,7 @@
   **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
   **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
   **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-  **** Start of session at: Sat Mar 28 01:30:35 2026
+  **** Start of session at: Sat Mar 28 04:43:25 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -25,29 +25,28 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 58564
+INFO: [Synth 8-7075] Helper process launched with PID 61224
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1269.484 ; gain = 542.297
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1265.188 ; gain = 541.297
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'Top' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top.vhd:48]
-INFO: [Synth 8-3491] module 'Mem' declared at 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:35' bound to instance 'uut1' of component 'Mem' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top.vhd:125]
-INFO: [Synth 8-638] synthesizing module 'Mem' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:53]
-INFO: [Synth 8-256] done synthesizing module 'Mem' (0#1) [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:53]
-INFO: [Synth 8-3491] module 'reg' declared at 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/reg.vhd:35' bound to instance 'uut2' of component 'reg' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top.vhd:143]
+INFO: [Synth 8-638] synthesizing module 'Top' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top.vhd:49]
+INFO: [Synth 8-3491] module 'Mem' declared at 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:35' bound to instance 'uut1' of component 'Mem' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top.vhd:183]
+INFO: [Synth 8-638] synthesizing module 'Mem' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:57]
+INFO: [Synth 8-256] done synthesizing module 'Mem' (0#1) [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:57]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/reg.vhd:35' bound to instance 'uut2' of component 'reg' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top.vhd:204]
 INFO: [Synth 8-638] synthesizing module '\reg ' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/reg.vhd:61]
 INFO: [Synth 8-256] done synthesizing module '\reg ' (0#1) [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/reg.vhd:61]
-INFO: [Synth 8-3491] module 'Control' declared at 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Control.vhd:36' bound to instance 'uut3' of component 'Control' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top.vhd:150]
+INFO: [Synth 8-3491] module 'Control' declared at 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Control.vhd:36' bound to instance 'uut3' of component 'Control' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top.vhd:211]
 INFO: [Synth 8-638] synthesizing module 'Control' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Control.vhd:47]
 WARNING: [Synth 8-614] signal 'addr1' is read in the process but is not in the sensitivity list [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Control.vhd:65]
 INFO: [Synth 8-256] done synthesizing module 'Control' (0#1) [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Control.vhd:47]
-INFO: [Synth 8-3491] module 'RKMod1' declared at 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:12' bound to instance 'uut4' of component 'RKMod1' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top.vhd:158]
+INFO: [Synth 8-3491] module 'RKMod1' declared at 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:12' bound to instance 'uut4' of component 'RKMod1' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top.vhd:218]
 INFO: [Synth 8-638] synthesizing module 'RKMod1' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:23]
-INFO: [Synth 8-3491] module 'k_block' declared at 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:18' bound to instance 'uut_kb' of component 'k_block' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:131]
+INFO: [Synth 8-3491] module 'k_block' declared at 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:18' bound to instance 'uut_kb' of component 'k_block' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:134]
 INFO: [Synth 8-638] synthesizing module 'k_block' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:31]
-INFO: [Synth 8-3491] module 'func' declared at 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:33' bound to instance 'f1' of component 'func' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:148]
+INFO: [Synth 8-3491] module 'func' declared at 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:33' bound to instance 'f1' of component 'func' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:150]
 INFO: [Synth 8-638] synthesizing module 'func' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:46]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:47]
-INFO: [Synth 8-3491] module 'fpu_add' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:59' bound to instance 'uut' of component 'fpu_add' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:108]
+INFO: [Synth 8-3491] module 'fpu_add' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:59' bound to instance 'uut' of component 'fpu_add' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:111]
 INFO: [Synth 8-638] synthesizing module 'fpu_add' [c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:74]
 	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
 	Parameter C_PART bound to: xc7a35tftg256-1 - type: string 
@@ -128,8 +127,7 @@ INFO: [Synth 8-638] synthesizing module 'fpu_add' [c:/Users/Daniel/Documents/Mas
 	Parameter C_FIXED_DATA_UNSIGNED bound to: 0 - type: integer 
 INFO: [Synth 8-3491] module 'floating_point_v7_1_21' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/hdl/floating_point_v7_1_vh_rfs.vhd:93266' bound to instance 'U0' of component 'floating_point_v7_1_21' [c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:219]
 INFO: [Synth 8-256] done synthesizing module 'fpu_add' (0#1) [c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:74]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:61]
-INFO: [Synth 8-3491] module 'fpu_sub' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_sub/synth/fpu_sub.vhd:59' bound to instance 'uut1' of component 'fpu_sub' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:122]
+INFO: [Synth 8-3491] module 'fpu_sub' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_sub/synth/fpu_sub.vhd:59' bound to instance 'uut1' of component 'fpu_sub' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:126]
 INFO: [Synth 8-638] synthesizing module 'fpu_sub' [c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_sub/synth/fpu_sub.vhd:74]
 	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
 	Parameter C_PART bound to: xc7a35tftg256-1 - type: string 
@@ -210,8 +208,7 @@ INFO: [Synth 8-638] synthesizing module 'fpu_sub' [c:/Users/Daniel/Documents/Mas
 	Parameter C_FIXED_DATA_UNSIGNED bound to: 0 - type: integer 
 INFO: [Synth 8-3491] module 'floating_point_v7_1_21' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/hdl/floating_point_v7_1_vh_rfs.vhd:93266' bound to instance 'U0' of component 'floating_point_v7_1_21' [c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_sub/synth/fpu_sub.vhd:219]
 INFO: [Synth 8-256] done synthesizing module 'fpu_sub' (0#1) [c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_sub/synth/fpu_sub.vhd:74]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:75]
-INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 'uut2' of component 'fpu_mul' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:135]
+INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 'uut2' of component 'fpu_mul' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:140]
 INFO: [Synth 8-638] synthesizing module 'fpu_mul' [c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:74]
 	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
 	Parameter C_PART bound to: xc7a35tftg256-1 - type: string 
@@ -293,8 +290,7 @@ INFO: [Synth 8-638] synthesizing module 'fpu_mul' [c:/Users/Daniel/Documents/Mas
 INFO: [Synth 8-3491] module 'floating_point_v7_1_21' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/hdl/floating_point_v7_1_vh_rfs.vhd:93266' bound to instance 'U0' of component 'floating_point_v7_1_21' [c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:219]
 INFO: [Synth 8-256] done synthesizing module 'fpu_mul' (0#1) [c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:74]
 INFO: [Synth 8-256] done synthesizing module 'func' (0#1) [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:46]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:54]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's2_x' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:155]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's2_x' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:157]
 INFO: [Synth 8-638] synthesizing module 'fpu_fused' [c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:77]
 	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
 	Parameter C_PART bound to: xc7a35tftg256-1 - type: string 
@@ -375,146 +371,115 @@ INFO: [Synth 8-638] synthesizing module 'fpu_fused' [c:/Users/Daniel/Documents/M
 	Parameter C_FIXED_DATA_UNSIGNED bound to: 0 - type: integer 
 INFO: [Synth 8-3491] module 'floating_point_v7_1_21' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/hdl/floating_point_v7_1_vh_rfs.vhd:93266' bound to instance 'U0' of component 'floating_point_v7_1_21' [c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:227]
 INFO: [Synth 8-256] done synthesizing module 'fpu_fused' (0#1) [c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:77]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:40]
-INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 's2_m1' of component 'fpu_mul' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:163]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:54]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's2_y' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:170]
-INFO: [Synth 8-3491] module 'func' declared at 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:33' bound to instance 'f2' of component 'func' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:177]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:54]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's3_x' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:184]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:40]
-INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 's3_m1' of component 'fpu_mul' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:192]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:54]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's3_a1' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:199]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:54]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's3_y' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:207]
-INFO: [Synth 8-3491] module 'func' declared at 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:33' bound to instance 'f3' of component 'func' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:214]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:54]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's4_x' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:221]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:40]
-INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 's4_m1' of component 'fpu_mul' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:229]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:54]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's4_a1' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:236]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:54]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's4_a2' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:244]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:54]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's4_y' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:252]
-INFO: [Synth 8-3491] module 'func' declared at 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:33' bound to instance 'f4' of component 'func' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:259]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:54]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's5_x' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:266]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:40]
-INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 's5_m1' of component 'fpu_mul' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:274]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:54]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's5_a1' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:281]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:54]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's5_a2' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:289]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:54]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's5_a3' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:297]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:54]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's5_y' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:305]
-INFO: [Synth 8-3491] module 'func' declared at 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:33' bound to instance 'f5' of component 'func' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:312]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:54]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's6_x' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:320]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:40]
-INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 's6_m1' of component 'fpu_mul' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:328]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:54]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's6_a1' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:335]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:54]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's6_a2' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:343]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:54]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's6_a3' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:351]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:54]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's6_a4' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:359]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:54]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's6_y' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:367]
-INFO: [Synth 8-3491] module 'func' declared at 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:33' bound to instance 'f6' of component 'func' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:374]
+INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 's2_m1' of component 'fpu_mul' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:165]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's2_y' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:172]
+INFO: [Synth 8-3491] module 'func' declared at 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:33' bound to instance 'f2' of component 'func' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:179]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's3_x' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:186]
+INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 's3_m1' of component 'fpu_mul' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:194]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's3_a1' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:201]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's3_y' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:209]
+INFO: [Synth 8-3491] module 'func' declared at 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:33' bound to instance 'f3' of component 'func' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:216]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's4_x' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:223]
+INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 's4_m1' of component 'fpu_mul' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:231]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's4_a1' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:238]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's4_a2' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:246]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's4_y' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:254]
+INFO: [Synth 8-3491] module 'func' declared at 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:33' bound to instance 'f4' of component 'func' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:261]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's5_x' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:268]
+INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 's5_m1' of component 'fpu_mul' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:276]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's5_a1' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:283]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's5_a2' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:291]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's5_a3' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:299]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's5_y' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:307]
+INFO: [Synth 8-3491] module 'func' declared at 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:33' bound to instance 'f5' of component 'func' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:314]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's6_x' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:322]
+INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 's6_m1' of component 'fpu_mul' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:330]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's6_a1' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:337]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's6_a2' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:345]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's6_a3' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:353]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's6_a4' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:361]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 's6_y' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:369]
+INFO: [Synth 8-3491] module 'func' declared at 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:33' bound to instance 'f6' of component 'func' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:376]
 INFO: [Synth 8-256] done synthesizing module 'k_block' (0#1) [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:31]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:39]
-INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 'sol_m1' of component 'fpu_mul' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:141]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:67]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'sol_a1' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:148]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:67]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'sol_a2' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:156]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:67]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'sol_a3' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:164]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:67]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'sol_a4' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:172]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:67]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'sol_final' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:180]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:53]
-INFO: [Synth 8-3491] module 'fpu_add' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:59' bound to instance 'x_add' of component 'fpu_add' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:190]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:39]
-INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 'err_m1' of component 'fpu_mul' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:201]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:67]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'err_a1' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:208]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:67]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'err_a2' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:216]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:67]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'err_a3' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:224]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:67]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'err_a4' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:232]
-WARNING: [Synth 8-5640] Port 'm_axis_result_tready' is missing in component declaration [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:39]
-INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 'err_final' of component 'fpu_mul' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:240]
+INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 'sol_m1' of component 'fpu_mul' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:144]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'sol_a1' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:151]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'sol_a2' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:159]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'sol_a3' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:167]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'sol_a4' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:175]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'sol_final' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:183]
+INFO: [Synth 8-3491] module 'fpu_add' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:59' bound to instance 'x_add' of component 'fpu_add' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:193]
+INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 'err_m1' of component 'fpu_mul' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:204]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'err_a1' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:211]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'err_a2' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:219]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'err_a3' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:227]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'err_a4' of component 'fpu_fused' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:235]
+INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 'err_final' of component 'fpu_mul' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:243]
 INFO: [Synth 8-256] done synthesizing module 'RKMod1' (0#1) [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:23]
-INFO: [Synth 8-256] done synthesizing module 'Top' (0#1) [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[5] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[6] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[7] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[9] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[10] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[11] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[13] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[14] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[15] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[17] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[18] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[19] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[21] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[22] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[23] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[24] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[25] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[26] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[27] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[28] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[29] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[30] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[31] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[32] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[33] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[34] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[35] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[36] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[37] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[38] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[39] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[40] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[41] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[42] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[43] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[44] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[45] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[46] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[47] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[48] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[49] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[50] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[51] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[52] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[53] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[54] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[55] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[56] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[57] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[58] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[59] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[60] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[61] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[62] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[63] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:64]
+INFO: [Synth 8-3491] module 'step_ctrl' declared at 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/step_ctrl.vhd:14' bound to instance 'uut5' of component 'step_ctrl' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top.vhd:228]
+INFO: [Synth 8-638] synthesizing module 'step_ctrl' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/step_ctrl.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'step_ctrl' (0#1) [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/step_ctrl.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'Top' (0#1) [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top.vhd:49]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[5] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[6] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[7] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[9] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[10] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[11] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[13] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[14] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[15] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[17] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[18] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[19] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[21] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[22] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[23] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[24] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[25] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[26] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[27] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[28] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[29] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[30] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[31] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[32] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[33] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[34] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[35] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[36] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[37] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[38] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[39] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[40] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[41] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[42] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[43] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[44] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[45] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[46] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[47] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[48] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[49] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[50] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[51] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[52] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[53] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[54] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[55] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[56] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[57] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[58] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[59] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[60] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[61] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[62] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[63] was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element sm_init_reg was removed.  [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top.vhd:247]
+WARNING: [Synth 8-7129] Port err_in[31] in module step_ctrl is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tol[31] in module step_ctrl is either unconnected or has no load
 WARNING: [Synth 8-7129] Port CLK in module xbip_pipe_v3_0_11_viv__parameterized3 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port CE in module xbip_pipe_v3_0_11_viv__parameterized3 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SCLR in module xbip_pipe_v3_0_11_viv__parameterized3 is either unconnected or has no load
@@ -613,22 +578,20 @@ WARNING: [Synth 8-7129] Port MANT_CASC_IN[22] in module flt_mult_round is either
 WARNING: [Synth 8-7129] Port MANT_CASC_IN[21] in module flt_mult_round is either unconnected or has no load
 WARNING: [Synth 8-7129] Port MANT_CASC_IN[20] in module flt_mult_round is either unconnected or has no load
 WARNING: [Synth 8-7129] Port MANT_CASC_IN[19] in module flt_mult_round is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MANT_CASC_IN[18] in module flt_mult_round is either unconnected or has no load
-WARNING: [Synth 8-7129] Port MANT_CASC_IN[17] in module flt_mult_round is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1649.984 ; gain = 922.797
+Finished RTL Elaboration : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1648.254 ; gain = 924.363
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1649.984 ; gain = 922.797
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1648.254 ; gain = 924.363
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1649.984 ; gain = 922.797
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1648.254 ; gain = 924.363
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1649.984 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1648.254 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 13036 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -643,38 +606,46 @@ Parsing XDC File [C:/Users/Daniel/Documents/Master of Engineering/Parallel Archi
 Finished Parsing XDC File [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.203 . Memory (MB): peak = 1833.996 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.201 . Memory (MB): peak = 1835.438 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1212 instances were transformed.
   FDE => FDRE: 1212 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1833.996 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1835.438 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:26 ; elapsed = 00:01:26 . Memory (MB): peak = 1833.996 ; gain = 1106.809
+Finished Constraint Validation : Time (s): cpu = 00:01:25 ; elapsed = 00:01:25 . Memory (MB): peak = 1835.438 ; gain = 1111.547
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tftg256-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:26 ; elapsed = 00:01:26 . Memory (MB): peak = 1833.996 ; gain = 1106.809
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:25 ; elapsed = 00:01:25 . Memory (MB): peak = 1835.438 ; gain = 1111.547
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:27 ; elapsed = 00:01:26 . Memory (MB): peak = 1833.996 ; gain = 1106.809
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:25 ; elapsed = 00:01:25 . Memory (MB): peak = 1835.438 ; gain = 1111.547
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Top'
 WARNING: [Synth 8-327] inferring latch for variable 'wrdata_reg' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/reg.vhd:80]
-WARNING: [Synth 8-327] inferring latch for variable 'wridata_reg' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/reg.vhd:73]
 WARNING: [Synth 8-327] inferring latch for variable 'addr1_reg' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Control.vhd:72]
-WARNING: [Synth 8-327] inferring latch for variable 'write_en_reg' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Control.vhd:69]
-WARNING: [Synth 8-327] inferring latch for variable 'flush_reg' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Control.vhd:70]
-WARNING: [Synth 8-327] inferring latch for variable 'init_reg' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Control.vhd:81]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+                  s_idle |                              000 |                              000
+                 s_flush |                              001 |                              001
+               s_compute |                              010 |                              010
+                s_update |                              011 |                              011
+                  s_done |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'Top'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:31 ; elapsed = 00:01:31 . Memory (MB): peak = 1833.996 ; gain = 1106.809
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:30 ; elapsed = 00:01:31 . Memory (MB): peak = 1835.438 ; gain = 1111.547
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-223] decloning instance 'fpu_add:/U0/i_synth/DELAY_DIVIDE_BY_ZERO' (delay__parameterized0) to 'fpu_add:/U0/i_synth/DELAY_ACCUM_OVERFLOW'
 INFO: [Synth 8-223] decloning instance 'fpu_add:/U0/i_synth/DELAY_DIVIDE_BY_ZERO' (delay__parameterized0) to 'fpu_add:/U0/i_synth/DELAY_ACCUM_INPUT_OVERFLOW'
@@ -704,28 +675,30 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3936] Found unconnected internal register 'uut1/mem_reg[12]' and it is trimmed from '32' to '31' bits. [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+WARNING: [Synth 8-3936] Found unconnected internal register 'uut1/mem_reg[16]' and it is trimmed from '32' to '31' bits. [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
 INFO: [Synth 8-3332] Sequential element (FMA_OP.OP/addsub/add/EXP/bma_exp_cc/CARRYS_Q_DEL.FAST_DEL.CARRY_FD) is unused and will be removed from module floating_point_v7_1_21_viv__parameterized5.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:50 ; elapsed = 00:02:53 . Memory (MB): peak = 1930.254 ; gain = 1203.066
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:45 ; elapsed = 00:02:49 . Memory (MB): peak = 1918.824 ; gain = 1194.934
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-3323] Resources of type DSP have been overutilized. Used = 112, Available = 90. Use report_utilization command for details.
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:01 ; elapsed = 00:03:04 . Memory (MB): peak = 2063.945 ; gain = 1336.758
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:56 ; elapsed = 00:03:00 . Memory (MB): peak = 2054.672 ; gain = 1330.781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:03:01 ; elapsed = 00:03:04 . Memory (MB): peak = 2064.242 ; gain = 1337.055
+Finished Timing Optimization : Time (s): cpu = 00:02:56 ; elapsed = 00:03:00 . Memory (MB): peak = 2054.969 ; gain = 1331.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:03:13 ; elapsed = 00:03:17 . Memory (MB): peak = 2094.406 ; gain = 1367.219
+Finished Technology Mapping : Time (s): cpu = 00:03:13 ; elapsed = 00:03:17 . Memory (MB): peak = 2085.137 ; gain = 1361.246
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -743,37 +716,145 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:03:20 ; elapsed = 00:03:24 . Memory (MB): peak = 2252.191 ; gain = 1525.004
+Finished IO Insertion : Time (s): cpu = 00:03:20 ; elapsed = 00:03:24 . Memory (MB): peak = 2249.398 ; gain = 1525.508
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:03:20 ; elapsed = 00:03:24 . Memory (MB): peak = 2252.191 ; gain = 1525.004
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:20 ; elapsed = 00:03:24 . Memory (MB): peak = 2249.398 ; gain = 1525.508
 ---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][31] with 1st driver pin 'uut1/mem_reg[0][31]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][31] with 2nd driver pin 'uut1/mem_reg[0][31]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][30] with 1st driver pin 'uut1/mem_reg[0][30]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][30] with 2nd driver pin 'uut1/mem_reg[0][30]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][29] with 1st driver pin 'uut1/mem_reg[0][29]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][29] with 2nd driver pin 'uut1/mem_reg[0][29]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][28] with 1st driver pin 'uut1/mem_reg[0][28]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][28] with 2nd driver pin 'uut1/mem_reg[0][28]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][27] with 1st driver pin 'uut1/mem_reg[0][27]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][27] with 2nd driver pin 'uut1/mem_reg[0][27]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][26] with 1st driver pin 'uut1/mem_reg[0][26]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][26] with 2nd driver pin 'uut1/mem_reg[0][26]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][25] with 1st driver pin 'uut1/mem_reg[0][25]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][25] with 2nd driver pin 'uut1/mem_reg[0][25]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][24] with 1st driver pin 'uut1/mem_reg[0][24]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][24] with 2nd driver pin 'uut1/mem_reg[0][24]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][23] with 1st driver pin 'uut1/mem_reg[0][23]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][23] with 2nd driver pin 'uut1/mem_reg[0][23]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][22] with 1st driver pin 'uut1/mem_reg[0][22]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][22] with 2nd driver pin 'uut1/mem_reg[0][22]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][21] with 1st driver pin 'uut1/mem_reg[0][21]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][21] with 2nd driver pin 'uut1/mem_reg[0][21]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][20] with 1st driver pin 'uut1/mem_reg[0][20]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][20] with 2nd driver pin 'uut1/mem_reg[0][20]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][19] with 1st driver pin 'uut1/mem_reg[0][19]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][19] with 2nd driver pin 'uut1/mem_reg[0][19]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][18] with 1st driver pin 'uut1/mem_reg[0][18]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][18] with 2nd driver pin 'uut1/mem_reg[0][18]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][17] with 1st driver pin 'uut1/mem_reg[0][17]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][17] with 2nd driver pin 'uut1/mem_reg[0][17]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][16] with 1st driver pin 'uut1/mem_reg[0][16]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][16] with 2nd driver pin 'uut1/mem_reg[0][16]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][15] with 1st driver pin 'uut1/mem_reg[0][15]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][15] with 2nd driver pin 'uut1/mem_reg[0][15]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][14] with 1st driver pin 'uut1/mem_reg[0][14]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][14] with 2nd driver pin 'uut1/mem_reg[0][14]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][13] with 1st driver pin 'uut1/mem_reg[0][13]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][13] with 2nd driver pin 'uut1/mem_reg[0][13]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][12] with 1st driver pin 'uut1/mem_reg[0][12]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][12] with 2nd driver pin 'uut1/mem_reg[0][12]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][11] with 1st driver pin 'uut1/mem_reg[0][11]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][11] with 2nd driver pin 'uut1/mem_reg[0][11]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][10] with 1st driver pin 'uut1/mem_reg[0][10]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][10] with 2nd driver pin 'uut1/mem_reg[0][10]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][9] with 1st driver pin 'uut1/mem_reg[0][9]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][9] with 2nd driver pin 'uut1/mem_reg[0][9]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][8] with 1st driver pin 'uut1/mem_reg[0][8]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][8] with 2nd driver pin 'uut1/mem_reg[0][8]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][7] with 1st driver pin 'uut1/mem_reg[0][7]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][7] with 2nd driver pin 'uut1/mem_reg[0][7]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][6] with 1st driver pin 'uut1/mem_reg[0][6]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][6] with 2nd driver pin 'uut1/mem_reg[0][6]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][5] with 1st driver pin 'uut1/mem_reg[0][5]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][5] with 2nd driver pin 'uut1/mem_reg[0][5]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][4] with 1st driver pin 'uut1/mem_reg[0][4]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][4] with 2nd driver pin 'uut1/mem_reg[0][4]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][3] with 1st driver pin 'uut1/mem_reg[0][3]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][3] with 2nd driver pin 'uut1/mem_reg[0][3]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][2] with 1st driver pin 'uut1/mem_reg[0][2]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][2] with 2nd driver pin 'uut1/mem_reg[0][2]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][1] with 1st driver pin 'uut1/mem_reg[0][1]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][1] with 2nd driver pin 'uut1/mem_reg[0][1]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][0] with 1st driver pin 'uut1/mem_reg[0][0]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[0][0] with 2nd driver pin 'uut1/mem_reg[0][0]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][31] with 1st driver pin 'uut1/mem_reg[4][31]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][31] with 2nd driver pin 'uut1/mem_reg[4][31]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][30] with 1st driver pin 'uut1/mem_reg[4][30]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][30] with 2nd driver pin 'uut1/mem_reg[4][30]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][29] with 1st driver pin 'uut1/mem_reg[4][29]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][29] with 2nd driver pin 'uut1/mem_reg[4][29]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][28] with 1st driver pin 'uut1/mem_reg[4][28]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][28] with 2nd driver pin 'uut1/mem_reg[4][28]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][27] with 1st driver pin 'uut1/mem_reg[4][27]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][27] with 2nd driver pin 'uut1/mem_reg[4][27]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][26] with 1st driver pin 'uut1/mem_reg[4][26]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][26] with 2nd driver pin 'uut1/mem_reg[4][26]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][25] with 1st driver pin 'uut1/mem_reg[4][25]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][25] with 2nd driver pin 'uut1/mem_reg[4][25]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][24] with 1st driver pin 'uut1/mem_reg[4][24]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][24] with 2nd driver pin 'uut1/mem_reg[4][24]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][23] with 1st driver pin 'uut1/mem_reg[4][23]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][23] with 2nd driver pin 'uut1/mem_reg[4][23]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][22] with 1st driver pin 'uut1/mem_reg[4][22]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][22] with 2nd driver pin 'uut1/mem_reg[4][22]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][21] with 1st driver pin 'uut1/mem_reg[4][21]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][21] with 2nd driver pin 'uut1/mem_reg[4][21]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][20] with 1st driver pin 'uut1/mem_reg[4][20]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][20] with 2nd driver pin 'uut1/mem_reg[4][20]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][19] with 1st driver pin 'uut1/mem_reg[4][19]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][19] with 2nd driver pin 'uut1/mem_reg[4][19]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][18] with 1st driver pin 'uut1/mem_reg[4][18]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][18] with 2nd driver pin 'uut1/mem_reg[4][18]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][17] with 1st driver pin 'uut1/mem_reg[4][17]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][17] with 2nd driver pin 'uut1/mem_reg[4][17]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][16] with 1st driver pin 'uut1/mem_reg[4][16]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][16] with 2nd driver pin 'uut1/mem_reg[4][16]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][15] with 1st driver pin 'uut1/mem_reg[4][15]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][15] with 2nd driver pin 'uut1/mem_reg[4][15]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][14] with 1st driver pin 'uut1/mem_reg[4][14]__0/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin uut1/mem[4][14] with 2nd driver pin 'uut1/mem_reg[4][14]/Q' [C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:68]
+INFO: [Common 17-14] Message 'Synth 8-6859' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|       64|Failed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:28 ; elapsed = 00:03:32 . Memory (MB): peak = 2327.004 ; gain = 1599.816
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:28 ; elapsed = 00:03:32 . Memory (MB): peak = 2320.117 ; gain = 1596.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:03:29 ; elapsed = 00:03:32 . Memory (MB): peak = 2327.004 ; gain = 1599.816
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:28 ; elapsed = 00:03:32 . Memory (MB): peak = 2320.117 ; gain = 1596.227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:03:31 ; elapsed = 00:03:35 . Memory (MB): peak = 2331.723 ; gain = 1604.535
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:30 ; elapsed = 00:03:35 . Memory (MB): peak = 2323.789 ; gain = 1599.898
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:03:31 ; elapsed = 00:03:35 . Memory (MB): peak = 2331.988 ; gain = 1604.801
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:31 ; elapsed = 00:03:35 . Memory (MB): peak = 2323.789 ; gain = 1599.898
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -783,27 +864,27 @@ DSP Final Report (the ' indicates corresponding REG is set)
 +-------------------------------------+-----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |Module Name                          | DSP Mapping           | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
 +-------------------------------------+-----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|dsp__parameterized0_9816             | (C+(A'*B')')'         | 24     | 17     | 0      | -      | 17     | 1    | 1    | 0    | -    | -     | 1    | 1    | 
-|dsp__parameterized0_9816             | (PCIN>>17+(A'*B'')')' | 0      | 7      | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 1    | 
-|dsp__parameterized0_9543             | (C+(A'*B')')'         | 24     | 17     | 0      | -      | 17     | 1    | 1    | 0    | -    | -     | 1    | 1    | 
-|dsp__parameterized0_9543             | (PCIN>>17+(A'*B'')')' | 0      | 7      | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 1    | 
-|dsp__parameterized0_9270             | (C+(A'*B')')'         | 24     | 17     | 0      | -      | 17     | 1    | 1    | 0    | -    | -     | 1    | 1    | 
-|dsp__parameterized0_9270             | (PCIN>>17+(A'*B'')')' | 0      | 7      | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 1    | 
-|dsp__parameterized0_8997             | (C+(A'*B')')'         | 24     | 17     | 0      | -      | 17     | 1    | 1    | 0    | -    | -     | 1    | 1    | 
-|dsp__parameterized0_8997             | (PCIN>>17+(A'*B'')')' | 0      | 7      | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 1    | 
-|dsp__parameterized0_8724             | (C+(A'*B')')'         | 24     | 17     | 0      | -      | 17     | 1    | 1    | 0    | -    | -     | 1    | 1    | 
-|dsp__parameterized0_8724             | (PCIN>>17+(A'*B'')')' | 0      | 7      | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 1    | 
-|dsp__parameterized0_8451             | (C+(A'*B')')'         | 24     | 17     | 0      | -      | 17     | 1    | 1    | 0    | -    | -     | 1    | 1    | 
-|dsp__parameterized0_8451             | (PCIN>>17+(A'*B'')')' | 0      | 7      | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 1    | 
-|dsp__parameterized0_8178             | (C+(A'*B')')'         | 24     | 17     | 0      | -      | 17     | 1    | 1    | 0    | -    | -     | 1    | 1    | 
-|dsp__parameterized0_8178             | (PCIN>>17+(A'*B'')')' | 0      | 7      | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 1    | 
-|dsp__parameterized0_7905             | (C+(A'*B')')'         | 24     | 17     | 0      | -      | 17     | 1    | 1    | 0    | -    | -     | 1    | 1    | 
-|dsp__parameterized0_7905             | (PCIN>>17+(A'*B'')')' | 0      | 7      | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 1    | 
-|dsp__parameterized0_7632             | (C+(A'*B')')'         | 24     | 17     | 0      | -      | 17     | 1    | 1    | 0    | -    | -     | 1    | 1    | 
-|dsp__parameterized0_7632             | (PCIN>>17+(A'*B'')')' | 0      | 7      | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 1    | 
-|dsp_7547                             | (C+(A'*B')')'         | 24     | 17     | 0      | -      | 17     | 1    | 1    | 0    | -    | -     | 1    | 1    | 
-|dsp_7547                             | (PCIN>>17+(A'*B'')')' | 0      | 7      | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 1    | 
-|dsp48e1_wrapper_7496                 | Dynamic               | -      | -      | -      | -      | 40     | -    | -    | -    | -    | 1     | 1    | 1    | 
+|dsp__parameterized0_9818             | (C+(A'*B')')'         | 24     | 17     | 0      | -      | 17     | 1    | 1    | 0    | -    | -     | 1    | 1    | 
+|dsp__parameterized0_9818             | (PCIN>>17+(A'*B'')')' | 0      | 7      | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 1    | 
+|dsp__parameterized0_9545             | (C+(A'*B')')'         | 24     | 17     | 0      | -      | 17     | 1    | 1    | 0    | -    | -     | 1    | 1    | 
+|dsp__parameterized0_9545             | (PCIN>>17+(A'*B'')')' | 0      | 7      | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 1    | 
+|dsp__parameterized0_9272             | (C+(A'*B')')'         | 24     | 17     | 0      | -      | 17     | 1    | 1    | 0    | -    | -     | 1    | 1    | 
+|dsp__parameterized0_9272             | (PCIN>>17+(A'*B'')')' | 0      | 7      | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 1    | 
+|dsp__parameterized0_8999             | (C+(A'*B')')'         | 24     | 17     | 0      | -      | 17     | 1    | 1    | 0    | -    | -     | 1    | 1    | 
+|dsp__parameterized0_8999             | (PCIN>>17+(A'*B'')')' | 0      | 7      | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 1    | 
+|dsp__parameterized0_8726             | (C+(A'*B')')'         | 24     | 17     | 0      | -      | 17     | 1    | 1    | 0    | -    | -     | 1    | 1    | 
+|dsp__parameterized0_8726             | (PCIN>>17+(A'*B'')')' | 0      | 7      | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 1    | 
+|dsp__parameterized0_8453             | (C+(A'*B')')'         | 24     | 17     | 0      | -      | 17     | 1    | 1    | 0    | -    | -     | 1    | 1    | 
+|dsp__parameterized0_8453             | (PCIN>>17+(A'*B'')')' | 0      | 7      | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 1    | 
+|dsp__parameterized0_8180             | (C+(A'*B')')'         | 24     | 17     | 0      | -      | 17     | 1    | 1    | 0    | -    | -     | 1    | 1    | 
+|dsp__parameterized0_8180             | (PCIN>>17+(A'*B'')')' | 0      | 7      | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 1    | 
+|dsp__parameterized0_7907             | (C+(A'*B')')'         | 24     | 17     | 0      | -      | 17     | 1    | 1    | 0    | -    | -     | 1    | 1    | 
+|dsp__parameterized0_7907             | (PCIN>>17+(A'*B'')')' | 0      | 7      | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 1    | 
+|dsp__parameterized0_7634             | (C+(A'*B')')'         | 24     | 17     | 0      | -      | 17     | 1    | 1    | 0    | -    | -     | 1    | 1    | 
+|dsp__parameterized0_7634             | (PCIN>>17+(A'*B'')')' | 0      | 7      | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 1    | 
+|dsp_7549                             | (C+(A'*B')')'         | 24     | 17     | 0      | -      | 17     | 1    | 1    | 0    | -    | -     | 1    | 1    | 
+|dsp_7549                             | (PCIN>>17+(A'*B'')')' | 0      | 7      | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 1    | 
+|dsp48e1_wrapper_7498                 | Dynamic               | -      | -      | -      | -      | 40     | -    | -    | -    | -    | 1     | 1    | 1    | 
 |dsp48e1_wrapper__parameterized0_7429 | (C'+(A''*B')')'       | 24     | 16     | 35     | -      | 35     | 2    | 1    | 1    | -    | -     | 1    | 1    | 
 |dsp_7377                             | (C+(A'*B')')'         | 24     | 17     | 0      | -      | 17     | 1    | 1    | 0    | -    | -     | 1    | 1    | 
 |dsp_7377                             | (PCIN>>17+(A'*B'')')' | 0      | 7      | -      | -      | 43     | 1    | 2    | -    | -    | -     | 1    | 1    | 
@@ -909,55 +990,55 @@ Report Cell Usage:
 |      |Cell    |Count |
 +------+--------+------+
 |1     |BUFG    |     1|
-|2     |CARRY4  |   228|
+|2     |CARRY4  |   244|
 |3     |DSP48E1 |   112|
-|9     |LUT1    |   615|
-|10    |LUT2    |  3193|
-|11    |LUT3    |  8704|
-|12    |LUT4    |  5487|
-|13    |LUT5    |  4150|
-|14    |LUT6    |  9445|
+|9     |LUT1    |   548|
+|10    |LUT2    |  3244|
+|11    |LUT3    |  9368|
+|12    |LUT4    |  5495|
+|13    |LUT5    |  3502|
+|14    |LUT6    |  9486|
 |15    |MUXCY   |  7921|
 |16    |MUXF7   |   261|
 |17    |MUXF8   |    29|
-|18    |SRL16E  |  2539|
+|18    |SRL16E  |  2483|
 |19    |XORCY   |  3607|
 |20    |FDE     |  1183|
-|21    |FDRE    | 43792|
-|22    |LD      |    28|
-|23    |LDCP    |     2|
-|24    |LDP     |     1|
-|25    |IBUF    |    21|
-|26    |OBUF    |   141|
+|21    |FDRE    | 44300|
+|22    |FDSE    |    16|
+|23    |LD      |     9|
+|24    |LDC     |    12|
+|25    |IBUF    |    28|
+|26    |OBUF    |   142|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:03:32 ; elapsed = 00:03:36 . Memory (MB): peak = 2331.988 ; gain = 1604.801
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:31 ; elapsed = 00:03:36 . Memory (MB): peak = 2323.789 ; gain = 1599.898
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:13 ; elapsed = 00:02:47 . Memory (MB): peak = 2332.578 ; gain = 1421.379
-Synthesis Optimization Complete : Time (s): cpu = 00:03:32 ; elapsed = 00:03:36 . Memory (MB): peak = 2332.578 ; gain = 1605.391
+Synthesis finished with 0 errors, 128 critical warnings and 5 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:14 ; elapsed = 00:02:48 . Memory (MB): peak = 2324.059 ; gain = 1412.984
+Synthesis Optimization Complete : Time (s): cpu = 00:03:32 ; elapsed = 00:03:36 . Memory (MB): peak = 2324.059 ; gain = 1600.168
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2365.371 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 13372 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 2354.871 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 13378 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.101 . Memory (MB): peak = 2451.082 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.102 . Memory (MB): peak = 2438.969 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 3488 instances were transformed.
+  A total of 3478 instances were transformed.
   (MUXCY,XORCY) => CARRY4: 2274 instances
   FDE => FDRE: 1183 instances
-  LD => LDCE: 28 instances
-  LDCP => LDCP (GND, LDCE, LUT3(x2), VCC): 2 instances
-  LDP => LDPE: 1 instance 
+  LD => LDCE: 9 instances
+  LDC => LDCE: 12 instances
 
-Synth Design complete | Checksum: 3ab32ccb
+Synth Design complete | Checksum: 1dd65fbe
 INFO: [Common 17-83] Releasing license: Synthesis
-113 Infos, 207 Warnings, 0 Critical Warnings and 0 Errors encountered.
+119 Infos, 165 Warnings, 100 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
 INFO: [Common 17-600] The following parameters have non-default value.
 tcl.statsThreshold
-Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.141 . Memory (MB): peak = 2451.082 ; gain = 0.000
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.152 . Memory (MB): peak = 2438.969 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Daniel/Documents/Master of Engineering/Parallel Architecture/Runge-Kutta-45/Runge-Kutta-45/RK45/RK45.runs/synth_1/Top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file Top_utilization_synth.rpt -pb Top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Mar 28 01:35:43 2026...
+INFO: [Common 17-206] Exiting Vivado at Sat Mar 28 04:48:34 2026...

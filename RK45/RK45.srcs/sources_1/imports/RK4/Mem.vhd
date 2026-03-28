@@ -43,7 +43,7 @@ Port (
            p1_in : out STD_LOGIC_VECTOR(31 downto 0);
            c_in : out STD_LOGIC_VECTOR(31 downto 0);
            tol : out STD_LOGIC_VECTOR(31 downto 0);
-           n_steps : out STD_LOGIC_VECTOR(31 downto 0);
+           x_end : out STD_LOGIC_VECTOR(31 downto 0);
            write_en: in std_logic;
            clock: in std_logic;
            flush : in std_logic;
@@ -114,7 +114,7 @@ end if;
 
   -- Continuous outputs for adaptive step control
   tol     <= mem(12);
-  n_steps <= mem(16);
+  x_end   <= mem(16);
 
     
 end Behavioral;
