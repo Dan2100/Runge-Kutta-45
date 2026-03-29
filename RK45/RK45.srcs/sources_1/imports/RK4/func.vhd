@@ -54,6 +54,7 @@ COMPONENT fpu_add
     s_axis_b_tready : OUT STD_LOGIC;
     s_axis_b_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     m_axis_result_tvalid : OUT STD_LOGIC;
+    m_axis_result_tready : IN STD_LOGIC;
     m_axis_result_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0) 
   );
 END COMPONENT;
@@ -68,6 +69,7 @@ COMPONENT fpu_sub
     s_axis_b_tready : OUT STD_LOGIC;
     s_axis_b_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     m_axis_result_tvalid : OUT STD_LOGIC;
+    m_axis_result_tready : IN STD_LOGIC;
     m_axis_result_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0) 
   );
 END COMPONENT;
@@ -82,11 +84,18 @@ COMPONENT fpu_mul
     s_axis_b_tready : OUT STD_LOGIC;
     s_axis_b_tdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     m_axis_result_tvalid : OUT STD_LOGIC;
+    m_axis_result_tready : IN STD_LOGIC;
     m_axis_result_tdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0) 
   );
 END COMPONENT;
 
---signal clk: std_logic := '1';
+-- f(x,y) = -50(y - x) + 1 = 50(x - y) + 1
+-- Pipeline: fpu_sub(x,y) -> fpu_mul(50.0, result) -> fpu_add(result, 1.0)
+
+-- IEEE 754 constants
+constant CONST_50 : STD_LOGIC_VECTOR(31 downto 0) := x"42480000"; -- 50.0
+constant CONST_1 : STD_LOGIC_VECTOR(31 downto 0) := x"3F800000"; -- 1.0
+
 signal s_axis_a_tvalid: std_logic := '1';
 signal s_axis_b_tvalid: std_logic := '1';
 signal s_axis_a_tready1: std_logic := '1';
@@ -95,17 +104,17 @@ signal s_axis_a_tready2: std_logic := '1';
 signal s_axis_b_tready2: std_logic := '1';
 signal s_axis_a_tready3: std_logic := '1';
 signal s_axis_b_tready3: std_logic := '1';
-signal add1: STD_LOGIC_VECTOR(31 downto 0)  := (others => '0');
-signal sub1: STD_LOGIC_VECTOR(31 downto 0)  := (others => '0');
+signal sub_result: STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
+signal mul_result: STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
+signal add_result: STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
 signal m_axis_result_tvalid1: std_logic := '0';
 signal m_axis_result_tvalid2: std_logic := '0';
 signal m_axis_result_tvalid3: std_logic := '0';
-signal func: STD_LOGIC_VECTOR(31 downto 0)  := (others => '0');
 
+begin
 
-begin 
- 
-uut: fpu_add
+-- Stage 1: x - y
+sub_inst: fpu_sub
   PORT MAP (
     aclk => clk,
     s_axis_a_tready => s_axis_a_tready1,
@@ -115,38 +124,41 @@ uut: fpu_add
     s_axis_b_tvalid => s_axis_b_tvalid,
     s_axis_b_tdata => y_in,
     m_axis_result_tvalid => m_axis_result_tvalid1,
-    m_axis_result_tdata => add1
+    m_axis_result_tready => '1',
+    m_axis_result_tdata => sub_result
   );
 
-
-uut1: fpu_sub
+-- Stage 2: 50 * (x - y)
+mul_inst: fpu_mul
   PORT MAP (
     aclk => clk,
     s_axis_a_tready => s_axis_a_tready2,
     s_axis_b_tready => s_axis_b_tready2,
     s_axis_a_tvalid => s_axis_a_tvalid,
-    s_axis_a_tdata => x_in,
+    s_axis_a_tdata => CONST_50,
     s_axis_b_tvalid => s_axis_b_tvalid,
-    s_axis_b_tdata => y_in,
-   m_axis_result_tvalid => m_axis_result_tvalid2,
-    m_axis_result_tdata => sub1
+    s_axis_b_tdata => sub_result,
+    m_axis_result_tvalid => m_axis_result_tvalid2,
+    m_axis_result_tready => '1',
+    m_axis_result_tdata => mul_result
   );
 
-uut2 : fpu_mul
+-- Stage 3: 50(x - y) + 1.0
+add_inst: fpu_add
   PORT MAP (
-   aclk => clk,
-      s_axis_a_tready => s_axis_a_tready3,
+    aclk => clk,
+    s_axis_a_tready => s_axis_a_tready3,
     s_axis_b_tready => s_axis_b_tready3,
     s_axis_a_tvalid => s_axis_a_tvalid,
-    s_axis_a_tdata => add1,
+    s_axis_a_tdata => mul_result,
     s_axis_b_tvalid => s_axis_b_tvalid,
-    s_axis_b_tdata => sub1,
+    s_axis_b_tdata => CONST_1,
     m_axis_result_tvalid => m_axis_result_tvalid3,
-    m_axis_result_tdata => func
+    m_axis_result_tready => '1',
+    m_axis_result_tdata => add_result
   );
-   
- 
-f <= func ;
+
+f <= add_result;
 
  
 
