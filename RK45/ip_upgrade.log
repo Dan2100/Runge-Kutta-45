@@ -1,6 +1,90 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Mon Mar 30 22:52:59 2026
+| Host         : DANIEL-PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a200tfbg484-3
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'fpu_sub'
+
+1. Summary
+----------
+
+SUCCESS in the update of fpu_sub (xilinx.com:ip:floating_point:7.1 (Rev. 21)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Mon Mar 30 22:52:39 2026
+| Host         : DANIEL-PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a200tfbg484-3
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'fpu_add'
+
+1. Summary
+----------
+
+SUCCESS in the update of fpu_add (xilinx.com:ip:floating_point:7.1 (Rev. 21)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Mon Mar 30 22:52:24 2026
+| Host         : DANIEL-PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a200tfbg484-3
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'fpu_mul'
+
+1. Summary
+----------
+
+SUCCESS in the update of fpu_mul (xilinx.com:ip:floating_point:7.1 (Rev. 21)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Mon Mar 30 22:52:03 2026
+| Host         : DANIEL-PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a200tfbg484-3
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'fpu_fused'
+
+1. Summary
+----------
+
+SUCCESS in the update of fpu_fused (xilinx.com:ip:floating_point:7.1 (Rev. 21)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
 | Date         : Fri Mar 27 21:49:19 2026
 | Host         : Harry running 64-bit major release  (build 9200)
 | Command      : upgrade_ip

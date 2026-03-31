@@ -56,9 +56,11 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param tcl.statsThreshold 360
 set_param general.usePosixSpawnForFork 1
+set_param chipscope.maxJobs 4
 OPTRACE "Creating in-memory project" START { }
-create_project -in_memory -part xc7a35tftg256-1
+create_project -in_memory -part xc7a200tfbg484-3
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
@@ -110,7 +112,7 @@ read_checkpoint -auto_incremental -incremental {C:/Users/Daniel/Documents/Master
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top Top -part xc7a35tftg256-1
+synth_design -top Top -part xc7a200tfbg484-3
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"

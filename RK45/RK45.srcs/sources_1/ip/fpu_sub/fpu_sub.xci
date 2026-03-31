@@ -53,7 +53,7 @@
       },
       "model_parameters": {
         "C_XDEVICEFAMILY": [ { "value": "artix7", "resolve_type": "generated", "usage": "all" } ],
-        "C_PART": [ { "value": "xc7a35tftg256-1", "resolve_type": "generated", "usage": "all" } ],
+        "C_PART": [ { "value": "xc7a200tfbg484-3", "resolve_type": "generated", "usage": "all" } ],
         "C_HAS_ADD": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_HAS_SUBTRACT": [ { "value": "1", "resolve_type": "generated", "format": "long", "usage": "all" } ],
         "C_HAS_MULTIPLY": [ { "value": "0", "resolve_type": "generated", "format": "long", "usage": "all" } ],
@@ -134,12 +134,12 @@
         "ARCHITECTURE": [ { "value": "artix7", "resolve_type": "generated", "usage": "all" } ],
         "BASE_BOARD_PART": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
         "BOARD_CONNECTIONS": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
-        "DEVICE": [ { "value": "xc7a35t", "resolve_type": "generated", "usage": "all" } ],
-        "PACKAGE": [ { "value": "ftg256", "resolve_type": "generated", "usage": "all" } ],
+        "DEVICE": [ { "value": "xc7a200t", "resolve_type": "generated", "usage": "all" } ],
+        "PACKAGE": [ { "value": "fbg484", "resolve_type": "generated", "usage": "all" } ],
         "PREFHDL": [ { "value": "VERILOG", "resolve_type": "generated", "usage": "all" } ],
         "SILICON_REVISION": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
         "SIMULATOR_LANGUAGE": [ { "value": "MIXED", "resolve_type": "generated", "usage": "all" } ],
-        "SPEEDGRADE": [ { "value": "-1", "resolve_type": "generated", "usage": "all" } ],
+        "SPEEDGRADE": [ { "value": "-3", "resolve_type": "generated", "usage": "all" } ],
         "STATIC_POWER": [ { "value": "", "resolve_type": "generated", "usage": "all" } ],
         "TEMPERATURE_GRADE": [ { "value": "", "resolve_type": "generated", "usage": "all" } ]
       },
@@ -282,5 +282,5 @@
       }
     }
   },
-  "checksum": "0983e256"
+  "checksum": "6451785e"
 }
