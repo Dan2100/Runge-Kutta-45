@@ -72,8 +72,11 @@ begin
   if  regwr = '1' then 
      r(TO_INTEGER(unsigned(rs1))) <= wridata;
      end if;
-   end if;      
-   
+   end if;
+
+    wridata <= (others => '0');
+    wrdata  <= (others => '0');
+
     case rs1  is
       when "00001" =>
         wridata <= x"00000000";

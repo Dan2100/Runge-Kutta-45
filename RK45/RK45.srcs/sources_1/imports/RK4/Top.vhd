@@ -84,7 +84,7 @@ Port (
 
 component Control is
 Port (
-
+clock: in std_logic;
 inst: in std_logic_vector(31 downto 0);
 addr: out std_logic_vector(11 downto 0);
 flush: out std_logic;
@@ -147,7 +147,6 @@ signal sc_accepted : std_logic;
 signal tol1     : STD_LOGIC_VECTOR(31 downto 0);
 signal x_end1   : STD_LOGIC_VECTOR(31 downto 0);
  
-signal clk: std_logic;
 signal addr1: std_logic_vector(11 downto 0);
 signal wdata:  std_logic_vector(31 downto 0);
 signal  rs :  std_logic_vector(4 downto 0);
@@ -184,7 +183,7 @@ uut1: Mem port map (
 cont => wdata,
 addr =>  addr1,
 write_en => mem_write_en,
-clock => clk,
+clock => clock,
 x_in => x_in1,
 y_in => y_in1,
 h => h1,
@@ -202,13 +201,14 @@ step_ok => mem_step_ok
 );
 
 uut2: reg port map (
- clk => clk,
+ clk => clock,
  rs1 => inst(19 downto 15), 
  regwr => write_en,
  wrdata => wdata
 );
 
 uut3: Control port map (
+clock => clock,
 inst => inst,
 addr => addr1,
 flush => flush,
@@ -216,7 +216,7 @@ write_en => write_en,
 init => init );
 
 uut4: RKMod1 port map (
-clk => clk,
+clk => clock,
 x_in => x_in1,
 y_in => y_in1,
 h => h1,
@@ -238,9 +238,9 @@ accepted => sc_accepted
 -- Triggered by instruction with func3="010" (RKS = Run Solver).
 -- Autonomously cycles: flush → compute → update, adjusting h on each step.
 ---------------------------------------------------------------------------
-adaptive_fsm: process(clk)
+adaptive_fsm: process(clock)
 begin
-    if rising_edge(clk) then
+    if rising_edge(clock) then
         case state is
 
             when S_IDLE =>
@@ -307,7 +307,6 @@ end process;
 ---------------------------------------------------------------------------
 -- Output assignments
 ---------------------------------------------------------------------------
-clk <= clock;
 cont <= wdata;
 addr <= addr1;
 initial <= init;

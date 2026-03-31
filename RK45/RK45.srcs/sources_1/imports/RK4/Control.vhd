@@ -35,7 +35,7 @@ use IEEE.std_logic_unsigned.ALL;
 
 entity Control is
 Port (
-
+clock: in std_logic;
 inst: in std_logic_vector(31 downto 0);
 addr: out std_logic_vector(11 downto 0);
 write_en: out std_logic;
@@ -62,39 +62,38 @@ func3 <= inst(14 downto 12);
 rs1 <= inst(19 downto 15);
 imm <= inst(31 downto 20);
 
+-- Combinational decode (no latches: all outputs assigned in every branch)
 process(func3, imm)
 begin
+  write_en <= '0';
+  flush    <= '0';
+  init     <= '0';
 
- -- Default assignments to avoid latches / 'U' on unassigned paths
- write_en <= '0';
- flush    <= '0';
- init     <= '0';
- addr1    <= addr1;
-
- if (func3 = "000")  then    ---    RKI Init: write register value to memory
-   write_en <= '1';
-   flush <= '0';
-   init  <= '0';
-       if (imm = "000000000000" ) then 
-     addr1 <= imm;
-    else
-         addr1 <= std_logic_vector(unsigned(addr1) + 4);
-   end if;
-
-  elsif (func3 = "110") then   --- RKF Flush: load values from memory to RK module
-   write_en <= '0';
-   flush <= '1';
-   init <= '0';
-
-  elsif (func3 = "100")  then --- RKU Update: store RK output back to memory
-   write_en <= '1';
-   flush <= '0';
-   init <= '1';
-   addr1 <= imm;
-
+  if (func3 = "000") then       -- RKI Init
+    write_en <= '1';
+  elsif (func3 = "110") then    -- RKF Flush
+    flush <= '1';
+  elsif (func3 = "100") then    -- RKU Update
+    write_en <= '1';
+    init     <= '1';
   end if;
+end process;
 
- end process;
+-- Synchronous address counter (eliminates latch / async clear)
+process(clock)
+begin
+  if rising_edge(clock) then
+    if (func3 = "000") then
+      if (imm = "000000000000") then
+        addr1 <= imm;
+      else
+        addr1 <= std_logic_vector(unsigned(addr1) + 4);
+      end if;
+    elsif (func3 = "100") then
+      addr1 <= imm;
+    end if;
+  end if;
+end process;
     addr <= addr1;
  --flush <= mflush; 
 
