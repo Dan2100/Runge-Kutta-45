@@ -216,7 +216,7 @@ BEGIN
   U0 : floating_point_v7_1_21
     GENERIC MAP (
       C_XDEVICEFAMILY => "artix7",
-      C_PART => "xc7a35tftg256-1",
+      C_PART => "xc7a200tfbg484-3",
       C_HAS_ADD => 0,
       C_HAS_SUBTRACT => 0,
       C_HAS_MULTIPLY => 0,

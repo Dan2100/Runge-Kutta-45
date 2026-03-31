@@ -62,7 +62,7 @@ Compiling architecture synth of entity xbip_pipe_v3_0_11.xbip_pipe_v3_0_11_viv [
 Compiling architecture rtl of entity floating_point_v7_1_21.delay [\delay(width=24,length=0)\]
 Compiling architecture synth of entity xbip_pipe_v3_0_11.xbip_pipe_v3_0_11_viv [\xbip_pipe_v3_0_11_viv(c_has_ce=...]
 Compiling architecture rtl of entity floating_point_v7_1_21.delay [\delay(width=16,length=0)\]
-Compiling architecture rtl of entity floating_point_v7_1_21.dsp48e1_wrapper [\dsp48e1_wrapper(c_part="xc7a35t...]
+Compiling architecture rtl of entity floating_point_v7_1_21.dsp48e1_wrapper [\dsp48e1_wrapper(c_part="xc7a200...]
 Compiling architecture synth of entity xbip_pipe_v3_0_11.xbip_pipe_v3_0_11_viv [\xbip_pipe_v3_0_11_viv(c_latency...]
 Compiling architecture rtl of entity floating_point_v7_1_21.delay [\delay(length=3)\]
 Compiling architecture synth of entity xbip_pipe_v3_0_11.xbip_pipe_v3_0_11_viv [\xbip_pipe_v3_0_11_viv(c_has_ce=...]

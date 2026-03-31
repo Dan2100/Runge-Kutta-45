@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.runs/synth_1'
+HD_PWD='C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

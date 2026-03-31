@@ -8,48 +8,48 @@
   **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
   **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
   **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-  **** Start of session at: Mon Mar 30 18:05:06 2026
+  **** Start of session at: Mon Mar 30 23:09:15 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source Top.tcl -notrace
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 530.039 ; gain = 219.738
-Command: read_checkpoint -auto_incremental -incremental C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/utils_1/imports/synth_1/Top_TB.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/utils_1/imports/synth_1/Top_TB.dcp for incremental synthesis
+create_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:14 . Memory (MB): peak = 529.043 ; gain = 219.473
+Command: read_checkpoint -auto_incremental -incremental C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/utils_1/imports/synth_1/Top_TB.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/utils_1/imports/synth_1/Top_TB.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
-Command: synth_design -top Top -part xc7a35tftg256-1
+Command: synth_design -top Top -part xc7a200tfbg484-3
 Starting synth_design
-Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
-INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
-INFO: [Device 21-403] Loading part xc7a35tftg256-1
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: [Device 21-403] Loading part xc7a200tfbg484-3
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 12952
+INFO: [Synth 8-7075] Helper process launched with PID 13504
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1275.625 ; gain = 542.699
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1319.773 ; gain = 542.754
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'Top' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top.vhd:47]
-INFO: [Synth 8-3491] module 'Mem' declared at 'C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:35' bound to instance 'uut1' of component 'Mem' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top.vhd:127]
-INFO: [Synth 8-638] synthesizing module 'Mem' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:53]
-INFO: [Synth 8-256] done synthesizing module 'Mem' (0#1) [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:53]
-INFO: [Synth 8-3491] module 'reg' declared at 'C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/reg.vhd:35' bound to instance 'uut2' of component 'reg' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top.vhd:145]
-INFO: [Synth 8-638] synthesizing module '\reg ' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/reg.vhd:61]
-INFO: [Synth 8-256] done synthesizing module '\reg ' (0#1) [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/reg.vhd:61]
-INFO: [Synth 8-3491] module 'Control' declared at 'C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Control.vhd:36' bound to instance 'uut3' of component 'Control' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top.vhd:152]
-INFO: [Synth 8-638] synthesizing module 'Control' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Control.vhd:47]
-INFO: [Synth 8-256] done synthesizing module 'Control' (0#1) [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Control.vhd:47]
-INFO: [Synth 8-3491] module 'RKMod1' declared at 'C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:36' bound to instance 'uut4' of component 'RKMod1' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top.vhd:160]
-INFO: [Synth 8-638] synthesizing module 'RKMod1' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:50]
-INFO: [Synth 8-3491] module 'k_block' declared at 'C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:33' bound to instance 'uut' of component 'k_block' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:153]
-INFO: [Synth 8-638] synthesizing module 'k_block' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:47]
-INFO: [Synth 8-3491] module 'func' declared at 'C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:33' bound to instance 'f1' of component 'func' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:129]
-INFO: [Synth 8-638] synthesizing module 'func' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:46]
-INFO: [Synth 8-3491] module 'fpu_add' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:59' bound to instance 'uut' of component 'fpu_add' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:108]
-INFO: [Synth 8-638] synthesizing module 'fpu_add' [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:73]
+INFO: [Synth 8-638] synthesizing module 'Top' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Top.vhd:47]
+INFO: [Synth 8-3491] module 'Mem' declared at 'C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:35' bound to instance 'uut1' of component 'Mem' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Top.vhd:127]
+INFO: [Synth 8-638] synthesizing module 'Mem' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'Mem' (0#1) [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:53]
+INFO: [Synth 8-3491] module 'reg' declared at 'C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/reg.vhd:35' bound to instance 'uut2' of component 'reg' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Top.vhd:145]
+INFO: [Synth 8-638] synthesizing module '\reg ' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/reg.vhd:61]
+INFO: [Synth 8-256] done synthesizing module '\reg ' (0#1) [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/reg.vhd:61]
+INFO: [Synth 8-3491] module 'Control' declared at 'C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Control.vhd:36' bound to instance 'uut3' of component 'Control' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Top.vhd:152]
+INFO: [Synth 8-638] synthesizing module 'Control' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Control.vhd:47]
+INFO: [Synth 8-256] done synthesizing module 'Control' (0#1) [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Control.vhd:47]
+INFO: [Synth 8-3491] module 'RKMod1' declared at 'C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:36' bound to instance 'uut4' of component 'RKMod1' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Top.vhd:160]
+INFO: [Synth 8-638] synthesizing module 'RKMod1' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:50]
+INFO: [Synth 8-3491] module 'k_block' declared at 'C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/k_block.vhd:33' bound to instance 'uut' of component 'k_block' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:153]
+INFO: [Synth 8-638] synthesizing module 'k_block' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/k_block.vhd:47]
+INFO: [Synth 8-3491] module 'func' declared at 'C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/func.vhd:33' bound to instance 'f1' of component 'func' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/k_block.vhd:129]
+INFO: [Synth 8-638] synthesizing module 'func' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/func.vhd:46]
+INFO: [Synth 8-3491] module 'fpu_add' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:59' bound to instance 'uut' of component 'fpu_add' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/func.vhd:108]
+INFO: [Synth 8-638] synthesizing module 'fpu_add' [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:73]
 	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
-	Parameter C_PART bound to: xc7a35tftg256-1 - type: string 
+	Parameter C_PART bound to: xc7a200tfbg484-3 - type: string 
 	Parameter C_HAS_ADD bound to: 1 - type: integer 
 	Parameter C_HAS_SUBTRACT bound to: 0 - type: integer 
 	Parameter C_HAS_MULTIPLY bound to: 0 - type: integer 
@@ -125,12 +125,12 @@ INFO: [Synth 8-638] synthesizing module 'fpu_add' [c:/Users/lehar/OneDrive/Docum
 	Parameter C_RESULT_TDATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_RESULT_TUSER_WIDTH bound to: 1 - type: integer 
 	Parameter C_FIXED_DATA_UNSIGNED bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'floating_point_v7_1_21' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_add/hdl/floating_point_v7_1_vh_rfs.vhd:93266' bound to instance 'U0' of component 'floating_point_v7_1_21' [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:217]
-INFO: [Synth 8-256] done synthesizing module 'fpu_add' (0#1) [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:73]
-INFO: [Synth 8-3491] module 'fpu_sub' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_sub/synth/fpu_sub.vhd:59' bound to instance 'uut1' of component 'fpu_sub' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:122]
-INFO: [Synth 8-638] synthesizing module 'fpu_sub' [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_sub/synth/fpu_sub.vhd:73]
+INFO: [Synth 8-3491] module 'floating_point_v7_1_21' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_add/hdl/floating_point_v7_1_vh_rfs.vhd:93266' bound to instance 'U0' of component 'floating_point_v7_1_21' [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:217]
+INFO: [Synth 8-256] done synthesizing module 'fpu_add' (0#1) [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:73]
+INFO: [Synth 8-3491] module 'fpu_sub' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_sub/synth/fpu_sub.vhd:59' bound to instance 'uut1' of component 'fpu_sub' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/func.vhd:122]
+INFO: [Synth 8-638] synthesizing module 'fpu_sub' [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_sub/synth/fpu_sub.vhd:73]
 	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
-	Parameter C_PART bound to: xc7a35tftg256-1 - type: string 
+	Parameter C_PART bound to: xc7a200tfbg484-3 - type: string 
 	Parameter C_HAS_ADD bound to: 0 - type: integer 
 	Parameter C_HAS_SUBTRACT bound to: 1 - type: integer 
 	Parameter C_HAS_MULTIPLY bound to: 0 - type: integer 
@@ -206,12 +206,12 @@ INFO: [Synth 8-638] synthesizing module 'fpu_sub' [c:/Users/lehar/OneDrive/Docum
 	Parameter C_RESULT_TDATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_RESULT_TUSER_WIDTH bound to: 1 - type: integer 
 	Parameter C_FIXED_DATA_UNSIGNED bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'floating_point_v7_1_21' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_add/hdl/floating_point_v7_1_vh_rfs.vhd:93266' bound to instance 'U0' of component 'floating_point_v7_1_21' [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_sub/synth/fpu_sub.vhd:217]
-INFO: [Synth 8-256] done synthesizing module 'fpu_sub' (0#1) [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_sub/synth/fpu_sub.vhd:73]
-INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 'uut2' of component 'fpu_mul' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:135]
-INFO: [Synth 8-638] synthesizing module 'fpu_mul' [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:73]
+INFO: [Synth 8-3491] module 'floating_point_v7_1_21' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_add/hdl/floating_point_v7_1_vh_rfs.vhd:93266' bound to instance 'U0' of component 'floating_point_v7_1_21' [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_sub/synth/fpu_sub.vhd:217]
+INFO: [Synth 8-256] done synthesizing module 'fpu_sub' (0#1) [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_sub/synth/fpu_sub.vhd:73]
+INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 'uut2' of component 'fpu_mul' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/func.vhd:135]
+INFO: [Synth 8-638] synthesizing module 'fpu_mul' [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:73]
 	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
-	Parameter C_PART bound to: xc7a35tftg256-1 - type: string 
+	Parameter C_PART bound to: xc7a200tfbg484-3 - type: string 
 	Parameter C_HAS_ADD bound to: 0 - type: integer 
 	Parameter C_HAS_SUBTRACT bound to: 0 - type: integer 
 	Parameter C_HAS_MULTIPLY bound to: 1 - type: integer 
@@ -287,14 +287,14 @@ INFO: [Synth 8-638] synthesizing module 'fpu_mul' [c:/Users/lehar/OneDrive/Docum
 	Parameter C_RESULT_TDATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_RESULT_TUSER_WIDTH bound to: 1 - type: integer 
 	Parameter C_FIXED_DATA_UNSIGNED bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'floating_point_v7_1_21' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_add/hdl/floating_point_v7_1_vh_rfs.vhd:93266' bound to instance 'U0' of component 'floating_point_v7_1_21' [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:217]
-INFO: [Synth 8-256] done synthesizing module 'fpu_mul' (0#1) [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:73]
-INFO: [Synth 8-256] done synthesizing module 'func' (0#1) [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:46]
-INFO: [Synth 8-3491] module 'fpu_add' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:59' bound to instance 'uut1' of component 'fpu_add' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:138]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'uut2' of component 'fpu_fused' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:155]
-INFO: [Synth 8-638] synthesizing module 'fpu_fused' [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:76]
+INFO: [Synth 8-3491] module 'floating_point_v7_1_21' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_add/hdl/floating_point_v7_1_vh_rfs.vhd:93266' bound to instance 'U0' of component 'floating_point_v7_1_21' [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:217]
+INFO: [Synth 8-256] done synthesizing module 'fpu_mul' (0#1) [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:73]
+INFO: [Synth 8-256] done synthesizing module 'func' (0#1) [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/func.vhd:46]
+INFO: [Synth 8-3491] module 'fpu_add' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:59' bound to instance 'uut1' of component 'fpu_add' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/k_block.vhd:138]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'uut2' of component 'fpu_fused' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/k_block.vhd:155]
+INFO: [Synth 8-638] synthesizing module 'fpu_fused' [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:76]
 	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
-	Parameter C_PART bound to: xc7a35tftg256-1 - type: string 
+	Parameter C_PART bound to: xc7a200tfbg484-3 - type: string 
 	Parameter C_HAS_ADD bound to: 0 - type: integer 
 	Parameter C_HAS_SUBTRACT bound to: 0 - type: integer 
 	Parameter C_HAS_MULTIPLY bound to: 0 - type: integer 
@@ -370,82 +370,82 @@ INFO: [Synth 8-638] synthesizing module 'fpu_fused' [c:/Users/lehar/OneDrive/Doc
 	Parameter C_RESULT_TDATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_RESULT_TUSER_WIDTH bound to: 1 - type: integer 
 	Parameter C_FIXED_DATA_UNSIGNED bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'floating_point_v7_1_21' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_add/hdl/floating_point_v7_1_vh_rfs.vhd:93266' bound to instance 'U0' of component 'floating_point_v7_1_21' [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:225]
-INFO: [Synth 8-256] done synthesizing module 'fpu_fused' (0#1) [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:76]
-INFO: [Synth 8-3491] module 'func' declared at 'C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:33' bound to instance 'f2' of component 'func' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:173]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'uut5' of component 'fpu_fused' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:184]
-INFO: [Synth 8-3491] module 'func' declared at 'C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:33' bound to instance 'f3' of component 'func' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:202]
-INFO: [Synth 8-3491] module 'fpu_add' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:59' bound to instance 'uut7' of component 'fpu_add' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:211]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'uut8' of component 'fpu_fused' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:226]
-INFO: [Synth 8-3491] module 'func' declared at 'C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/func.vhd:33' bound to instance 'f4' of component 'func' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:243]
-INFO: [Synth 8-256] done synthesizing module 'k_block' (0#1) [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/k_block.vhd:47]
-INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 'uut1' of component 'fpu_mul' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:165]
-INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 'uut2' of component 'fpu_mul' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:178]
-INFO: [Synth 8-3491] module 'fpu_add' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:59' bound to instance 'uut3' of component 'fpu_add' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:192]
-INFO: [Synth 8-3491] module 'fpu_add' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:59' bound to instance 'uut4' of component 'fpu_add' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:206]
-INFO: [Synth 8-3491] module 'fpu_add' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:59' bound to instance 'uut5' of component 'fpu_add' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:220]
-INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'uut6' of component 'fpu_fused' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:234]
-INFO: [Synth 8-3491] module 'fpu_add' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:59' bound to instance 'uut7' of component 'fpu_add' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:250]
-INFO: [Synth 8-256] done synthesizing module 'RKMod1' (0#1) [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:50]
-INFO: [Synth 8-256] done synthesizing module 'Top' (0#1) [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Top.vhd:47]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[5] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[6] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[7] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[9] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[10] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[11] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[13] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[14] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[15] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[17] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[18] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[19] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[21] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[22] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[23] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[24] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[25] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[26] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[27] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[28] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[29] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[30] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[31] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[32] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[33] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[34] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[35] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[36] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[37] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[38] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[39] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[40] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[41] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[42] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[43] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[44] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[45] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[46] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[47] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[48] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[49] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[50] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[51] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[52] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[53] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[54] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[55] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[56] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[57] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[58] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[59] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[60] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[61] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[62] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[63] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+INFO: [Synth 8-3491] module 'floating_point_v7_1_21' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_add/hdl/floating_point_v7_1_vh_rfs.vhd:93266' bound to instance 'U0' of component 'floating_point_v7_1_21' [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:225]
+INFO: [Synth 8-256] done synthesizing module 'fpu_fused' (0#1) [c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:76]
+INFO: [Synth 8-3491] module 'func' declared at 'C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/func.vhd:33' bound to instance 'f2' of component 'func' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/k_block.vhd:173]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'uut5' of component 'fpu_fused' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/k_block.vhd:184]
+INFO: [Synth 8-3491] module 'func' declared at 'C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/func.vhd:33' bound to instance 'f3' of component 'func' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/k_block.vhd:202]
+INFO: [Synth 8-3491] module 'fpu_add' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:59' bound to instance 'uut7' of component 'fpu_add' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/k_block.vhd:211]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'uut8' of component 'fpu_fused' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/k_block.vhd:226]
+INFO: [Synth 8-3491] module 'func' declared at 'C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/func.vhd:33' bound to instance 'f4' of component 'func' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/k_block.vhd:243]
+INFO: [Synth 8-256] done synthesizing module 'k_block' (0#1) [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/k_block.vhd:47]
+INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 'uut1' of component 'fpu_mul' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:165]
+INFO: [Synth 8-3491] module 'fpu_mul' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_mul/synth/fpu_mul.vhd:59' bound to instance 'uut2' of component 'fpu_mul' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:178]
+INFO: [Synth 8-3491] module 'fpu_add' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:59' bound to instance 'uut3' of component 'fpu_add' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:192]
+INFO: [Synth 8-3491] module 'fpu_add' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:59' bound to instance 'uut4' of component 'fpu_add' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:206]
+INFO: [Synth 8-3491] module 'fpu_add' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:59' bound to instance 'uut5' of component 'fpu_add' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:220]
+INFO: [Synth 8-3491] module 'fpu_fused' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_fused/synth/fpu_fused.vhd:59' bound to instance 'uut6' of component 'fpu_fused' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:234]
+INFO: [Synth 8-3491] module 'fpu_add' declared at 'c:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.gen/sources_1/ip/fpu_add/synth/fpu_add.vhd:59' bound to instance 'uut7' of component 'fpu_add' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:250]
+INFO: [Synth 8-256] done synthesizing module 'RKMod1' (0#1) [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/RKMod1.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'Top' (0#1) [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Top.vhd:47]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[5] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[6] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[7] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[9] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[10] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[11] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[13] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[14] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[15] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[17] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[18] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[19] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[21] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[22] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[23] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[24] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[25] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[26] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[27] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[28] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[29] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[30] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[31] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[32] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[33] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[34] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[35] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[36] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[37] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[38] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[39] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[40] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[41] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[42] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[43] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[44] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[45] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[46] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[47] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[48] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[49] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[50] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[51] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[52] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[53] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[54] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[55] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[56] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[57] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[58] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[59] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[60] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[61] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[62] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[63] was removed.  [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/Mem.vhd:66]
 WARNING: [Synth 8-7129] Port CLK in module xbip_pipe_v3_0_11_viv__parameterized3 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port CE in module xbip_pipe_v3_0_11_viv__parameterized3 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SCLR in module xbip_pipe_v3_0_11_viv__parameterized3 is either unconnected or has no load
@@ -548,58 +548,59 @@ WARNING: [Synth 8-7129] Port ROUND_EXP_INC in module flt_add_exp_sp is either un
 WARNING: [Synth 8-7129] Port ADD_MANT_MSBS[1] in module flt_add_exp_sp is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1655.910 ; gain = 922.984
+Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1703.062 ; gain = 926.043
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1655.910 ; gain = 922.984
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1703.062 ; gain = 926.043
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1655.910 ; gain = 922.984
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1703.062 ; gain = 926.043
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.575 . Memory (MB): peak = 1655.910 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.627 . Memory (MB): peak = 1703.062 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 3328 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/constrs_1/new/constraint.xdc]
-Finished Parsing XDC File [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/constrs_1/new/constraint.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.srcs/constrs_1/new/constraint.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_propImpl.xdc].
+Parsing XDC File [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/constrs_1/new/constraint.xdc]
+Finished Parsing XDC File [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/constrs_1/new/constraint.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/constrs_1/new/constraint.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/Top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.runs/synth_1/dont_touch.xdc]
+Parsing XDC File [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1655.910 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 1703.062 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 334 instances were transformed.
   FDE => FDRE: 334 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.346 . Memory (MB): peak = 1655.910 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.353 . Memory (MB): peak = 1703.062 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1655.910 ; gain = 922.984
+Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 1703.062 ; gain = 926.043
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
-Loading part: xc7a35tftg256-1
+Loading part: xc7a200tfbg484-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1655.910 ; gain = 922.984
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 1703.062 ; gain = 926.043
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1655.910 ; gain = 922.984
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 1703.062 ; gain = 926.043
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'wrdata_reg' [C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/sources_1/imports/RK4/reg.vhd:80]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 1655.910 ; gain = 922.984
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 1703.062 ; gain = 926.043
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-223] decloning instance 'fpu_add:/U0/i_synth/DELAY_DIVIDE_BY_ZERO' (delay__parameterized0) to 'fpu_add:/U0/i_synth/DELAY_ACCUM_OVERFLOW'
 INFO: [Synth 8-223] decloning instance 'fpu_add:/U0/i_synth/DELAY_DIVIDE_BY_ZERO' (delay__parameterized0) to 'fpu_add:/U0/i_synth/DELAY_ACCUM_INPUT_OVERFLOW'
@@ -621,44 +622,36 @@ Finished RTL Component Statistics
 Start Part Resource Summary
 ---------------------------------------------------------------------------------
 Part Resources:
-DSPs: 90 (col length:60)
-BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+DSPs: 740 (col length:100)
+BRAMs: 730 (col length: RAMB18 100 RAMB36 50)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3917] design Top has port cont[31] driven by constant 0
-WARNING: [Synth 8-3917] design Top has port cont[21] driven by constant 0
-WARNING: [Synth 8-3917] design Top has port cont[20] driven by constant 0
-WARNING: [Synth 8-3917] design Top has port cont[17] driven by constant 0
-WARNING: [Synth 8-3917] design Top has port cont[16] driven by constant 0
-WARNING: [Synth 8-3917] design Top has port cont[8] driven by constant 0
-WARNING: [Synth 8-3917] design Top has port cont[5] driven by constant 0
-WARNING: [Synth 8-3917] design Top has port cont[4] driven by constant 0
-WARNING: [Synth 8-3917] design Top has port cont[1] driven by constant 0
+WARNING: [Synth 8-3332] Sequential element (uut2/wrdata_reg[3]) is unused and will be removed from module Top.
 INFO: [Synth 8-3332] Sequential element (FMA_OP.OP/addsub/add/EXP/bma_exp_cc/CARRYS_Q_DEL.FAST_DEL.CARRY_FD) is unused and will be removed from module floating_point_v7_1_21_viv__parameterized5.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 1655.910 ; gain = 922.984
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:45 ; elapsed = 00:00:49 . Memory (MB): peak = 1703.062 ; gain = 926.043
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:45 ; elapsed = 00:00:49 . Memory (MB): peak = 1790.262 ; gain = 1057.336
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:50 ; elapsed = 00:00:55 . Memory (MB): peak = 1823.227 ; gain = 1046.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:46 ; elapsed = 00:00:50 . Memory (MB): peak = 1823.074 ; gain = 1090.148
+Finished Timing Optimization : Time (s): cpu = 00:00:52 ; elapsed = 00:00:57 . Memory (MB): peak = 1873.520 ; gain = 1096.500
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:48 ; elapsed = 00:00:52 . Memory (MB): peak = 1850.672 ; gain = 1117.746
+Finished Technology Mapping : Time (s): cpu = 00:00:56 ; elapsed = 00:01:00 . Memory (MB): peak = 1900.457 ; gain = 1123.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -676,37 +669,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:50 ; elapsed = 00:00:55 . Memory (MB): peak = 2039.609 ; gain = 1306.684
+Finished IO Insertion : Time (s): cpu = 00:00:58 ; elapsed = 00:01:03 . Memory (MB): peak = 2091.445 ; gain = 1314.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:50 ; elapsed = 00:00:55 . Memory (MB): peak = 2039.609 ; gain = 1306.684
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:58 ; elapsed = 00:01:03 . Memory (MB): peak = 2091.445 ; gain = 1314.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 2039.609 ; gain = 1306.684
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:00 ; elapsed = 00:01:05 . Memory (MB): peak = 2104.336 ; gain = 1327.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 2039.609 ; gain = 1306.684
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:00 ; elapsed = 00:01:05 . Memory (MB): peak = 2104.336 ; gain = 1327.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 2039.609 ; gain = 1306.684
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:01 ; elapsed = 00:01:06 . Memory (MB): peak = 2104.336 ; gain = 1327.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 2039.859 ; gain = 1306.934
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:01 ; elapsed = 00:01:06 . Memory (MB): peak = 2104.336 ; gain = 1327.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -781,46 +774,48 @@ Report Cell Usage:
 |2     |CARRY4  |    70|
 |3     |DSP48E1 |    48|
 |9     |LUT1    |   139|
-|10    |LUT2    |   874|
-|11    |LUT3    |  1970|
-|12    |LUT4    |  1349|
-|13    |LUT5    |  1161|
-|14    |LUT6    |  1765|
+|10    |LUT2    |   870|
+|11    |LUT3    |  1980|
+|12    |LUT4    |  1344|
+|13    |LUT5    |  1166|
+|14    |LUT6    |  1753|
 |15    |MUXCY   |  2004|
 |16    |MUXF7   |    36|
 |17    |MUXF8   |     4|
 |18    |SRL16E  |   550|
 |19    |XORCY   |   880|
 |20    |FDE     |   330|
-|21    |FDRE    | 11075|
-|22    |FDSE    |    32|
-|23    |IBUF    |    21|
-|24    |OBUF    |   109|
+|21    |FDRE    | 11097|
+|22    |FDSE    |    30|
+|23    |LD      |     9|
+|24    |IBUF    |    21|
+|25    |OBUF    |   109|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:52 ; elapsed = 00:00:56 . Memory (MB): peak = 2039.859 ; gain = 1306.934
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:01 ; elapsed = 00:01:06 . Memory (MB): peak = 2104.336 ; gain = 1327.316
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 255 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:49 . Memory (MB): peak = 2040.145 ; gain = 1307.219
-Synthesis Optimization Complete : Time (s): cpu = 00:00:52 ; elapsed = 00:00:56 . Memory (MB): peak = 2040.145 ; gain = 1307.219
+Synthesis finished with 0 errors, 0 critical warnings and 248 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:38 ; elapsed = 00:00:57 . Memory (MB): peak = 2104.395 ; gain = 1327.375
+Synthesis Optimization Complete : Time (s): cpu = 00:01:01 ; elapsed = 00:01:06 . Memory (MB): peak = 2104.395 ; gain = 1327.375
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.414 . Memory (MB): peak = 2046.324 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 3372 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.439 . Memory (MB): peak = 2129.379 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 3381 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 2073.914 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 2142.711 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 900 instances were transformed.
+  A total of 909 instances were transformed.
   (MUXCY,XORCY) => CARRY4: 570 instances
   FDE => FDRE: 330 instances
+  LD => LDCE: 9 instances
 
-Synth Design complete | Checksum: 128d3e81
+Synth Design complete | Checksum: a49405d5
 INFO: [Common 17-83] Releasing license: Synthesis
-85 Infos, 167 Warnings, 0 Critical Warnings and 0 Errors encountered.
+85 Infos, 160 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:00 ; elapsed = 00:01:23 . Memory (MB): peak = 2073.914 ; gain = 1531.301
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 2073.914 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK45/RK45.runs/synth_1/Top.dcp' has been generated.
+synth_design: Time (s): cpu = 00:01:11 ; elapsed = 00:01:17 . Memory (MB): peak = 2142.711 ; gain = 1603.070
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 2142.711 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.runs/synth_1/Top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file Top_utilization_synth.rpt -pb Top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Mar 30 18:06:49 2026...
+INFO: [Common 17-206] Exiting Vivado at Mon Mar 30 23:10:51 2026...

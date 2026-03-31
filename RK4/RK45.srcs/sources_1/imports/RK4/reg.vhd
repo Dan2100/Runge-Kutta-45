@@ -84,8 +84,8 @@ begin
         wrdata  <= x"3F800000"; -- 1.0  (y0)
 
       when "00011" =>
-        wridata <= x"3DCCCCCD";
-        wrdata  <= x"3DCCCCCD"; -- 0.1  (h)
+        wridata <= x"3CCCCCCD";
+        wrdata  <= x"3CCCCCCD"; -- 0.025 (h)
 
       when "00100" =>
         wridata <= x"3D4CCCCD";
