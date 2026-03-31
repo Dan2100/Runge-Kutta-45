@@ -1,0 +1,17 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../RK45.gen/sources_1/ip/fpu_add/sim/fpu_add.vhd" \
+"../../../../RK45.gen/sources_1/ip/fpu_fused/sim/fpu_fused.vhd" \
+"../../../../RK45.gen/sources_1/ip/fpu_mul/sim/fpu_mul.vhd" \
+"../../../../RK45.gen/sources_1/ip/fpu_sub/sim/fpu_sub.vhd" \
+"../../../../RK45.srcs/sources_1/imports/RK4/Control.vhd" \
+"../../../../RK45.srcs/sources_1/imports/RK4/Mem.vhd" \
+"../../../../RK45.srcs/sources_1/imports/RK4/RKMod1.vhd" \
+"../../../../RK45.srcs/sources_1/imports/RK4/Top.vhd" \
+"../../../../RK45.srcs/sources_1/imports/RK4/func.vhd" \
+"../../../../RK45.srcs/sources_1/imports/RK4/k_block.vhd" \
+"../../../../RK45.srcs/sources_1/imports/RK4/reg.vhd" \
+"../../../../RK45.srcs/sources_1/imports/RK4/Top_TB.vhd" \
+
+# Do not sort compile order
+nosort

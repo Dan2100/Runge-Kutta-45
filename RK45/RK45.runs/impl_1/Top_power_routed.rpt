@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date             : Fri Mar 27 22:55:39 2026
+| Date             : Mon Mar 30 18:08:43 2026
 | Host             : Harry running 64-bit major release  (build 9200)
 | Command          : report_power -file Top_power_routed.rpt -pb Top_power_summary_routed.pb -rpx Top_power_routed.rpx
 | Design           : Top
@@ -29,20 +29,20 @@ Table of Contents
 1. Summary
 ----------
 
-+--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 47.714 (Junction temp exceeded!) |
-| Design Power Budget (W)  | Unspecified*                     |
-| Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 47.230                           |
-| Device Static (W)        | 0.485                            |
-| Effective TJA (C/W)      | 4.9                              |
-| Max Ambient (C)          | 0.0                              |
-| Junction Temperature (C) | 125.0                            |
-| Confidence Level         | Low                              |
-| Setting File             | ---                              |
-| Simulation Activity File | ---                              |
-| Design Nets Matched      | NA                               |
-+--------------------------+----------------------------------+
++--------------------------+-----------------------------------+
+| Total On-Chip Power (W)  | 194.941 (Junction temp exceeded!) |
+| Design Power Budget (W)  | Unspecified*                      |
+| Power Budget Margin (W)  | NA                                |
+| Dynamic (W)              | 194.456                           |
+| Device Static (W)        | 0.485                             |
+| Effective TJA (C/W)      | 4.9                               |
+| Max Ambient (C)          | 0.0                               |
+| Junction Temperature (C) | 125.0                             |
+| Confidence Level         | Low                               |
+| Setting File             | ---                               |
+| Simulation Activity File | ---                               |
+| Design Nets Matched      | NA                                |
++--------------------------+-----------------------------------+
 * Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
 
 
@@ -52,19 +52,19 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Slice Logic             |     9.429 |    25586 |       --- |             --- |
-|   LUT as Logic          |     8.235 |     6743 |     20800 |           32.42 |
-|   Register              |     0.825 |    12880 |     41600 |           30.96 |
-|   CARRY4                |     0.331 |      635 |      8150 |            7.79 |
-|   LUT as Shift Register |     0.023 |      356 |      9600 |            3.71 |
-|   F7/F8 Muxes           |     0.009 |       40 |     32600 |            0.12 |
+| Slice Logic             |    62.293 |    23064 |       --- |             --- |
+|   LUT as Logic          |    50.527 |     5473 |     20800 |           26.31 |
+|   Register              |     7.156 |    11303 |     41600 |           27.17 |
+|   LUT as Shift Register |     2.538 |      328 |      9600 |            3.42 |
+|   CARRY4                |     2.018 |      632 |      8150 |            7.75 |
+|   F7/F8 Muxes           |     0.048 |       40 |     32600 |            0.12 |
 |   BUFG                  |     0.006 |        1 |        32 |            3.13 |
-|   Others                |     0.000 |     2623 |       --- |             --- |
-| Signals                 |    12.976 |    17203 |       --- |             --- |
-| DSPs                    |    13.260 |       48 |        90 |           53.33 |
-| I/O                     |    11.565 |      130 |       170 |           76.47 |
+|   Others                |     0.000 |     3508 |       --- |             --- |
+| Signals                 |    80.441 |    15397 |       --- |             --- |
+| DSPs                    |    29.608 |       48 |        90 |           53.33 |
+| I/O                     |    22.114 |      130 |       170 |           76.47 |
 | Static Power            |     0.485 |          |           |                 |
-| Total                   |    47.714 |          |           |                 |
+| Total                   |   194.941 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,11 +74,11 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |    36.089 |      35.748 |      0.341 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.993 |       0.940 |      0.053 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |   172.767 |     172.426 |      0.341 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     1.857 |       1.803 |      0.053 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vcco18    |       1.800 |     5.440 |       5.439 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco18    |       1.800 |    10.437 |      10.436 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -138,40 +138,36 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+------------------+-----------+
-| Name             | Power (W) |
-+------------------+-----------+
-| Top              |    47.230 |
-|   uut1           |     0.110 |
-|   uut2           |     0.272 |
-|   uut3           |     0.407 |
-|     flush_reg    |     0.014 |
-|     write_en_reg |     0.022 |
-|   uut4           |    34.331 |
-|     uut          |    25.322 |
-|       f1         |     1.831 |
-|       f2         |     1.956 |
-|       f3         |     2.025 |
-|       f4         |     2.089 |
-|       uut1       |     0.089 |
-|       uut2       |     5.773 |
-|       uut5       |     5.717 |
-|       uut7       |     0.080 |
-|       uut8       |     5.763 |
-|     uut1         |     1.205 |
-|       U0         |     1.205 |
-|     uut2         |     1.212 |
-|       U0         |     1.212 |
-|     uut3         |     0.100 |
-|       U0         |     0.100 |
-|     uut4         |     0.103 |
-|       U0         |     0.103 |
-|     uut5         |     0.093 |
-|       U0         |     0.093 |
-|     uut6         |     5.700 |
-|       U0         |     5.700 |
-|     uut7         |     0.596 |
-|       U0         |     0.596 |
-+------------------+-----------+
++------------+-----------+
+| Name       | Power (W) |
++------------+-----------+
+| Top        |   194.456 |
+|   uut1     |     0.400 |
+|   uut4     |   171.063 |
+|     uut    |   122.438 |
+|       f1   |    11.715 |
+|       f2   |    16.395 |
+|       f3   |    16.034 |
+|       f4   |    16.186 |
+|       uut1 |     3.117 |
+|       uut2 |    18.781 |
+|       uut5 |    18.416 |
+|       uut7 |     2.898 |
+|       uut8 |    18.896 |
+|     uut1   |     4.014 |
+|       U0   |     4.014 |
+|     uut2   |     4.122 |
+|       U0   |     4.122 |
+|     uut3   |     5.942 |
+|       U0   |     5.942 |
+|     uut4   |     5.648 |
+|       U0   |     5.648 |
+|     uut5   |     6.201 |
+|       U0   |     6.201 |
+|     uut6   |    19.341 |
+|       U0   |    19.341 |
+|     uut7   |     3.227 |
+|       U0   |     3.227 |
++------------+-----------+
 
 

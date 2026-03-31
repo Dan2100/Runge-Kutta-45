@@ -337,7 +337,6 @@ architecture tb of tb_fpu_sub is
 
   -- Result master channel signals
   signal m_axis_result_tvalid    : std_logic := '0';
-  signal m_axis_result_tready    : std_logic := '1';
   signal m_axis_result_tdata     : std_logic_vector(31 downto 0) := (others => '0');  -- data payload
 
   -----------------------------------------------------------------------
@@ -390,7 +389,6 @@ begin
       s_axis_b_tdata          => s_axis_b_tdata,
       -- AXI4-Stream master channel for output result
       m_axis_result_tvalid    => m_axis_result_tvalid,
-      m_axis_result_tready    => m_axis_result_tready,
       m_axis_result_tdata     => m_axis_result_tdata
       );
 
@@ -435,7 +433,7 @@ begin
 
     -- Run the same consecutive series of 100 operations, while demonstrating use and effect of AXI handshaking signals
     sim_phase <= phase_axi_handshake;
-    wait for 137 * CLOCK_PERIOD;
+    wait for 127 * CLOCK_PERIOD;
 
 
     -- Run operations that demonstrate the use of special floating-point values (+/- zero, +/- infinity, Not a Number)
@@ -453,8 +451,6 @@ begin
 
   -----------------------------------------------------------------------
   -- Generate inputs on the A operand slave channel
-  -- This process also drives:
-  -- + RESULT master channel TREADY input
   -----------------------------------------------------------------------
 
   stimuli_a : process
@@ -546,8 +542,6 @@ begin
     wait for 15 * CLOCK_PERIOD;
     -- 20 normal consecutive transactions
     drive_a(3.1, normal, 20, 0.1);
-    -- Apply backpressure (not ready for result) for 10 clock cycles, then release
-    m_axis_result_tready <= '0', '1' after 10 * CLOCK_PERIOD;
   -- 50 normal consecutive transactions
   drive_a(5.1, normal, 50, 0.1);
 
@@ -724,10 +718,6 @@ begin
 
   check_outputs : process
     variable check_ok : boolean := true;
-    -- Previous values of RESULT master channel signals
-    variable result_tvalid_prev : std_logic := '0';
-    variable result_tready_prev : std_logic := '1';
-    variable result_tdata_prev  : std_logic_vector(31 downto 0) := (others => '0');
   begin
 
     -- Check outputs T_STROBE time after rising edge of clock
@@ -738,7 +728,6 @@ begin
     -- which would make this demonstration testbench unwieldy.
     -- Instead, check the protocol of the RESULT master channel:
     -- check that the payload is valid (not X) when TVALID is high
-    -- and check that the payload does not change while TVALID is high until TREADY goes high
 
     if m_axis_result_tvalid = '1' then
       if is_x(m_axis_result_tdata) then
@@ -746,24 +735,10 @@ begin
         check_ok := false;
       end if;
 
-      if result_tvalid_prev = '1' and result_tready_prev = '0' then  -- payload must be the same as last cycle
-        if m_axis_result_tdata /= result_tdata_prev then
-          report "ERROR: m_axis_result_tdata changed while m_axis_result_tvalid was high and m_axis_result_tready was low" severity error;
-          check_ok := false;
-        end if;
-      end if;
-
     end if;
 
     assert check_ok
       report "ERROR: terminating test with failures." severity failure;
-
-    -- Record payload values for checking next clock cycle
-    if check_ok then
-      result_tvalid_prev := m_axis_result_tvalid;
-      result_tready_prev := m_axis_result_tready;
-      result_tdata_prev  := m_axis_result_tdata;
-    end if;
 
   end process check_outputs;
 

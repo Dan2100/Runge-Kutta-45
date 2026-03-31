@@ -76,28 +76,28 @@ begin
    
     case rs1  is
       when "00001" =>
-      wridata <= x"40000000";
-       wrdata <= wridata;
-       
+        wridata <= x"00000000";
+        wrdata  <= x"00000000"; -- 0.0  (x0)
+
       when "00010" =>
-       wridata <= x"3F800000";
-       wrdata <=  wridata; 
-       
-      when "00011" => 
-      wridata <= x"3DCCCCCD";
-       wrdata <=  wridata;
-       
-      when "00100" => 
-      wridata <=  x"3D4CCCCD";
-       wrdata <=  wridata;
-       
+        wridata <= x"3F800000";
+        wrdata  <= x"3F800000"; -- 1.0  (y0)
+
+      when "00011" =>
+        wridata <= x"3DCCCCCD";
+        wrdata  <= x"3DCCCCCD"; -- 0.1  (h)
+
+      when "00100" =>
+        wridata <= x"3D4CCCCD";
+        wrdata  <= x"3D4CCCCD";
+
       when "00101" =>
-      wridata <= x"40000000";
-       wrdata <= wridata;
-       
+        wridata <= x"40400000";  -- 3.0 (x_end, IEEE 754 float)
+        wrdata  <= x"40400000";
+
       when "00110" =>
-       wridata <= x"3C887A8D";
-       wrdata <= wridata;
+        wridata <= x"3C887A8D";
+        wrdata  <= x"3C887A8D";
       
 --      when "00111" =>
 --        x_out <= r(7);

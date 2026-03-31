@@ -63,7 +63,7 @@ module fpu_mul_sv (
   vivado_axis_v1_0.slave S_AXIS_B,
   (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS_RESULT" *)
   (* X_INTERFACE_MODE = "master M_AXIS_RESULT" *)
-  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME M_AXIS_RESULT, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 100000000, PHASE 0.0, LAYERED_METADATA undef, INSERT_VIP 0" *)
+  (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME M_AXIS_RESULT, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 0, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 100000000, PHASE 0.0, LAYERED_METADATA undef, INSERT_VIP 0" *)
   vivado_axis_v1_0.master M_AXIS_RESULT,
   (* X_INTERFACE_IGNORE = "true" *)
   input wire aclk
@@ -86,7 +86,6 @@ module fpu_mul_sv (
     .s_axis_b_tready(S_AXIS_B.TREADY),
     .s_axis_b_tdata(S_AXIS_B.TDATA),
     .m_axis_result_tvalid(M_AXIS_RESULT.TVALID),
-    .m_axis_result_tready(M_AXIS_RESULT.TREADY),
     .m_axis_result_tdata(M_AXIS_RESULT.TDATA)
   );
 

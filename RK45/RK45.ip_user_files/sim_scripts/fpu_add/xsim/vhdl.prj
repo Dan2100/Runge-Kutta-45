@@ -1,21 +1,3 @@
-vhdl xbip_utils_v3_0_15  \
-"../../../ipstatic/hdl/xbip_utils_v3_0_vh_rfs.vhd" \
-
-vhdl axi_utils_v2_0_11  \
-"../../../ipstatic/hdl/axi_utils_v2_0_vh_rfs.vhd" \
-
-vhdl xbip_pipe_v3_0_11  \
-"../../../ipstatic/hdl/xbip_pipe_v3_0_vh_rfs.vhd" \
-
-vhdl xbip_dsp48_wrapper_v3_0_7  \
-"../../../ipstatic/hdl/xbip_dsp48_wrapper_v3_0_vh_rfs.vhd" \
-
-vhdl mult_gen_v12_0_24  \
-"../../../ipstatic/hdl/mult_gen_v12_0_vh_rfs.vhd" \
-
-vhdl floating_point_v7_1_21  \
-"../../../ipstatic/hdl/floating_point_v7_1_vh_rfs.vhd" \
-
 vhdl xil_defaultlib  \
 "../../../../RK45.gen/sources_1/ip/fpu_add/sim/fpu_add.vhd" \
 
