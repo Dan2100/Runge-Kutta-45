@@ -1,0 +1,83 @@
+%% =============================================================================
+%% rk45_top_block_diagram.mmd — Top-Level Architecture of rk45_top
+%% =============================================================================
+%% Render: https://mermaid.live  or  mmdc -i rk45_top_block_diagram.mmd -o rk45_top.svg
+%%
+block-beta
+    columns 5
+
+    %% ── External interface (top row) ─────────────────────────────────────────
+    space
+    block:ctrl_in:3
+        columns 3
+        start["start"]
+        params["x_start  x_end  y0  h0  rtol  atol"]
+        status["busy  done"]
+    end
+    space
+
+    %% ── Top-level module boundary ────────────────────────────────────────────
+    space
+    block:top["rk45_top"]:3
+        columns 3
+
+        %% Row 1: Main controller
+        space
+        block:main_fsm["Main FSM Controller"]
+            columns 1
+            fsm_states["IDLE → INIT → STEP → STEP_WAIT →\nCOMPUTE_X → CTRL → CHECK →\nWRITE_OUT → ADVANCE → END_CHECK → DONE"]
+        end
+        space
+
+        %% Row 2: Core compute modules
+        block:step_eng["rk45_step\n(k1–k7 + error)"]
+            columns 1
+            stage["rk45_stage\n× 1 (sequential)"]
+            ode["ode_func\nf(x,y) = −50(y−x)+1"]
+            err_acc["Error accumulator\nΣ eᵢ·kᵢ"]
+        end
+
+        block:step_ctrl["step_controller\n(adaptive h)"]
+            columns 1
+            sc_comp["sc = atol + rtol·max(|yₙ|,|y'|)"]
+            norm["err_norm = |err| / sc"]
+            pow["err_norm^(−0.2)"]
+            scale["h_new = h · clamp(0.9·pow, 0.2, 10)"]
+        end
+
+        block:support["Support Units"]
+            columns 1
+            fp_xa["fp_add_sub\nx_after = xₙ + h"]
+            fp_cmp["fp_compare\nx_after ≥ x_end?"]
+        end
+
+        %% Row 3: Output FIFO
+        space
+        block:fifo["output_buffer (FIFO)"]
+            columns 1
+            fifo_inner["1024 × 192-bit\n(x, y, err) triples"]
+        end
+        space
+    end
+    space
+
+    %% ── Read interface (bottom row) ──────────────────────────────────────────
+    space
+    space
+    block:rd_port:1
+        columns 1
+        rd["result_read → result_valid\nresult_x  result_y  result_err\nfifo_empty  result_count"]
+    end
+    space
+    space
+
+    %% ── Connections ──────────────────────────────────────────────────────────
+    ctrl_in --> top
+    top --> rd_port
+    main_fsm --> step_eng
+    main_fsm --> step_ctrl
+    main_fsm --> support
+    step_eng --> step_ctrl
+    step_ctrl --> main_fsm
+    support --> main_fsm
+    main_fsm --> fifo

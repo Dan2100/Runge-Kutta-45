@@ -1,0 +1,110 @@
+%% =============================================================================
+%% rk45_compute_block_diagram.mmd — RK45 Compute Datapath Detail
+%% =============================================================================
+%% Shows the internal structure of rk45_step and rk45_stage, including
+%% the FP units, ODE function, and error accumulation pipeline.
+%%
+%% Render: https://mermaid.live  or  mmdc -i rk45_compute_block_diagram.mmd -o rk45_compute.svg
+%%
+block-beta
+    columns 5
+
+    %% ── Inputs ───────────────────────────────────────────────────────────────
+    space
+    block:inputs:3
+        columns 3
+        xn["xₙ"]
+        yn["yₙ"]
+        h["h"]
+    end
+    space
+
+    %% ── rk45_step boundary ───────────────────────────────────────────────────
+    space
+    block:step["rk45_step"]:3
+        columns 3
+
+        %% Orchestrator
+        space
+        block:orch["Stage Orchestrator FSM"]
+            columns 1
+            seq["Sequences stages 0→6\nStores k[0]..k[6] in register file"]
+        end
+        space
+
+        %% rk45_stage (single instance, reused 7 times)
+        block:stage["rk45_stage  (reused × 7)"]:3
+            columns 4
+
+            block:mac["Multiply-Accumulate Loop"]:2
+                columns 1
+                lut["Butcher Tableau\nCoefficient Lookup\nget_a_coeff(s, j)"]
+                mul1["fp_mul\na[s][j] × k[j]\n(6 cycles)"]
+                add1["fp_add_sub\naccum += product\n(11 cycles)"]
+            end
+
+            block:xy_comp["Stage Point Computation"]:2
+                columns 1
+                hmul["fp_mul\nh × accum\n(6 cycles)"]
+                yadd["fp_add_sub\ny_stage = yₙ + h·accum\n(11 cycles)"]
+                cmul["fp_mul\nc[s] × h\n(6 cycles)"]
+                xadd["fp_add_sub\nx_stage = xₙ + c·h\n(11 cycles)"]
+            end
+        end
+
+        %% ODE function
+        space
+        block:ode["ode_func"]
+            columns 1
+            sub["fp_add_sub: y − x  (11 cyc)"]
+            m50["fp_mul: −50 × diff  (6 cyc)"]
+            p1["fp_add_sub: + 1.0  (11 cyc)"]
+            ode_out["k[s] = f(x_stage, y_stage)"]
+        end
+        space
+
+        %% k7 / y_next capture
+        space
+        block:k7cap["Stage 6 (k7) Capture"]
+            columns 1
+            ynext["y_stage_out → y_next\n(b-weights as a-coeffs)"]
+        end
+        space
+
+        %% Error accumulation
+        block:erracc["Error Accumulation"]:3
+            columns 3
+            e_lut["Error Coefficients\nE1..E7 lookup"]
+            emul["fp_mul\neᵢ × kᵢ\n(6 cycles)"]
+            eadd["fp_add_sub\nΣ eᵢ·kᵢ\n(11 cycles)"]
+        end
+
+        %% Final h multiply
+        space
+        block:herr["Error Scaling"]
+            columns 1
+            hmul2["fp_mul\nerr_est = h × Σ(eᵢ·kᵢ)\n(6 cycles)"]
+        end
+        space
+    end
+    space
+
+    %% ── Outputs ──────────────────────────────────────────────────────────────
+    space
+    block:outputs:3
+        columns 3
+        yo["y_next"]
+        eo["err_est"]
+        ko["k7_out"]
+    end
+    space
+
+    %% ── Connections ──────────────────────────────────────────────────────────
+    inputs --> step
+    orch --> stage
+    stage --> ode
+    ode --> orch
+    orch --> k7cap
+    orch --> erracc
+    erracc --> herr
+    step --> outputs

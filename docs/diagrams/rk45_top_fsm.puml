@@ -1,0 +1,109 @@
+@startuml rk45_top_fsm
+' =============================================================================
+' rk45_top_fsm.puml — Main FSM State Diagram for rk45_top
+' =============================================================================
+' Render: https://www.plantuml.com/plantuml  or  plantuml rk45_top_fsm.puml
+'
+' Shows the complete state machine that orchestrates the adaptive RK45
+' integration loop: compute step → evaluate error → accept/reject → advance.
+' =============================================================================
+
+skinparam backgroundColor #0d1117
+skinparam state {
+    BackgroundColor #161b22
+    BorderColor #30363d
+    FontColor #e6edf3
+    FontSize 11
+    ArrowColor #58a6ff
+    StartColor #3fb950
+    EndColor #f85149
+}
+skinparam note {
+    BackgroundColor #21262d
+    BorderColor #30363d
+    FontColor #8b949e
+    FontSize 9
+}
+
+title **rk45_top Main FSM** — Adaptive Dormand-Prince Integration Loop
+
+[*] --> ST_IDLE
+
+state ST_IDLE : Wait for start pulse
+state ST_INIT : Latch x_start, y0, h0\ninto x_n, y_n, h_n
+
+state "RK45 Step Computation" as step_group {
+    state ST_STEP : Assert step_start\nto rk45_step engine
+    state ST_STEP_WAIT : Wait for step_done\n(k1–k7 + error estimate)
+}
+
+state "X Advance Computation" as x_group {
+    state ST_COMPUTE_X : Issue x_n + h_n\nto fp_add_sub
+    state ST_COMPUTE_X_WAIT : Wait for xa_valid_out\nCapture x_after_step
+}
+
+state "Step Control" as ctrl_group {
+    state ST_CTRL : Assert ctrl_start\nto step_controller
+    state ST_CTRL_WAIT : Wait for ctrl_done\n(accept/reject + h_new)
+}
+
+state ST_CHECK <<choice>>
+
+state "Accept Path" as accept_group {
+    state ST_WRITE_OUT : Write (x, y, err)\nto output FIFO
+    state ST_ADVANCE : x_n ← x_after_step\ny_n ← y_next\nh_n ← h_new
+}
+
+state "End-of-Interval Check" as end_group {
+    state ST_END_CHECK : Issue fp_compare:\nx_end > x_after_step?
+    state ST_END_CHECK_WAIT : Wait for cmp_valid_out
+}
+
+state end_decision <<choice>>
+
+state ST_DONE : Assert done=1\nClear busy
+
+ST_IDLE --> ST_INIT : start = 1
+ST_INIT --> ST_STEP : Parameters latched
+
+ST_STEP --> ST_STEP_WAIT : step_start pulsed
+ST_STEP_WAIT --> ST_COMPUTE_X : step_done = 1
+
+ST_COMPUTE_X --> ST_COMPUTE_X_WAIT : xa_valid_in pulsed
+ST_COMPUTE_X_WAIT --> ST_CTRL : xa_valid_out = 1
+
+ST_CTRL --> ST_CTRL_WAIT : ctrl_start pulsed
+ST_CTRL_WAIT --> ST_CHECK : ctrl_done = 1
+
+ST_CHECK --> ST_WRITE_OUT : **accept = 1**
+ST_CHECK --> ST_STEP : **reject**\nh_n ← h_new (smaller)
+
+ST_WRITE_OUT --> ST_ADVANCE : FIFO write complete
+ST_ADVANCE --> ST_END_CHECK : State updated
+
+ST_END_CHECK --> ST_END_CHECK_WAIT : end_cmp_valid_in pulsed
+ST_END_CHECK_WAIT --> end_decision : cmp_valid_out = 1
+
+end_decision --> ST_DONE : x_after_step ≥ x_end
+end_decision --> ST_STEP : x_after_step < x_end\n(continue integration)
+
+ST_DONE --> ST_IDLE : done pulsed
+
+note right of ST_CHECK
+  Step controller computes:
+    err_norm = |err| / (atol + rtol·max(|y|,|y'|))
+    accept ⟺ err_norm ≤ 1.0
+end note
+
+note right of ST_STEP
+  Rejected steps retry from
+  the same (x_n, y_n) with
+  a reduced step size h_new
+end note
+
+note left of ST_WRITE_OUT
+  Stalls if FIFO full
+  (back-pressure)
+end note
+
+@enduml

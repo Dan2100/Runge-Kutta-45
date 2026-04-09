@@ -1,0 +1,76 @@
+%% =============================================================================
+%% step_size_selection_flowchart.mmd — Adaptive Step-Size Selection Algorithm
+%% =============================================================================
+%% Shows the complete step_controller decision flow:
+%%   error normalization → accept/reject → scaling → clamping → overshoot limit
+%%
+%% Render: https://mermaid.live  or  mmdc -i step_size_selection_flowchart.mmd -o step_size.svg
+%%
+flowchart TD
+    classDef startEnd fill:#3fb950,stroke:#238636,color:#0d1117,font-weight:bold
+    classDef process fill:#161b22,stroke:#30363d,color:#e6edf3
+    classDef decision fill:#1f2937,stroke:#58a6ff,color:#e6edf3
+    classDef accept fill:#238636,stroke:#3fb950,color:#e6edf3
+    classDef reject fill:#b62324,stroke:#f85149,color:#e6edf3
+    classDef fp_op fill:#21262d,stroke:#8b949e,color:#c9d1d9,font-style:italic
+
+    START(["step_controller START"]):::startEnd
+
+    %% ── Error Normalization ──────────────────────────────────────────────────
+    ABS_Y["|yₙ|  and  |y_next|<br/><i>combinational bit-clear</i>"]:::fp_op
+    CMP_Y{"max(|yₙ|, |y_next|)<br/><i>fp_compare — 2 cycles</i>"}:::decision
+    MUL_RTOL["rtol × max_y<br/><i>fp_mul — 6 cycles</i>"]:::fp_op
+    ADD_ATOL["sc = atol + rtol·max_y<br/><i>fp_add_sub — 11 cycles</i>"]:::fp_op
+    ABS_ERR["|err_est|<br/><i>combinational bit-clear</i>"]:::fp_op
+    DIV_ERR["err_norm = |err_est| / sc<br/><i>fp_div — 28 cycles</i>"]:::fp_op
+
+    %% ── Accept / Reject Decision ────────────────────────────────────────────
+    CMP_ERR{"err_norm ≤ 1.0 ?<br/><i>fp_compare — 2 cycles</i>"}:::decision
+    ACCEPT["✓ accept = 1"]:::accept
+    REJECT["✗ accept = 0"]:::reject
+
+    %% ── Scale Factor Computation ────────────────────────────────────────────
+    CHK_ZERO{"err_norm = 0 ?"}:::decision
+    MAX_SCALE_FAST["scale = MAX_SCALE (10.0)<br/><i>skip pow</i>"]:::process
+    POW["pow = err_norm^(−0.2)<br/><i>fp_pow_neg0p2 — Newton 8 iter</i>"]:::fp_op
+    SAFETY["scale = 0.9 × pow<br/><i>fp_mul — 6 cycles</i>"]:::fp_op
+
+    %% ── Clamping ────────────────────────────────────────────────────────────
+    CLAMP_LO{"scale < 0.2 ?<br/><i>fp_compare</i>"}:::decision
+    SET_LO["scale = 0.2"]:::process
+    CLAMP_HI{"scale > 10.0 ?<br/><i>fp_compare</i>"}:::decision
+    SET_HI["scale = 10.0"]:::process
+
+    %% ── Final h Computation ─────────────────────────────────────────────────
+    MUL_H["h_new = h × scale<br/><i>fp_mul — 6 cycles</i>"]:::fp_op
+    LIMIT_SUB["x_remain = x_end − x_current<br/><i>fp_add_sub — 11 cycles</i>"]:::fp_op
+    LIMIT_CMP{"h_new > x_remain ?<br/><i>fp_compare — 2 cycles</i>"}:::decision
+    LIMIT_SET["h_new = x_remain<br/><i>don't overshoot x_end</i>"]:::process
+
+    DONE(["DONE: accept + h_new valid"]):::startEnd
+
+    %% ── Flow ─────────────────────────────────────────────────────────────────
+    START --> ABS_Y --> CMP_Y --> MUL_RTOL --> ADD_ATOL
+    ABS_ERR --> DIV_ERR
+    ADD_ATOL --> DIV_ERR --> CMP_ERR
+
+    START --> ABS_ERR
+
+    CMP_ERR -- "yes" --> ACCEPT
+    CMP_ERR -- "no" --> REJECT
+    ACCEPT --> CHK_ZERO
+    REJECT --> CHK_ZERO
+
+    CHK_ZERO -- "yes" --> MAX_SCALE_FAST --> MUL_H
+    CHK_ZERO -- "no" --> POW --> SAFETY --> CLAMP_LO
+
+    CLAMP_LO -- "yes" --> SET_LO --> CLAMP_HI
+    CLAMP_LO -- "no" --> CLAMP_HI
+
+    CLAMP_HI -- "yes" --> SET_HI --> MUL_H
+    CLAMP_HI -- "no" --> MUL_H
+
+    MUL_H --> LIMIT_SUB --> LIMIT_CMP
+
+    LIMIT_CMP -- "yes" --> LIMIT_SET --> DONE
+    LIMIT_CMP -- "no" --> DONE
