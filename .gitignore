@@ -1,0 +1,13 @@
+# Simulation working directories
+sim_fp_unit/
+sim_rk45_top/
+
+# Vivado project files
+*.jou
+*.log
+*.str
+*.pb
+
+# Python
+__pycache__/
+*.pyc
