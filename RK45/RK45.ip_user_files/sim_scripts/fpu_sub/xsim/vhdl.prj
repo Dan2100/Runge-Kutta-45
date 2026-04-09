@@ -1,5 +1,0 @@
-vhdl xil_defaultlib  \
-"../../../../RK45.gen/sources_1/ip/fpu_sub/sim/fpu_sub.vhd" \
-
-# Do not sort compile order
-nosort
