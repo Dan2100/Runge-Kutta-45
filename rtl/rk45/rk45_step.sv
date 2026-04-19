@@ -2,14 +2,14 @@
 // rk45_step.sv — Full Dormand-Prince RK45 Step (k1–k7 + Error Estimate)
 // =============================================================================
 // Orchestrates one complete RK45 step attempt:
-//   1. Compute k1 through k7 via rk45_stage (sequentially)
-//   2. Compute y_next = y_n + h * Σ(b_i * k_i)  [5th-order solution]
-//      (This is done implicitly by k7 stage using b-weights as a-coefficients)
-//   3. Compute err = h * Σ(e_i * k_i)  [error estimate]
+//   1. Compute k1 through k6 via rk45_stage (sequentially)
+//   2. Launch k7 stage AND begin error accumulation for k[0..5] in parallel
+//   3. After k7 completes, fold in e7*k7 and compute err_est = h * err_sum
+//   4. y_next comes from k7 stage (b-weights as a-coefficients)
 //
-// Design note: k7 stage uses b1..b6 as its "a" coefficients, so the stage
-// engine's output y_stage for k7 IS the 5th-order solution y_next.
-// The k7 value itself is also needed for the error estimate (e7 ≠ 0).
+// Phase B optimization: error terms e[0..5]*k[0..5] are computed during
+// k7 computation using separate FP units (fp_mul_err, fp_as_err), hiding
+// ~108 cycles of error work behind k7's ~130+ cycle computation.
 //
 // Interface:
 //   - Assert start HIGH for 1 cycle with stable inputs.
@@ -28,6 +28,13 @@ module rk45_step (
     input  logic [63:0] x_n,        // current x
     input  logic [63:0] y_n,        // current y
     input  logic [63:0] h,          // current step size
+
+    // ODE engine program (static during integration)
+    input  logic [15:0] ode_prog_mem   [0:15],
+    input  logic [63:0] ode_const_regs [0:5],
+    input  logic [3:0]  ode_prog_len,
+    input  logic [2:0]  ode_result_reg,
+
     output logic [63:0] y_next,     // 5th-order solution
     output logic [63:0] err_est,    // error estimate (weighted sum)
     output logic [63:0] k7_out,     // k7 value (for FSAL reuse as next k1)
@@ -44,21 +51,25 @@ module rk45_step (
     logic [63:0] k_array [0:6];
 
     rk45_stage stage_engine (
-        .clk         (clk),
-        .rst_n       (rst_n),
-        .start       (stage_start),
-        .stage       (stage_idx),
-        .x_n         (x_n),
-        .y_n         (y_n),
-        .h           (h),
-        .k           (k_array),
-        .k_out       (stage_k_out),
-        .y_stage_out (stage_y_out),
-        .done        (stage_done)
+        .clk            (clk),
+        .rst_n          (rst_n),
+        .start          (stage_start),
+        .stage          (stage_idx),
+        .x_n            (x_n),
+        .y_n            (y_n),
+        .h              (h),
+        .k              (k_array),
+        .ode_prog_mem   (ode_prog_mem),
+        .ode_const_regs (ode_const_regs),
+        .ode_prog_len   (ode_prog_len),
+        .ode_result_reg (ode_result_reg),
+        .k_out          (stage_k_out),
+        .y_stage_out    (stage_y_out),
+        .done           (stage_done)
     );
 
     // -------------------------------------------------------------------------
-    // Shared FP units for error accumulation
+    // Separate FP units for error accumulation (independent of stage engine)
     // -------------------------------------------------------------------------
     logic        mul_valid_in, mul_valid_out;
     logic [63:0] mul_a, mul_b, mul_result;
@@ -102,22 +113,23 @@ module rk45_step (
         ST_COMPUTE_STAGE,   // Launch stage engine for k[stage_idx]
         ST_WAIT_STAGE,      // Wait for stage engine to finish
         ST_STORE_K,         // Store ki and advance to next stage
-        ST_ERR_INIT,        // Begin error accumulation
-        ST_ERR_MUL,         // e[j] * k[j]
-        ST_ERR_MUL_WAIT,
+        ST_K7_ERR_START,    // Launch k7 + init error loop for k[0..5]
+        ST_ERR_MUL,         // e[j] * k[j]  (j = 0..5, overlapped with k7)
         ST_ERR_ADD,         // accum += e[j] * k[j]
-        ST_ERR_ADD_WAIT,
-        ST_ERR_NEXT,        // Advance j
-        ST_ERR_H_MUL,      // err = h * accum
-        ST_ERR_H_MUL_WAIT,
+        ST_ERR_NEXT,        // Advance j; if j>5, wait for k7
+        ST_WAIT_K7,         // Wait for k7 stage_done (if not already done)
+        ST_FOLD_K7_MUL,     // Compute e7 * k7
+        ST_FOLD_K7_ADD,     // accum += e7 * k7
+        ST_ERR_H_MUL,       // err_est = h * accum
         ST_DONE
     } state_t;
 
     state_t      state;
     logic [2:0]  current_stage;
-    int          err_j;             // error accumulation index
+    int          err_j;             // error accumulation index (0..5 during overlap)
     logic [63:0] err_accum;
     logic        launched;
+    logic        k7_done;           // captures stage_done during error loop
 
     // Latched inputs
     logic [63:0] x_r, y_r, h_r;
@@ -130,11 +142,24 @@ module rk45_step (
             mul_valid_in <= 1'b0;
             as_valid_in  <= 1'b0;
             launched     <= 1'b0;
+            k7_done      <= 1'b0;
         end else begin
             stage_start  <= 1'b0;
             mul_valid_in <= 1'b0;
             as_valid_in  <= 1'b0;
             done         <= 1'b0;
+
+            // ---- Capture k7 completion during error loop states ----
+            // stage_done is a 1-cycle pulse; capture it whenever it fires
+            // during the overlapped error computation.
+            if ((state == ST_ERR_MUL || state == ST_ERR_ADD ||
+                 state == ST_ERR_NEXT || state == ST_WAIT_K7) &&
+                stage_done && !k7_done) begin
+                k_array[6] <= stage_k_out;
+                y_next     <= stage_y_out;
+                k7_out     <= stage_k_out;
+                k7_done    <= 1'b1;
+            end
 
             case (state)
 
@@ -146,6 +171,7 @@ module rk45_step (
                         h_r           <= h;
                         current_stage <= 3'd0;
                         launched      <= 1'b0;
+                        k7_done       <= 1'b0;
                         for (int i = 0; i < 7; i++)
                             k_array[i] <= `FP64_ZERO;
                         state <= ST_COMPUTE_STAGE;
@@ -153,7 +179,7 @@ module rk45_step (
                 end
 
                 // ---------------------------------------------------------
-                // Launch the stage engine
+                // Launch the stage engine (stages 0–5 only)
                 // ---------------------------------------------------------
                 ST_COMPUTE_STAGE: begin
                     stage_idx   <= current_stage;
@@ -162,9 +188,8 @@ module rk45_step (
                 end
 
                 ST_WAIT_STAGE: begin
-                    if (stage_done) begin
+                    if (stage_done)
                         state <= ST_STORE_K;
-                    end
                 end
 
                 // ---------------------------------------------------------
@@ -173,13 +198,9 @@ module rk45_step (
                 ST_STORE_K: begin
                     k_array[current_stage] <= stage_k_out;
 
-                    if (current_stage == 3'd6) begin
-                        // Stage 6 (k7) uses b-weights as a-coefficients, so
-                        // y_stage = y_n + h*(b1*k1 + b3*k3 + b4*k4 + b5*k5 + b6*k6)
-                        // which IS the 5th-order y_next (b2=b7=0).
-                        y_next <= stage_y_out;
-                        k7_out <= stage_k_out;
-                        state  <= ST_ERR_INIT;
+                    if (current_stage == 3'd5) begin
+                        // k6 done — launch k7 AND start error accumulation
+                        state <= ST_K7_ERR_START;
                     end else begin
                         current_stage <= current_stage + 3'd1;
                         state         <= ST_COMPUTE_STAGE;
@@ -187,16 +208,26 @@ module rk45_step (
                 end
 
                 // ---------------------------------------------------------
-                // Error accumulation: err = h * Σ(e_i * k_i, i=1..7)
+                // Launch k7 stage + initialize error loop
                 // ---------------------------------------------------------
-                ST_ERR_INIT: begin
-                    err_j    <= 0;
+                ST_K7_ERR_START: begin
+                    // Launch k7 via stage engine
+                    stage_idx   <= 3'd6;
+                    stage_start <= 1'b1;
+
+                    // Initialize error accumulation for j = 0..5
+                    err_j     <= 0;
                     err_accum <= `FP64_ZERO;
-                    launched <= 1'b0;
-                    state    <= ST_ERR_MUL;
+                    launched  <= 1'b0;
+                    k7_done   <= 1'b0;
+
+                    state <= ST_ERR_MUL;
                 end
 
-                // Compute e[j] * k[j]
+                // ---------------------------------------------------------
+                // Error loop (runs in parallel with k7 stage engine)
+                // Compute e[j] * k[j] for j = 0..5
+                // ---------------------------------------------------------
                 ST_ERR_MUL: begin
                     if (!launched) begin
                         mul_a        <= get_e_coeff(err_j);
@@ -206,7 +237,7 @@ module rk45_step (
                     end
                     if (mul_valid_out) begin
                         launched <= 1'b0;
-                        // Skip accumulation for zero-coefficient terms
+                        // Skip accumulation for zero-coefficient terms (E2=0)
                         if (get_e_coeff(err_j) == `FP64_ZERO)
                             state <= ST_ERR_NEXT;
                         else
@@ -230,16 +261,66 @@ module rk45_step (
                     end
                 end
 
+                // Advance j; loop while j < 6
                 ST_ERR_NEXT: begin
-                    if (err_j == 6)
-                        state <= ST_ERR_H_MUL;
-                    else begin
+                    if (err_j == 5) begin
+                        // Partial error (j=0..5) complete. Need k7 now.
+                        launched <= 1'b0;
+                        if (k7_done)
+                            state <= ST_FOLD_K7_MUL;
+                        else
+                            state <= ST_WAIT_K7;
+                    end else begin
                         err_j <= err_j + 1;
                         state <= ST_ERR_MUL;
                     end
                 end
 
+                // ---------------------------------------------------------
+                // Wait for k7 stage to complete (if not already captured)
+                // ---------------------------------------------------------
+                ST_WAIT_K7: begin
+                    // k7_done is set by the capture logic above
+                    if (k7_done) begin
+                        launched <= 1'b0;
+                        state    <= ST_FOLD_K7_MUL;
+                    end
+                end
+
+                // ---------------------------------------------------------
+                // Fold in e7 * k7
+                // ---------------------------------------------------------
+                ST_FOLD_K7_MUL: begin
+                    if (!launched) begin
+                        mul_a        <= E7_B;
+                        mul_b        <= k_array[6];
+                        mul_valid_in <= 1'b1;
+                        launched     <= 1'b1;
+                    end
+                    if (mul_valid_out) begin
+                        launched <= 1'b0;
+                        state    <= ST_FOLD_K7_ADD;
+                    end
+                end
+
+                ST_FOLD_K7_ADD: begin
+                    if (!launched) begin
+                        as_a        <= err_accum;
+                        as_b        <= mul_result;
+                        as_is_sub   <= 1'b0;
+                        as_valid_in <= 1'b1;
+                        launched    <= 1'b1;
+                    end
+                    if (as_valid_out) begin
+                        err_accum <= as_result;
+                        launched  <= 1'b0;
+                        state     <= ST_ERR_H_MUL;
+                    end
+                end
+
+                // ---------------------------------------------------------
                 // err_est = h * accum
+                // ---------------------------------------------------------
                 ST_ERR_H_MUL: begin
                     if (!launched) begin
                         mul_a        <= h_r;

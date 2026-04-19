@@ -9,6 +9,13 @@
 //   rtol:   1e-6
 //   atol:   1e-9
 //
+// The ODE is loaded as a 3-instruction microcode program:
+//   R2 = -50.0, R3 = 1.0
+//   Instr 0: SUB R4, R1, R0    → R4 = y - x
+//   Instr 1: MUL R4, R2, R4    → R4 = -50*(y-x)
+//   Instr 2: ADD R4, R4, R3    → R4 = -50*(y-x)+1
+//   prog_len = 3, result_reg = 4
+//
 // After integration completes, reads all accepted (x, y, err) triples from
 // the output FIFO and writes them to "rk45_output.txt" in both hex and
 // decimal formats for comparison with Python reference.
@@ -50,25 +57,37 @@ module rk45_top_tb;
     logic        fifo_empty;
     logic [10:0] result_count;
 
+    // ODE program: f(x,y) = -50*(y-x)+1
+    // Instruction format: [15:14]=op, [13:11]=dst, [10:8]=src_a, [7:5]=src_b
+    //   op: 00=ADD, 01=SUB, 10=MUL, 11=DIV
+    logic [15:0] ode_prog_mem   [0:15];
+    logic [63:0] ode_const_regs [0:5];
+    logic [3:0]  ode_prog_len;
+    logic [2:0]  ode_result_reg;
+
     rk45_top dut (
-        .clk          (clk),
-        .rst_n        (rst_n),
-        .start        (start),
-        .x_start      (X_START),
-        .x_end        (X_END),
-        .y0           (Y0),
-        .h0           (H0),
-        .rtol         (RTOL),
-        .atol         (ATOL),
-        .busy         (busy),
-        .done         (dut_done),
-        .result_read  (result_read),
-        .result_valid (result_valid),
-        .result_x     (result_x),
-        .result_y     (result_y),
-        .result_err   (result_err),
-        .fifo_empty   (fifo_empty),
-        .result_count (result_count)
+        .clk            (clk),
+        .rst_n          (rst_n),
+        .start          (start),
+        .x_start        (X_START),
+        .x_end          (X_END),
+        .y0             (Y0),
+        .h0             (H0),
+        .rtol           (RTOL),
+        .atol           (ATOL),
+        .ode_prog_mem   (ode_prog_mem),
+        .ode_const_regs (ode_const_regs),
+        .ode_prog_len   (ode_prog_len),
+        .ode_result_reg (ode_result_reg),
+        .busy           (busy),
+        .done           (dut_done),
+        .result_read    (result_read),
+        .result_valid   (result_valid),
+        .result_x       (result_x),
+        .result_y       (result_y),
+        .result_err     (result_err),
+        .fifo_empty     (fifo_empty),
+        .result_count   (result_count)
     );
 
     // -------------------------------------------------------------------------
@@ -96,6 +115,29 @@ module rk45_top_tb;
         rst_n       = 1'b0;
         start       = 1'b0;
         result_read = 1'b0;
+
+        // ---- Load ODE program: f(x,y) = -50*(y-x)+1 ----
+        // Register mapping: R0=x, R1=y, R2=-50.0, R3=1.0, R4=temp/result
+        // Instruction encoding: {op[1:0], dst[2:0], src_a[2:0], src_b[2:0], 5'b0}
+        //   Instr 0: SUB R4, R1, R0  → op=01, dst=100, src_a=001, src_b=000
+        ode_prog_mem[0]  = {2'b01, 3'd4, 3'd1, 3'd0, 5'b0};
+        //   Instr 1: MUL R4, R2, R4  → op=10, dst=100, src_a=010, src_b=100
+        ode_prog_mem[1]  = {2'b10, 3'd4, 3'd2, 3'd4, 5'b0};
+        //   Instr 2: ADD R4, R4, R3  → op=00, dst=100, src_a=100, src_b=011
+        ode_prog_mem[2]  = {2'b00, 3'd4, 3'd4, 3'd3, 5'b0};
+        // Unused slots zeroed
+        for (int i = 3; i < 16; i++) ode_prog_mem[i] = 16'h0;
+
+        // Constants: R2=-50.0, R3=1.0, R4–R7 unused (zero)
+        ode_const_regs[0] = 64'hC049000000000000;  // -50.0  (R2)
+        ode_const_regs[1] = 64'h3FF0000000000000;  //   1.0  (R3)
+        ode_const_regs[2] = 64'h0;
+        ode_const_regs[3] = 64'h0;
+        ode_const_regs[4] = 64'h0;
+        ode_const_regs[5] = 64'h0;
+
+        ode_prog_len   = 4'd3;
+        ode_result_reg = 3'd4;
 
         // Reset for 20 cycles
         repeat (20) @(posedge clk);

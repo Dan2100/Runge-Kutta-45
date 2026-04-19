@@ -21,7 +21,7 @@ REM Compile in dependency order:
 REM   1. FP stubs (behavioral Xilinx IP replacements)
 REM   2. FP primitives (wrappers)
 REM   3. Constants package
-REM   4. ODE function
+REM   4. ODE engine (programmable microcode)
 REM   5. Stage engine
 REM   6. Step engine
 REM   7. Step controller
@@ -43,7 +43,7 @@ REM  10. Testbench
     "%RTL%\fp\fp_compare.sv" ^
     "%RTL%\fp\fp_pow_neg0p2.sv" ^
     "%RTL%\rk45\rk45_constants_pkg.sv" ^
-    "%RTL%\rk45\ode_func.sv" ^
+    "%RTL%\rk45\ode_engine.sv" ^
     "%RTL%\rk45\rk45_stage.sv" ^
     "%RTL%\rk45\rk45_step.sv" ^
     "%RTL%\rk45\step_controller.sv" ^

@@ -1,8 +1,14 @@
 // =============================================================================
 // rk45_top.sv — Top-Level Adaptive RK45 ODE Solver
 // =============================================================================
-// Solves dy/dx = -50*(y-x)+1 over [x_start, x_end] using the Dormand-Prince
-// RK45 method with adaptive step-size control.
+// Solves a user-programmable ODE dy/dx = f(x,y) over [x_start, x_end] using
+// the Dormand-Prince RK45 method with adaptive step-size control.
+//
+// The ODE function is defined by a microcode program loaded before integration:
+//   - ode_prog_mem:   up to 16 instructions (ADD/SUB/MUL/DIV on registers)
+//   - ode_const_regs: 6 constants loaded into R2–R7
+//   - ode_prog_len:   number of instructions
+//   - ode_result_reg: register holding f(x,y) after execution
 //
 // Main FSM:
 //   IDLE → INIT → STEP → STEP_WAIT → CHECK →
@@ -12,24 +18,6 @@
 //
 // Outputs accepted (x, y, err) triples into an output FIFO, readable via
 // the result_valid/result_read handshake.
-//
-// Interface:
-//   Inputs:
-//     clk, rst_n          — clock and active-low synchronous reset
-//     start                — pulse HIGH for 1 cycle to begin integration
-//     x_start, x_end      — integration interval [x_start, x_end]
-//     y0                   — initial condition y(x_start)
-//     h0                   — initial step size
-//     rtol, atol           — relative and absolute tolerances
-//   Outputs:
-//     busy                 — HIGH while integration is in progress
-//     done                 — pulses HIGH for 1 cycle when integration finishes
-//     result_valid         — HIGH when (result_x, result_y, result_err) are valid
-//     result_x/y/err       — current read output from FIFO
-//     result_count         — number of accepted steps in FIFO
-//     fifo_empty           — FIFO empty flag
-//   Controls:
-//     result_read          — pulse HIGH to advance FIFO read pointer
 // =============================================================================
 
 `include "fp_pkg.svh"
@@ -48,6 +36,12 @@ module rk45_top (
     input  logic [63:0] h0,
     input  logic [63:0] rtol,
     input  logic [63:0] atol,
+
+    // ODE program loading (set before start pulse)
+    input  logic [15:0] ode_prog_mem   [0:15],
+    input  logic [63:0] ode_const_regs [0:5],
+    input  logic [3:0]  ode_prog_len,
+    input  logic [2:0]  ode_result_reg,
 
     // Status
     output logic        busy,
@@ -75,16 +69,20 @@ module rk45_top (
     logic [63:0] step_y_next, step_err_est, step_k7;
 
     rk45_step step_engine (
-        .clk     (clk),
-        .rst_n   (rst_n),
-        .start   (step_start),
-        .x_n     (x_n),
-        .y_n     (y_n),
-        .h       (h_n),
-        .y_next  (step_y_next),
-        .err_est (step_err_est),
-        .k7_out  (step_k7),
-        .done    (step_done)
+        .clk            (clk),
+        .rst_n          (rst_n),
+        .start          (step_start),
+        .x_n            (x_n),
+        .y_n            (y_n),
+        .h              (h_n),
+        .ode_prog_mem   (ode_prog_mem),
+        .ode_const_regs (ode_const_regs),
+        .ode_prog_len   (ode_prog_len),
+        .ode_result_reg (ode_result_reg),
+        .y_next         (step_y_next),
+        .err_est        (step_err_est),
+        .k7_out         (step_k7),
+        .done           (step_done)
     );
 
     // -------------------------------------------------------------------------

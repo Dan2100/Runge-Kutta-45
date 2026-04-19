@@ -3,81 +3,92 @@
 %% =============================================================================
 %% Render: https://mermaid.live  or  mmdc -i rk45_top_block_diagram.mmd -o rk45_top.svg
 %%
-block-beta
-    columns 5
+flowchart TB
+    %% ── External Inputs ──────────────────────────────────────────────────────
+    in_start(["start"])
+    in_x_start(["x_start"])
+    in_x_end(["x_end"])
+    in_y0(["y0"])
+    in_h0(["h0"])
+    in_rtol(["rtol"])
+    in_atol(["atol"])
+    in_result_read(["result_read"])
+    in_ode_prog(["ode_prog_mem\node_const_regs\node_prog_len\node_result_reg"])
 
-    %% ── External interface (top row) ─────────────────────────────────────────
-    space
-    block:ctrl_in:3
-        columns 3
-        start["start"]
-        params["x_start  x_end  y0  h0  rtol  atol"]
-        status["busy  done"]
-    end
-    space
+    subgraph top ["rk45_top"]
+        direction TB
 
-    %% ── Top-level module boundary ────────────────────────────────────────────
-    space
-    block:top["rk45_top"]:3
-        columns 3
-
-        %% Row 1: Main controller
-        space
-        block:main_fsm["Main FSM Controller"]
-            columns 1
+        %% Main FSM
+        subgraph main_fsm ["Main FSM Controller"]
             fsm_states["IDLE → INIT → STEP → STEP_WAIT →\nCOMPUTE_X → CTRL → CHECK →\nWRITE_OUT → ADVANCE → END_CHECK → DONE"]
         end
-        space
 
-        %% Row 2: Core compute modules
-        block:step_eng["rk45_step\n(k1–k7 + error)"]
-            columns 1
-            stage["rk45_stage\n× 1 (sequential)"]
-            ode["ode_func\nf(x,y) = −50(y−x)+1"]
-            err_acc["Error accumulator\nΣ eᵢ·kᵢ"]
+        %% Core compute modules
+        subgraph step_eng ["RK45 Step Engine &ensp;(rk45_step)"]
+            direction TB
+            step_fsm["Step FSM\nSequences k1–k6 → k7 ∥ error"]
+            subgraph stage_box ["rk45_stage × 1 &ensp;(sequential reuse)"]
+                direction LR
+                mac["Pipelined MAC\n+ parallel post-MAC"]
+                ode_inst["ode_engine\n(programmable microcode)"]
+                mac --> ode_inst
+            end
+            err_inst["Error accumulator\n(fp_mul_err + fp_as_err)\nOverlapped with k7"]
+            step_fsm -- "stages 0–6" --> stage_box
+            step_fsm -. "k7 ∥ error" .-> err_inst
         end
 
-        block:step_ctrl["step_controller\n(adaptive h)"]
-            columns 1
-            sc_comp["sc = atol + rtol·max(|yₙ|,|y'|)"]
+        subgraph step_ctrl ["step_controller &ensp;(adaptive h)"]
+            direction TB
+            sc_comp["sc = atol + rtol·max(|yₙ|,|y′|)"]
             norm["err_norm = |err| / sc"]
-            pow["err_norm^(−0.2)"]
+            pow_op["err_norm^(−0.2)"]
             scale["h_new = h · clamp(0.9·pow, 0.2, 10)"]
+            sc_comp --> norm --> pow_op --> scale
         end
 
-        block:support["Support Units"]
-            columns 1
+        subgraph support ["Support Units"]
+            direction TB
             fp_xa["fp_add_sub\nx_after = xₙ + h"]
             fp_cmp["fp_compare\nx_after ≥ x_end?"]
+            fp_xa --> fp_cmp
         end
 
-        %% Row 3: Output FIFO
-        space
-        block:fifo["output_buffer (FIFO)"]
-            columns 1
+        subgraph fifo ["output_buffer &ensp;(FIFO)"]
             fifo_inner["1024 × 192-bit\n(x, y, err) triples"]
         end
-        space
-    end
-    space
 
-    %% ── Read interface (bottom row) ──────────────────────────────────────────
-    space
-    space
-    block:rd_port:1
-        columns 1
-        rd["result_read → result_valid\nresult_x  result_y  result_err\nfifo_empty  result_count"]
+        %% Internal flow
+        main_fsm -- "step_start\nx_n, y_n, h" --> step_eng
+        step_eng -- "step_done\ny_next, err_est, k7" --> main_fsm
+        main_fsm -- "ctrl_start\ny_n, y_next, err_est, h, x_after" --> step_ctrl
+        step_ctrl -- "ctrl_done\naccept, h_new" --> main_fsm
+        main_fsm -- "xa_valid_in\nx_n, h" --> fp_xa
+        fp_cmp -- "reached_end?" --> main_fsm
+        main_fsm -- "write_en\nx_after, y_next, err" --> fifo
     end
-    space
-    space
 
-    %% ── Connections ──────────────────────────────────────────────────────────
-    ctrl_in --> top
-    top --> rd_port
-    main_fsm --> step_eng
-    main_fsm --> step_ctrl
-    main_fsm --> support
-    step_eng --> step_ctrl
-    step_ctrl --> main_fsm
-    support --> main_fsm
-    main_fsm --> fifo
+    %% ── External Outputs ─────────────────────────────────────────────────────
+    out_busy(["busy"])
+    out_done(["done"])
+    out_result(["result_valid\nresult_x &ensp; result_y &ensp; result_err"])
+    out_fifo_status(["fifo_empty &ensp; result_count"])
+
+    %% ── Input connections ────────────────────────────────────────────────────
+    in_start --> main_fsm
+    in_x_start --> main_fsm
+    in_y0 --> main_fsm
+    in_h0 --> main_fsm
+    in_x_end --> main_fsm
+    in_x_end --> step_ctrl
+    in_x_end --> fp_cmp
+    in_rtol --> step_ctrl
+    in_atol --> step_ctrl
+    in_result_read --> fifo
+    in_ode_prog -- "program +\nconstants" --> step_eng
+
+    %% ── Output connections ───────────────────────────────────────────────────
+    main_fsm --> out_busy
+    main_fsm --> out_done
+    fifo --> out_result
+    fifo --> out_fifo_status
