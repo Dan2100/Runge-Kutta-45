@@ -11,3 +11,4 @@ sim_rk45_top/
 # Python
 __pycache__/
 *.pyc
+docs/final_report.md
