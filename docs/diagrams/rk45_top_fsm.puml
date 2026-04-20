@@ -8,24 +8,7 @@
 ' integration loop: compute step → evaluate error → accept/reject → advance.
 ' =============================================================================
 
-skinparam backgroundColor #0d1117
-skinparam state {
-    BackgroundColor #161b22
-    BorderColor #30363d
-    FontColor #e6edf3
-    FontSize 11
-    ArrowColor #58a6ff
-    StartColor #3fb950
-    EndColor #f85149
-}
-skinparam note {
-    BackgroundColor #21262d
-    BorderColor #30363d
-    FontColor #8b949e
-    FontSize 9
-}
-
-title **rk45_top Main FSM** — Adaptive Dormand-Prince Integration Loop
+title RK45 FSM Controller
 
 [*] --> ST_IDLE
 
