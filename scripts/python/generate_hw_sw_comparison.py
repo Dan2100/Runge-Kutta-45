@@ -106,7 +106,7 @@ ax1.set_ylabel("y(x)")
 ax1.legend(framealpha=0.2, fontsize=8.5)
 ax1.grid(True)
 ax1.set_title(
-    r"RK45 Hardware (FPGA) vs Software: $dy/dx = -50(y - x) + 1$",
+    r"RK45 Hardware vs Software: $dy/dx = -50(y - x) + 1$",
     fontsize=13, fontweight="bold", pad=10
 )
 

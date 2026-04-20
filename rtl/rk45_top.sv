@@ -136,7 +136,7 @@ module rk45_top (
     // -------------------------------------------------------------------------
     logic        fifo_write_en, fifo_full;
 
-    output_buffer #(.DEPTH(1024)) fifo (
+    output_buffer #(.DEPTH(256)) fifo (
         .clk       (clk),
         .rst_n     (rst_n),
         .write_en  (fifo_write_en),

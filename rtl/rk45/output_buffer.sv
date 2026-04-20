@@ -29,7 +29,7 @@
 `timescale 1ns / 1ps
 
 module output_buffer #(
-    parameter int DEPTH = 1024          // must be a power of 2
+    parameter int DEPTH = 256          // must be a power of 2
 ) (
     input  logic        clk,
     input  logic        rst_n,
@@ -58,7 +58,7 @@ module output_buffer #(
     // -------------------------------------------------------------------------
     localparam int PTR_W = $clog2(DEPTH);
 
-    logic [191:0] mem [0:DEPTH-1];      // 192 = 3 × 64 bits
+    (* ram_style = "block" *) logic [191:0] mem [0:DEPTH-1]; // 192 = 3 × 64 bits
 
     logic [PTR_W-1:0] wr_ptr, rd_ptr;
     logic [PTR_W:0]   count_r;          // one extra bit for full/empty detect

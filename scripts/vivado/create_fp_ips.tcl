@@ -26,13 +26,11 @@ create_ip \
 set_property -dict {
     CONFIG.Operation_Type           Add_Subtract
     CONFIG.A_Precision_Type         Double
-    CONFIG.B_Precision_Type         Double
     CONFIG.Result_Precision_Type    Double
     CONFIG.C_Latency                11
     CONFIG.Flow_Control             NonBlocking
     CONFIG.Has_ARESETn              false
     CONFIG.Has_ACLKEN               false
-    CONFIG.Has_Operation_Pinout     true
     CONFIG.C_Mult_Usage             Full_Usage
 } [get_ips fp_add_sub_dp]
 
@@ -52,7 +50,6 @@ create_ip \
 set_property -dict {
     CONFIG.Operation_Type           Multiply
     CONFIG.A_Precision_Type         Double
-    CONFIG.B_Precision_Type         Double
     CONFIG.Result_Precision_Type    Double
     CONFIG.C_Latency                6
     CONFIG.Flow_Control             NonBlocking
@@ -77,7 +74,6 @@ create_ip \
 set_property -dict {
     CONFIG.Operation_Type           Divide
     CONFIG.A_Precision_Type         Double
-    CONFIG.B_Precision_Type         Double
     CONFIG.Result_Precision_Type    Double
     CONFIG.C_Latency                28
     CONFIG.Flow_Control             NonBlocking
@@ -106,7 +102,6 @@ create_ip \
 set_property -dict {
     CONFIG.Operation_Type           Compare
     CONFIG.A_Precision_Type         Double
-    CONFIG.B_Precision_Type         Double
     CONFIG.C_Compare_Operation      Greater_Than
     CONFIG.C_Latency                2
     CONFIG.Flow_Control             NonBlocking
