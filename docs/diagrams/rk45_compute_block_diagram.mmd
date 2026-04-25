@@ -18,98 +18,45 @@ flowchart TB
     xn(["xₙ"])
     yn(["yₙ"])
     h(["h"])
-    ode_prog(["ODE Program\nprog_mem, const_regs,\nprog_len, result_reg"])
+    ode_prog(["ODE Program\nprog_mem, const_regs, prog_len, result_reg"])
 
     %% ── rk45_step ────────────────────────────────────────────────────────────
     subgraph step ["rk45_step"]
         direction TB
 
-        subgraph orch ["Stage Orchestrator FSM"]
-            seq["Sequences stages 0 → 5 (k1–k6)\nStores k0…k5 in register file\nThen launches k7 + error in parallel"]
-        end
+        orch["Stage Orchestrator FSM\nCompute k1..k6, then launch k7 + error path"]
 
-        subgraph stage ["rk45_stage &ensp;(reused × 7) — internal fp_mul + fp_add_sub"]
+        subgraph stage ["rk45_stage (reused ×7)"]
             direction LR
-
-            subgraph mac ["Pipelined MAC (Phase A)"]
-                direction TB
-                lut["Butcher Tableau\nCoefficient Lookup\nget_a_coeff(s, j)"]
-                feed["Pipeline Feed\nc·h, a₁·k₁, a₂·k₂, …\n(1 input per cycle)"]
-                mul1["fp_mul (pipelined)\naccepts 1/cycle\n(6-cycle latency)"]
-                buf["Product Buffer\nproducts[0..n−1]"]
-                add1["fp_add_sub\nSequential reduction\naccum += products·i\n(11 cycles each)"]
-                lut --> feed --> mul1 --> buf --> add1
-            end
-
-            subgraph xy_comp ["Parallel Post-MAC"]
-                direction TB
-                hmul["fp_mul\nh × accum (6 cyc)"]
-                yadd["fp_add_sub\ny_stage = yₙ + h·accum\n(11 cyc)"]
-                xadd["fp_add_sub\nx_stage = xₙ + c·h\n(11 cyc, ∥ with h×accum)"]
-                hmul --> yadd
-            end
-
-            subgraph ode ["ode_engine &ensp;(programmable microcode)"]
-                direction TB
-                regfile["Register File (8×64-bit)\nR0=x, R1=y, R2–R7=constants"]
-                fetch["Fetch: read prog_mem·PC·"]
-                exec["Execute: dispatch to\nfp_add_sub / fp_mul / fp_div"]
-                wb["Writeback: store result,\nPC++ until PC==prog_len"]
-                ode_out["k·s = regfile·result_reg·"]
-                regfile --> fetch --> exec --> wb
-                wb -. "loop" .-> fetch
-                wb --> ode_out
-            end
-
-            add1 -- "accum" --> hmul
-            add1 -. "c_h precomputed\nin MAC pipeline" .-> xadd
-            yadd -- "x_stage, y_stage" --> ode
+            mac["Pipelined MAC (Phase A)\nCompute weighted stage sum"]
+            post["Parallel Post-MAC\nBuild (x_stage, y_stage)"]
+            ode["ode_engine (microcode)\nEvaluate k_s = f(x_stage, y_stage)"]
+            mac --> post --> ode
         end
 
-        k7cap["Stage 6 (k7) Capture\ny_stage_out → y_next\n(b-weights as a-coeffs)"]
+        overlap["Overlapped k7 + Error (Phase B)\nRun k7 and e1..e6 accumulation in parallel"]
+        fold["Fold k7 Error Term\nAdd e7·k7 to partial error sum"]
+        herr["Error Scaling\nerr_est = h · Σ(e_i·k_i)"]
+        k7cap["k7 Capture\nProduce y_next and k7_out"]
 
-        subgraph overlap ["Overlapped k7 + Error (Phase B)"]
-            direction TB
-
-            subgraph k7path ["k7 Computation Path"]
-                k7_launch["Launch stage engine\nstage_idx = 6"]
-                k7_done_cap["k7_done capture\n(always-active pulse detect)"]
-                k7_launch --> k7_done_cap
-            end
-
-            subgraph errpath ["Error Path — separate fp_mul_err + fp_as_err"]
-                direction TB
-                e_lut["Error Coefficients\nE1,E3…E6 lookup"]
-                emul["fp_mul_err\neᵢ × kᵢ (6 cyc)\nj = 0..5"]
-                eadd["fp_as_err\naccum += eᵢ·kᵢ\n(11 cyc each)"]
-                e_lut --> emul --> eadd
-            end
-        end
-
-        fold["Fold k7 error term\nfp_mul_err: e₇ × k₇ (6 cyc)\nfp_as_err: accum += e₇·k₇ (11 cyc)"]
-        herr["Error Scaling\nfp_mul_err: err_est = h × Σ(eᵢ·kᵢ)\n(6 cycles)"]
-
-        %% Internal flow
-        orch -- "stages 0–5" --> stage
-        ode_out -- "k·s" --> orch
-        orch -- "after k6" --> overlap
-        k7_launch --> stage
-        k7_done_cap --> k7cap
-        eadd -- "partial sum\n(j=0..5)" --> fold
-        k7_done_cap -- "k7 value" --> fold
+        orch --> stage
+        stage --> orch
+        orch --> overlap
+        overlap --> fold
+        overlap --> k7cap
         fold --> herr
     end
 
     %% ── Outputs ──────────────────────────────────────────────────────────────
-    yo([y_next])
-    eo([err_est])
-    ko([k7_out])
+    yo(["y_next"])
+    eo(["err_est"])
+    ko(["k7_out"])
 
     %% ── Connections ──────────────────────────────────────────────────────────
     xn --> step
     yn --> step
     h --> step
-    ode_prog -- "threaded through\nrk45_step → rk45_stage" --> stage
+    ode_prog --> stage
     k7cap --> yo
-    herr --> eo
     k7cap --> ko
+    herr --> eo

@@ -12,3 +12,5 @@ sim_rk45_top/
 __pycache__/
 *.pyc
 docs/final_report.md
+docs/ECE1755 Final Report.docx
+.vscode/settings.json
