@@ -1,0 +1,1 @@
+fpu_add.vhd,vhdl,xil_defaultlib,../../../../RK45.gen/sources_1/ip/fpu_add/sim/fpu_add.vhd,incdir="../../../../../../../../../../../Xilinx/2025.2/Vivado/data/rsb/busdef"
