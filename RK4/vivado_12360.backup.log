@@ -3,10 +3,10 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Tue Apr 28 11:49:56 2026
-# Process ID         : 26956
+# Start of session at: Tue Apr 28 11:36:20 2026
+# Process ID         : 12360
 # Current directory  : C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4
-# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent10356 C:\Users\lehar\OneDrive\Documents\GitHub\Runge-Kutta-45\RK4\RK45.xpr
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent6096 C:\Users\lehar\OneDrive\Documents\GitHub\Runge-Kutta-45\RK4\RK45.xpr
 # Log file           : C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/vivado.log
 # Journal file       : C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4\vivado.jou
 # Running On         : Harry
@@ -19,7 +19,7 @@
 # Host memory        : 16886 MB
 # Swap memory        : 19327 MB
 # Total Virtual      : 36213 MB
-# Available Virtual  : 13139 MB
+# Available Virtual  : 19940 MB
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.xpr
@@ -130,56 +130,12 @@ WARNING: [Project 1-5713] Board part '' set for the project  is not found. Board
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/2025.2/Vivado/data/ip'.
-open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:08 . Memory (MB): peak = 1713.953 ; gain = 299.859
 update_compile_order -fileset sources_1
 reset_run synth_1
 INFO: [Project 1-1161] Replacing file C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.srcs/utils_1/imports/synth_1/Top_TB.dcp with file C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.runs/synth_1/Top.dcp
 launch_runs synth_1 -jobs 16
-[Tue Apr 28 11:51:16 2026] Launched synth_1...
+[Tue Apr 28 11:36:51 2026] Launched synth_1...
 Run output will be captured here: C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.runs/synth_1/runme.log
 launch_runs impl_1 -jobs 16
-[Tue Apr 28 12:05:17 2026] Launched impl_1...
+[Tue Apr 28 11:43:29 2026] Launched impl_1...
 Run output will be captured here: C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/RK45.runs/impl_1/runme.log
-open_run impl_1
-INFO: [Device 21-403] Loading part xc7a200tfbg484-3
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.363 . Memory (MB): peak = 1978.293 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 720 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Project 1-479] Netlist was created with Vivado 2025.2
-INFO: [Project 1-570] Preparing netlist for logic optimization
-Read ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.180 . Memory (MB): peak = 2103.180 ; gain = 5.730
-INFO: [Timing 38-478] Restoring timing data from binary archive.
-INFO: [Timing 38-479] Binary timing data restore complete.
-INFO: [Project 1-856] Restoring constraints from binary archive.
-INFO: [Project 1-853] Binary constraint restore complete.
-INFO: [Designutils 20-5722] Start Reading Physical Databases.
-Reading placement.
-Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2756.465 ; gain = 0.000
-Reading placer database...
-Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2756.465 ; gain = 0.000
-Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2756.465 ; gain = 0.000
-Read placeStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.209 . Memory (MB): peak = 2756.465 ; gain = 0.000
-Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2756.465 ; gain = 0.000
-Reading routing.
-Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.080 . Memory (MB): peak = 2756.465 ; gain = 0.000
-Read Physdb Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.307 . Memory (MB): peak = 2756.465 ; gain = 0.000
-Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
-Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.309 . Memory (MB): peak = 2756.465 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 2760.914 ; gain = 0.000
-INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
-
-open_run: Time (s): cpu = 00:00:23 ; elapsed = 00:00:15 . Memory (MB): peak = 3256.062 ; gain = 1534.914
-impl_1
-report_utilization   -file utilization_report.txt
-C:/Users/lehar/OneDrive/Documents/GitHub/Runge-Kutta-45/RK4/utilization_report.txt
-report_timing_summary -file timing_report.txt
-INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Delay Type: min_max.
-INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
-report_power         -file power_report.txt
-Command: report_power -file power_report.txt
-Running Vector-less Activity Propagation...
-
-Finished Running Vector-less Activity Propagation
-0 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
-report_power completed successfully

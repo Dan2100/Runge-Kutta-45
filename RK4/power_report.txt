@@ -1,9 +1,9 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date             : Tue Apr 28 12:07:07 2026
+| Date             : Tue Apr 28 12:21:56 2026
 | Host             : Harry running 64-bit major release  (build 9200)
-| Command          : report_power -file Top_power_routed.rpt -pb Top_power_summary_routed.pb -rpx Top_power_routed.rpx
+| Command          : report_power -file power_report.txt
 | Design           : Top
 | Device           : xc7a200tfbg484-3
 | Design State     : routed
@@ -54,11 +54,11 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.046 |        3 |       --- |             --- |
 | Slice Logic             |     0.064 |    23088 |       --- |             --- |
-|   LUT as Logic          |     0.052 |     5246 |    133800 |            3.92 |
-|   Register              |     0.007 |    11332 |    267600 |            4.23 |
+|   LUT as Logic          |     0.052 |     5246 |    134600 |            3.90 |
+|   Register              |     0.007 |    11332 |    269200 |            4.21 |
 |   LUT as Shift Register |     0.003 |      329 |     46200 |            0.71 |
-|   CARRY4                |     0.002 |      632 |     33450 |            1.89 |
-|   F7/F8 Muxes           |    <0.001 |       40 |    133800 |            0.03 |
+|   CARRY4                |     0.002 |      632 |     33650 |            1.88 |
+|   F7/F8 Muxes           |    <0.001 |       40 |    134600 |            0.03 |
 |   Others                |     0.000 |     3510 |       --- |             --- |
 | Signals                 |     0.081 |    15410 |       --- |             --- |
 | DSPs                    |     0.031 |       48 |       740 |            6.49 |
