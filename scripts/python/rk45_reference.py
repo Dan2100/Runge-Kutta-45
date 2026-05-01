@@ -23,6 +23,7 @@ import numpy as np
 from scipy.integrate import solve_ivp
 import csv
 import os
+import time
 
 # ---------------------------------------------------------------------------
 # ODE definition
@@ -55,17 +56,27 @@ H0      = 0.1       # initial step size hint
 # Run scipy RK45
 # ---------------------------------------------------------------------------
 print("Solving ODE with scipy RK45...")
-sol = solve_ivp(
-    fun=lambda x, y: [f_scalar(x, y[0])],
-    t_span=(X_START, X_END),
-    y0=[Y0],
-    method='RK45',
-    rtol=RTOL,
-    atol=ATOL,
-    first_step=H0,
-    dense_output=False,
-    max_step=np.inf
-)
+# Warm up to avoid first-call JIT overhead
+_ = solve_ivp(fun=lambda x, y: [f_scalar(x, y[0])],
+              t_span=(X_START, X_END), y0=[Y0], method='RK45',
+              rtol=RTOL, atol=ATOL, first_step=H0)
+
+N_REPEATS = 1000
+t0 = time.perf_counter()
+for _ in range(N_REPEATS):
+    sol = solve_ivp(
+        fun=lambda x, y: [f_scalar(x, y[0])],
+        t_span=(X_START, X_END),
+        y0=[Y0],
+        method='RK45',
+        rtol=RTOL,
+        atol=ATOL,
+        first_step=H0,
+        dense_output=False,
+        max_step=np.inf
+    )
+t1 = time.perf_counter()
+elapsed_us = (t1 - t0) / N_REPEATS * 1e6
 
 if not sol.success:
     raise RuntimeError(f"scipy RK45 failed: {sol.message}")
@@ -73,7 +84,8 @@ if not sol.success:
 xs      = sol.t            # x values at accepted steps
 ys      = sol.y[0]         # y values at accepted steps
 n_steps = len(xs)
-print(f"  Accepted steps: {n_steps}")
+print(f"  Accepted steps:   {n_steps}")
+print(f"  Mean wall-clock:  {elapsed_us:.3f} us  (avg over {N_REPEATS} runs)")
 print(f"  Final y({X_END:.1f}) = {ys[-1]:.15e}")
 print(f"  Exact  y({X_END:.1f}) = {exact_solution(X_END):.15e}")
 

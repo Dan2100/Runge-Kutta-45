@@ -110,6 +110,9 @@ module rk45_top_tb;
     integer step_num;
     real    x_val, y_val, err_val, y_exact, y_relerr;
 
+    // Cycle-count instrumentation
+    longint cycle_start, cycle_end, total_cycles;
+
     initial begin
         // Initialise
         rst_n       = 1'b0;
@@ -155,6 +158,7 @@ module rk45_top_tb;
 
         @(posedge clk);
         start = 1'b1;
+        cycle_start = $time / CLK_PERIOD;   // record start cycle
         @(posedge clk);
         start = 1'b0;
 
@@ -171,8 +175,16 @@ module rk45_top_tb;
         join_any
         disable fork;
 
+        cycle_end     = $time / CLK_PERIOD;
+        total_cycles  = cycle_end - cycle_start;
+
         $display("=== Integration Complete ===");
-        $display("  Accepted steps: %0d", result_count);
+        $display("  Accepted steps:           %0d", result_count);
+        $display("  Total clock cycles:       %0d", total_cycles);
+        $display("  Cycles per accepted step: %.1f",
+                 real'(total_cycles) / real'(result_count));
+        $display("  Wall-clock @ 100 MHz:     %.3f us",
+                 real'(total_cycles) * 0.010);
         $display("");
 
         // Wait a few cycles after done
